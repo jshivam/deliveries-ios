@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EEEF2E3B33F77355BC29F52 /* libPods-LalamoveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */; };
+		1A0F632449C23D2D106B0E8D /* libPods-Lalamove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */; };
 		A012076E236AA938007AF234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012076D236AA938007AF234 /* AppDelegate.swift */; };
 		A0120772236AA938007AF234 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* ViewController.swift */; };
 		A0120775236AA938007AF234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0120773236AA938007AF234 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70E78DBC01111D24DFDF6EC3 /* Pods-Lalamove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.debug.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.debug.xcconfig"; sourceTree = "<group>"; };
+		79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LalamoveTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A012076A236AA938007AF234 /* Lalamove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lalamove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A012076D236AA938007AF234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0120771236AA938007AF234 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		A0120783236AA93A007AF234 /* LalamoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LalamoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0120787236AA93A007AF234 /* LalamoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalamoveTests.swift; sourceTree = "<group>"; };
 		A0120789236AA93A007AF234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lalamove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4DE7D2EE26F642899077CA /* Pods-LalamoveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalamoveTests.release.xcconfig"; path = "Target Support Files/Pods-LalamoveTests/Pods-LalamoveTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB3931E5E8C80ADB732FBF5A /* Pods-Lalamove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.release.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.release.xcconfig"; sourceTree = "<group>"; };
+		FD38D731534E893F50F511ED /* Pods-LalamoveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalamoveTests.debug.xcconfig"; path = "Target Support Files/Pods-LalamoveTests/Pods-LalamoveTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0F632449C23D2D106B0E8D /* libPods-Lalamove.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EEEF2E3B33F77355BC29F52 /* libPods-LalamoveTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		756CFBA54CF3AEAD647B37FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70E78DBC01111D24DFDF6EC3 /* Pods-Lalamove.debug.xcconfig */,
+				FB3931E5E8C80ADB732FBF5A /* Pods-Lalamove.release.xcconfig */,
+				FD38D731534E893F50F511ED /* Pods-LalamoveTests.debug.xcconfig */,
+				BC4DE7D2EE26F642899077CA /* Pods-LalamoveTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A0120761236AA938007AF234 = {
 			isa = PBXGroup;
 			children = (
 				A012076C236AA938007AF234 /* Lalamove */,
 				A0120786236AA93A007AF234 /* LalamoveTests */,
 				A012076B236AA938007AF234 /* Products */,
+				756CFBA54CF3AEAD647B37FA /* Pods */,
+				D7A60C772092850548BB1387 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +123,15 @@
 			path = LalamoveTests;
 			sourceTree = "<group>";
 		};
+		D7A60C772092850548BB1387 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */,
+				79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +139,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A012078C236AA93A007AF234 /* Build configuration list for PBXNativeTarget "Lalamove" */;
 			buildPhases = (
+				84B4DB9946BE465709EBDB87 /* [CP] Check Pods Manifest.lock */,
 				A0120766236AA938007AF234 /* Sources */,
 				A0120767236AA938007AF234 /* Frameworks */,
 				A0120768236AA938007AF234 /* Resources */,
@@ -123,6 +157,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A012078F236AA93A007AF234 /* Build configuration list for PBXNativeTarget "LalamoveTests" */;
 			buildPhases = (
+				D4A10C716C35F94CF1A4E22D /* [CP] Check Pods Manifest.lock */,
 				A012077F236AA93A007AF234 /* Sources */,
 				A0120780236AA93A007AF234 /* Frameworks */,
 				A0120781236AA93A007AF234 /* Resources */,
@@ -194,6 +229,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84B4DB9946BE465709EBDB87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lalamove-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4A10C716C35F94CF1A4E22D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LalamoveTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0120766236AA938007AF234 /* Sources */ = {
@@ -360,6 +442,7 @@
 		};
 		A012078D236AA93A007AF234 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70E78DBC01111D24DFDF6EC3 /* Pods-Lalamove.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +462,7 @@
 		};
 		A012078E236AA93A007AF234 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB3931E5E8C80ADB732FBF5A /* Pods-Lalamove.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -398,6 +482,7 @@
 		};
 		A0120790236AA93A007AF234 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD38D731534E893F50F511ED /* Pods-LalamoveTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -420,6 +505,7 @@
 		};
 		A0120791236AA93A007AF234 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC4DE7D2EE26F642899077CA /* Pods-LalamoveTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
