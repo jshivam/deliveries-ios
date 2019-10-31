@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		0EEEF2E3B33F77355BC29F52 /* libPods-LalamoveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */; };
 		1A0F632449C23D2D106B0E8D /* libPods-Lalamove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */; };
+		A00D583A236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5834236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift */; };
+		A00D583B236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5835236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift */; };
+		A00D583C236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5836236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift */; };
+		A00D583D236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5837236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift */; };
+		A00D583E236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5838236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift */; };
+		A00D583F236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5839236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift */; };
+		A00D5841236AE89A000B6A63 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5840236AE89A000B6A63 /* CoreDataManager.swift */; };
 		A012076E236AA938007AF234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012076D236AA938007AF234 /* AppDelegate.swift */; };
 		A0120772236AA938007AF234 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* ViewController.swift */; };
 		A0120775236AA938007AF234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0120773236AA938007AF234 /* Main.storyboard */; };
@@ -44,6 +51,13 @@
 /* Begin PBXFileReference section */
 		70E78DBC01111D24DFDF6EC3 /* Pods-Lalamove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.debug.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.debug.xcconfig"; sourceTree = "<group>"; };
 		79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LalamoveTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00D5834236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		A00D5835236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A00D5836236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCache+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		A00D5837236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCache+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A00D5838236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		A00D5839236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		A00D5840236AE89A000B6A63 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A012076A236AA938007AF234 /* Lalamove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lalamove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A012076D236AA938007AF234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0120771236AA938007AF234 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,15 +142,16 @@
 		A012076C236AA938007AF234 /* Lalamove */ = {
 			isa = PBXGroup;
 			children = (
+				A04FB55F236ACC71002CDDD3 /* Views */,
+				A04FB55E236ACC58002CDDD3 /* ViewControllers */,
+				A04FB55D236ACC4E002CDDD3 /* ViewModels */,
 				A04FB54D236AB856002CDDD3 /* Model */,
 				A04FB536236AAF97002CDDD3 /* Manager */,
 				A012076D236AA938007AF234 /* AppDelegate.swift */,
-				A0120771236AA938007AF234 /* ViewController.swift */,
 				A0120773236AA938007AF234 /* Main.storyboard */,
 				A0120779236AA93A007AF234 /* Assets.xcassets */,
 				A012077B236AA93A007AF234 /* LaunchScreen.storyboard */,
 				A012077E236AA93A007AF234 /* Info.plist */,
-				A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */,
 			);
 			path = Lalamove;
 			sourceTree = "<group>";
@@ -168,6 +183,7 @@
 		A04FB536236AAF97002CDDD3 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A04FB560236AE4CA002CDDD3 /* CoreData */,
 				A04FB535236AAF71002CDDD3 /* Network */,
 			);
 			path = Manager;
@@ -223,6 +239,51 @@
 				A04FB553236ABBDB002CDDD3 /* Endpoint.swift */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		A04FB55D236ACC4E002CDDD3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A04FB55E236ACC58002CDDD3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A0120771236AA938007AF234 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A04FB55F236ACC71002CDDD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A04FB560236AE4CA002CDDD3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A00D5840236AE89A000B6A63 /* CoreDataManager.swift */,
+				A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */,
+				A04FB561236AE4D1002CDDD3 /* Model */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A04FB561236AE4D1002CDDD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A00D5834236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift */,
+				A00D5835236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift */,
+				A00D5836236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift */,
+				A00D5837236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift */,
+				A00D5838236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift */,
+				A00D5839236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D7A60C772092850548BB1387 /* Frameworks */ = {
@@ -384,13 +445,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00D583D236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift in Sources */,
+				A00D583C236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift in Sources */,
 				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
+				A00D583A236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */,
+				A00D583E236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift in Sources */,
+				A00D583F236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */,
 				A0120772236AA938007AF234 /* ViewController.swift in Sources */,
 				A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */,
+				A00D5841236AE89A000B6A63 /* CoreDataManager.swift in Sources */,
 				A04FB545236AB321002CDDD3 /* APIPerformer.swift in Sources */,
 				A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */,
 				A04FB55C236AC8E4002CDDD3 /* APIServiceError.swift in Sources */,
 				A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */,
+				A00D583B236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */,
 				A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */,
 				A012076E236AA938007AF234 /* AppDelegate.swift in Sources */,
 				A04FB551236AB879002CDDD3 /* Location.swift in Sources */,

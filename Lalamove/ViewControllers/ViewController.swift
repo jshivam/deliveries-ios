@@ -15,8 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         network.fetchService().fetchDeliveries { (delivries, error) in
-            print(error)
-            print(delivries)
+//            print(error)
+//            print(delivries)
         }
     }
 }
