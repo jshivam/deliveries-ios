@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A012076E236AA938007AF234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012076D236AA938007AF234 /* AppDelegate.swift */; };
+		A0120772236AA938007AF234 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* ViewController.swift */; };
+		A0120775236AA938007AF234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0120773236AA938007AF234 /* Main.storyboard */; };
+		A0120778236AA938007AF234 /* Lalamove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */; };
+		A012077A236AA93A007AF234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0120779236AA93A007AF234 /* Assets.xcassets */; };
+		A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A012077B236AA93A007AF234 /* LaunchScreen.storyboard */; };
+		A0120788236AA93A007AF234 /* LalamoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120787236AA93A007AF234 /* LalamoveTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0120784236AA93A007AF234 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0120762236AA938007AF234 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0120769236AA938007AF234;
+			remoteInfo = Lalamove;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A012076A236AA938007AF234 /* Lalamove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lalamove.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A012076D236AA938007AF234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0120771236AA938007AF234 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A0120774236AA938007AF234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0120777236AA938007AF234 /* Lalamove.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lalamove.xcdatamodel; sourceTree = "<group>"; };
+		A0120779236AA93A007AF234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A012077C236AA93A007AF234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A012077E236AA93A007AF234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0120783236AA93A007AF234 /* LalamoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LalamoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0120787236AA93A007AF234 /* LalamoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalamoveTests.swift; sourceTree = "<group>"; };
+		A0120789236AA93A007AF234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0120767236AA938007AF234 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0120780236AA93A007AF234 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0120761236AA938007AF234 = {
+			isa = PBXGroup;
+			children = (
+				A012076C236AA938007AF234 /* Lalamove */,
+				A0120786236AA93A007AF234 /* LalamoveTests */,
+				A012076B236AA938007AF234 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A012076B236AA938007AF234 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A012076A236AA938007AF234 /* Lalamove.app */,
+				A0120783236AA93A007AF234 /* LalamoveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A012076C236AA938007AF234 /* Lalamove */ = {
+			isa = PBXGroup;
+			children = (
+				A012076D236AA938007AF234 /* AppDelegate.swift */,
+				A0120771236AA938007AF234 /* ViewController.swift */,
+				A0120773236AA938007AF234 /* Main.storyboard */,
+				A0120779236AA93A007AF234 /* Assets.xcassets */,
+				A012077B236AA93A007AF234 /* LaunchScreen.storyboard */,
+				A012077E236AA93A007AF234 /* Info.plist */,
+				A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */,
+			);
+			path = Lalamove;
+			sourceTree = "<group>";
+		};
+		A0120786236AA93A007AF234 /* LalamoveTests */ = {
+			isa = PBXGroup;
+			children = (
+				A0120787236AA93A007AF234 /* LalamoveTests.swift */,
+				A0120789236AA93A007AF234 /* Info.plist */,
+			);
+			path = LalamoveTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0120769236AA938007AF234 /* Lalamove */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A012078C236AA93A007AF234 /* Build configuration list for PBXNativeTarget "Lalamove" */;
+			buildPhases = (
+				A0120766236AA938007AF234 /* Sources */,
+				A0120767236AA938007AF234 /* Frameworks */,
+				A0120768236AA938007AF234 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lalamove;
+			productName = Lalamove;
+			productReference = A012076A236AA938007AF234 /* Lalamove.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A0120782236AA93A007AF234 /* LalamoveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A012078F236AA93A007AF234 /* Build configuration list for PBXNativeTarget "LalamoveTests" */;
+			buildPhases = (
+				A012077F236AA93A007AF234 /* Sources */,
+				A0120780236AA93A007AF234 /* Frameworks */,
+				A0120781236AA93A007AF234 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0120785236AA93A007AF234 /* PBXTargetDependency */,
+			);
+			name = LalamoveTests;
+			productName = LalamoveTests;
+			productReference = A0120783236AA93A007AF234 /* LalamoveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0120762236AA938007AF234 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Shivam Jaiswal";
+				TargetAttributes = {
+					A0120769236AA938007AF234 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					A0120782236AA93A007AF234 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = A0120769236AA938007AF234;
+					};
+				};
+			};
+			buildConfigurationList = A0120765236AA938007AF234 /* Build configuration list for PBXProject "Lalamove" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0120761236AA938007AF234;
+			productRefGroup = A012076B236AA938007AF234 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0120769236AA938007AF234 /* Lalamove */,
+				A0120782236AA93A007AF234 /* LalamoveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0120768236AA938007AF234 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */,
+				A012077A236AA93A007AF234 /* Assets.xcassets in Resources */,
+				A0120775236AA938007AF234 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0120781236AA93A007AF234 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0120766236AA938007AF234 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0120772236AA938007AF234 /* ViewController.swift in Sources */,
+				A012076E236AA938007AF234 /* AppDelegate.swift in Sources */,
+				A0120778236AA938007AF234 /* Lalamove.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A012077F236AA93A007AF234 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0120788236AA93A007AF234 /* LalamoveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0120785236AA93A007AF234 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0120769236AA938007AF234 /* Lalamove */;
+			targetProxy = A0120784236AA93A007AF234 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A0120773236AA938007AF234 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0120774236AA938007AF234 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A012077B236AA93A007AF234 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A012077C236AA93A007AF234 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A012078A236AA93A007AF234 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A012078B236AA93A007AF234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A012078D236AA93A007AF234 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4V6BH5JAKH;
+				INFOPLIST_FILE = Lalamove/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sj.Lalamove;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A012078E236AA93A007AF234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4V6BH5JAKH;
+				INFOPLIST_FILE = Lalamove/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sj.Lalamove;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A0120790236AA93A007AF234 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4V6BH5JAKH;
+				INFOPLIST_FILE = LalamoveTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sj.LalamoveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lalamove.app/Lalamove";
+			};
+			name = Debug;
+		};
+		A0120791236AA93A007AF234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4V6BH5JAKH;
+				INFOPLIST_FILE = LalamoveTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sj.LalamoveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lalamove.app/Lalamove";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0120765236AA938007AF234 /* Build configuration list for PBXProject "Lalamove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A012078A236AA93A007AF234 /* Debug */,
+				A012078B236AA93A007AF234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A012078C236AA93A007AF234 /* Build configuration list for PBXNativeTarget "Lalamove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A012078D236AA93A007AF234 /* Debug */,
+				A012078E236AA93A007AF234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A012078F236AA93A007AF234 /* Build configuration list for PBXNativeTarget "LalamoveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0120790236AA93A007AF234 /* Debug */,
+				A0120791236AA93A007AF234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A0120777236AA938007AF234 /* Lalamove.xcdatamodel */,
+			);
+			currentVersion = A0120777236AA938007AF234 /* Lalamove.xcdatamodel */;
+			path = Lalamove.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A0120762236AA938007AF234 /* Project object */;
+}
