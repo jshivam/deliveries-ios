@@ -16,6 +16,19 @@
 		A012077A236AA93A007AF234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0120779236AA93A007AF234 /* Assets.xcassets */; };
 		A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A012077B236AA93A007AF234 /* LaunchScreen.storyboard */; };
 		A0120788236AA93A007AF234 /* LalamoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120787236AA93A007AF234 /* LalamoveTests.swift */; };
+		A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */; };
+		A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */; };
+		A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */; };
+		A04FB543236AB18C002CDDD3 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB542236AB18C002CDDD3 /* BaseService.swift */; };
+		A04FB545236AB321002CDDD3 /* APIPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB544236AB321002CDDD3 /* APIPerformer.swift */; };
+		A04FB547236AB370002CDDD3 /* URLRequestComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB546236AB370002CDDD3 /* URLRequestComponents.swift */; };
+		A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB548236AB3A3002CDDD3 /* URLRequestBuilder.swift */; };
+		A04FB54F236AB86F002CDDD3 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB54E236AB86F002CDDD3 /* Delivery.swift */; };
+		A04FB551236AB879002CDDD3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB550236AB879002CDDD3 /* Location.swift */; };
+		A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB553236ABBDB002CDDD3 /* Endpoint.swift */; };
+		A04FB558236AC0C3002CDDD3 /* DeliveryRequestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB557236AC0C3002CDDD3 /* DeliveryRequestComponent.swift */; };
+		A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB559236AC134002CDDD3 /* DeliveryService.swift */; };
+		A04FB55C236AC8E4002CDDD3 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB55B236AC8E4002CDDD3 /* APIServiceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +55,19 @@
 		A0120783236AA93A007AF234 /* LalamoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LalamoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0120787236AA93A007AF234 /* LalamoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalamoveTests.swift; sourceTree = "<group>"; };
 		A0120789236AA93A007AF234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfiguration.swift; sourceTree = "<group>"; };
+		A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfigurationProtocol.swift; sourceTree = "<group>"; };
+		A04FB542236AB18C002CDDD3 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		A04FB544236AB321002CDDD3 /* APIPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPerformer.swift; sourceTree = "<group>"; };
+		A04FB546236AB370002CDDD3 /* URLRequestComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestComponents.swift; sourceTree = "<group>"; };
+		A04FB548236AB3A3002CDDD3 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		A04FB54E236AB86F002CDDD3 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
+		A04FB550236AB879002CDDD3 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A04FB553236ABBDB002CDDD3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A04FB557236AC0C3002CDDD3 /* DeliveryRequestComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRequestComponent.swift; sourceTree = "<group>"; };
+		A04FB559236AC134002CDDD3 /* DeliveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryService.swift; sourceTree = "<group>"; };
+		A04FB55B236AC8E4002CDDD3 /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lalamove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4DE7D2EE26F642899077CA /* Pods-LalamoveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalamoveTests.release.xcconfig"; path = "Target Support Files/Pods-LalamoveTests/Pods-LalamoveTests.release.xcconfig"; sourceTree = "<group>"; };
 		FB3931E5E8C80ADB732FBF5A /* Pods-Lalamove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.release.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,7 +102,6 @@
 				FD38D731534E893F50F511ED /* Pods-LalamoveTests.debug.xcconfig */,
 				BC4DE7D2EE26F642899077CA /* Pods-LalamoveTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,6 +128,8 @@
 		A012076C236AA938007AF234 /* Lalamove */ = {
 			isa = PBXGroup;
 			children = (
+				A04FB54D236AB856002CDDD3 /* Model */,
+				A04FB536236AAF97002CDDD3 /* Manager */,
 				A012076D236AA938007AF234 /* AppDelegate.swift */,
 				A0120771236AA938007AF234 /* ViewController.swift */,
 				A0120773236AA938007AF234 /* Main.storyboard */,
@@ -121,6 +148,81 @@
 				A0120789236AA93A007AF234 /* Info.plist */,
 			);
 			path = LalamoveTests;
+			sourceTree = "<group>";
+		};
+		A04FB535236AAF71002CDDD3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A04FB552236ABBC9002CDDD3 /* Endpoints */,
+				A04FB541236AB16A002CDDD3 /* Services */,
+				A04FB53E236AB146002CDDD3 /* Config */,
+				A04FB537236AAFC4002CDDD3 /* Helper */,
+				A04FB544236AB321002CDDD3 /* APIPerformer.swift */,
+				A04FB55B236AC8E4002CDDD3 /* APIServiceError.swift */,
+				A04FB546236AB370002CDDD3 /* URLRequestComponents.swift */,
+				A04FB548236AB3A3002CDDD3 /* URLRequestBuilder.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A04FB536236AAF97002CDDD3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A04FB535236AAF71002CDDD3 /* Network */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A04FB537236AAFC4002CDDD3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */,
+				A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A04FB53E236AB146002CDDD3 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		A04FB541236AB16A002CDDD3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A04FB542236AB18C002CDDD3 /* BaseService.swift */,
+				A04FB54A236AB820002CDDD3 /* Delivery */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A04FB54A236AB820002CDDD3 /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				A04FB557236AC0C3002CDDD3 /* DeliveryRequestComponent.swift */,
+				A04FB559236AC134002CDDD3 /* DeliveryService.swift */,
+			);
+			path = Delivery;
+			sourceTree = "<group>";
+		};
+		A04FB54D236AB856002CDDD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A04FB54E236AB86F002CDDD3 /* Delivery.swift */,
+				A04FB550236AB879002CDDD3 /* Location.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A04FB552236ABBC9002CDDD3 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				A04FB553236ABBDB002CDDD3 /* Endpoint.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 		D7A60C772092850548BB1387 /* Frameworks */ = {
@@ -282,8 +384,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
 				A0120772236AA938007AF234 /* ViewController.swift in Sources */,
+				A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */,
+				A04FB545236AB321002CDDD3 /* APIPerformer.swift in Sources */,
+				A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */,
+				A04FB55C236AC8E4002CDDD3 /* APIServiceError.swift in Sources */,
+				A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */,
+				A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */,
 				A012076E236AA938007AF234 /* AppDelegate.swift in Sources */,
+				A04FB551236AB879002CDDD3 /* Location.swift in Sources */,
+				A04FB54F236AB86F002CDDD3 /* Delivery.swift in Sources */,
+				A04FB547236AB370002CDDD3 /* URLRequestComponents.swift in Sources */,
+				A04FB543236AB18C002CDDD3 /* BaseService.swift in Sources */,
+				A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */,
+				A04FB558236AC0C3002CDDD3 /* DeliveryRequestComponent.swift in Sources */,
 				A0120778236AA938007AF234 /* Lalamove.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
