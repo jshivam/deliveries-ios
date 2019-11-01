@@ -12,7 +12,7 @@ import UIKit
 
 class DeliveryViewModel
 {
-    var currentOffSet = 0
+    var currentOffSet = -1
     let deliveryServices = DeliveryService.init()
     
     private let context = CoreDataManager.sharedInstance.workerManagedContext
@@ -34,7 +34,7 @@ class DeliveryViewModel
     
     private lazy var fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = {
         let fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = DeliveryCoreDataModel.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "offSet", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "offSet", ascending: true), NSSortDescriptor(key: "identifier", ascending: true)]
         return fetchRequest
     }()
     
@@ -56,20 +56,24 @@ class DeliveryViewModel
 extension DeliveryViewModel
 {
     func cacheExists(offSet: Int) -> Bool {
-        let predicate = NSPredicate(format: "offSet = %@", offSet)
+        let predicate = NSPredicate(format: "%K = %@", "offSet", "\(offSet)")
         let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate)
         return !deliveries.isEmpty
     }
     
-    func shallFetchNextData(indexPath: IndexPath) -> Bool {
+    func isLastCell(indexPath: IndexPath) -> Bool{
         return ((numberOfRows(section: indexPath.section) - 1) == indexPath.row)
     }
     
-    func fetchDeliveries(offSet: Int)
+    func fetchDeliveries()
     {
-        // avoiding mutilple network calls for same offset
-        if currentOffSet >= offSet {
-            return
+        var offSet = currentOffSet + Contants.deliveryLimitPerRequest
+        
+        if currentOffSet == -1 {
+            if cacheExists(offSet: 0) {
+                return
+            }
+            offSet = 0
         }
         
         deliveryServices.fetchDeliveries(offSet: offSet, limit: Contants.deliveryLimitPerRequest) { [weak self] (deliveries, error) in

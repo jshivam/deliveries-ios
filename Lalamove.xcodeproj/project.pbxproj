@@ -11,7 +11,7 @@
 		1A0F632449C23D2D106B0E8D /* libPods-Lalamove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */; };
 		A00D5841236AE89A000B6A63 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5840236AE89A000B6A63 /* CoreDataManager.swift */; };
 		A012076E236AA938007AF234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012076D236AA938007AF234 /* AppDelegate.swift */; };
-		A0120772236AA938007AF234 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* ViewController.swift */; };
+		A0120772236AA938007AF234 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* DeliveryViewController.swift */; };
 		A0120775236AA938007AF234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0120773236AA938007AF234 /* Main.storyboard */; };
 		A0120778236AA938007AF234 /* Lalamove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */; };
 		A012077A236AA93A007AF234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0120779236AA93A007AF234 /* Assets.xcassets */; };
@@ -54,7 +54,7 @@
 		A00D5840236AE89A000B6A63 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A012076A236AA938007AF234 /* Lalamove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lalamove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A012076D236AA938007AF234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0120771236AA938007AF234 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A0120771236AA938007AF234 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		A0120774236AA938007AF234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0120777236AA938007AF234 /* Lalamove.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lalamove.xcdatamodel; sourceTree = "<group>"; };
 		A0120779236AA93A007AF234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		A04FB55E236ACC58002CDDD3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A0120771236AA938007AF234 /* ViewController.swift */,
+				A0120771236AA938007AF234 /* DeliveryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -455,7 +455,7 @@
 			files = (
 				A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */,
 				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
-				A0120772236AA938007AF234 /* ViewController.swift in Sources */,
+				A0120772236AA938007AF234 /* DeliveryViewController.swift in Sources */,
 				A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */,
 				A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */,
 				A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */,
