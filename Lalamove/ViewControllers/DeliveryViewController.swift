@@ -17,9 +17,6 @@ class DeliveryViewController: UIViewController, AlertPresentable, TableViewFoote
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
         title = "Things to Deliver"
         view.backgroundColor = .white
         view.addSubview(tableView)
@@ -93,6 +90,10 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let delivery = viewModel.frc.object(at: indexPath)
+        let detailViewModel = DeliveryDetailViewModel.init(delivery: delivery)
+        let detailViewController = DeliveryDetailViewController.init(viewModel: detailViewModel)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
