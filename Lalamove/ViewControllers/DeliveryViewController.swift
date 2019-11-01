@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DeliveryViewController: UIViewController
+class DeliveryViewController: UIViewController, AlertPresentable, TableViewFooterLoadable
 {
     let tableView = UITableView.init(frame: .zero, style: .plain)
     let viewModel = DeliveryViewModel.init()
@@ -17,6 +17,10 @@ class DeliveryViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+        title = "Deliveries"
         view.backgroundColor = .white
         view.addSubview(tableView)
         
@@ -26,12 +30,32 @@ class DeliveryViewController: UIViewController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         viewModel.frc.delegate = self
-        viewModel.fetchDeliveries()
+        downloadData(forNextPage: false, useCache: true)
+    }
+    
+    func downloadData(forNextPage: Bool, useCache: Bool)
+    {
+        forNextPage ? showFooterLoader() : beginRefreshing()
+        viewModel.fetchDeliveries(useCache: useCache, completion: { [weak self] error in
+            forNextPage ? self?.hideFooterLoader() : self?.endRefreshing()
+            if let error = error {
+                self?.showAlert(message: error.localizedDescription)
+            }
+        })
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         tableView.frame = view.bounds
+    }
+}
+
+extension DeliveryViewController: TableViewRefreshable
+{
+    func refreshData()
+    {
+        viewModel.deleteAllDeliveries()
+        downloadData(forNextPage: false, useCache: false)
     }
 }
 
@@ -62,7 +86,7 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource
         if viewModel.isLastCell(indexPath: indexPath) {
             let delivery = viewModel.frc.object(at: indexPath)
             viewModel.currentOffSet = Int(delivery.offSet)
-            viewModel.fetchDeliveries()
+            downloadData(forNextPage: true, useCache: false)
         }
     }
 }

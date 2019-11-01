@@ -83,6 +83,26 @@ class CoreDataManager {
         }
     }
     
+    func deleteAll<T: NSManagedObject>(_ _class: T.Type)
+    {
+        let context = networkManagedContext
+        let name = className(_class)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: name)
+        fetchRequest.includesPropertyValues = false
+        
+        do {
+            let items = try context.fetch(fetchRequest) as! [T]
+            for item in items {
+                context.delete(item)
+            }
+            saveContext()
+        }
+        catch
+        {
+            print("Errod deleting...")
+        }
+    }
+    
     func deleteObject(_ item: NSManagedObject){
         let itemId = item.objectID
         let object = networkManagedContext.object(with: itemId)

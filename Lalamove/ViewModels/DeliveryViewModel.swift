@@ -55,6 +55,15 @@ class DeliveryViewModel
 
 extension DeliveryViewModel
 {
+    func deleteAllDeliveries(){
+        CoreDataManager.sharedInstance.deleteAll(DeliveryCoreDataModel.self)
+        resetState()
+    }
+    
+    func resetState(){
+        currentOffSet = -1
+    }
+    
     func cacheExists(offSet: Int) -> Bool {
         let predicate = NSPredicate(format: "%K = %@", "offSet", "\(offSet)")
         let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate)
@@ -65,20 +74,21 @@ extension DeliveryViewModel
         return ((numberOfRows(section: indexPath.section) - 1) == indexPath.row)
     }
     
-    func fetchDeliveries()
+    func fetchDeliveries(useCache: Bool = true, completion: @escaping (Error?) -> Void)
     {
         var offSet = currentOffSet + Contants.deliveryLimitPerRequest
         
         if currentOffSet == -1 {
-            if cacheExists(offSet: 0) {
+            if useCache && cacheExists(offSet: 0) {
+                completion(nil)
                 return
             }
             offSet = 0
         }
         
         deliveryServices.fetchDeliveries(offSet: offSet, limit: Contants.deliveryLimitPerRequest) { [weak self] (deliveries, error) in
-            if error != nil {
-                print("Error fetching....")
+            if let error = error {
+                completion(error)
                 return
             }
             
@@ -90,6 +100,7 @@ extension DeliveryViewModel
             }
             self?.saveDeliveries()
             self?.currentOffSet = offSet
+            completion(nil)
         }
     }
     

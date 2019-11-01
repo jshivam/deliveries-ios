@@ -12,11 +12,13 @@
 		A00D5841236AE89A000B6A63 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5840236AE89A000B6A63 /* CoreDataManager.swift */; };
 		A012076E236AA938007AF234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012076D236AA938007AF234 /* AppDelegate.swift */; };
 		A0120772236AA938007AF234 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* DeliveryViewController.swift */; };
-		A0120775236AA938007AF234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0120773236AA938007AF234 /* Main.storyboard */; };
 		A0120778236AA938007AF234 /* Lalamove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */; };
 		A012077A236AA93A007AF234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0120779236AA93A007AF234 /* Assets.xcassets */; };
 		A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A012077B236AA93A007AF234 /* LaunchScreen.storyboard */; };
 		A0120788236AA93A007AF234 /* LalamoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120787236AA93A007AF234 /* LalamoveTests.swift */; };
+		A02CF575236BFC030035D066 /* TableViewRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF574236BFC030035D066 /* TableViewRefreshable.swift */; };
+		A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */; };
+		A02CF57B236C24610035D066 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF57A236C24610035D066 /* AlertPresentable.swift */; };
 		A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */; };
 		A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */; };
 		A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */; };
@@ -55,7 +57,6 @@
 		A012076A236AA938007AF234 /* Lalamove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lalamove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A012076D236AA938007AF234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0120771236AA938007AF234 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
-		A0120774236AA938007AF234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0120777236AA938007AF234 /* Lalamove.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lalamove.xcdatamodel; sourceTree = "<group>"; };
 		A0120779236AA93A007AF234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A012077C236AA93A007AF234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +64,9 @@
 		A0120783236AA93A007AF234 /* LalamoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LalamoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0120787236AA93A007AF234 /* LalamoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalamoveTests.swift; sourceTree = "<group>"; };
 		A0120789236AA93A007AF234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A02CF574236BFC030035D066 /* TableViewRefreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewRefreshable.swift; sourceTree = "<group>"; };
+		A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterLoader.swift; sourceTree = "<group>"; };
+		A02CF57A236C24610035D066 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfiguration.swift; sourceTree = "<group>"; };
 		A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfigurationProtocol.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 		A012076C236AA938007AF234 /* Lalamove */ = {
 			isa = PBXGroup;
 			children = (
+				A02CF573236BFB9F0035D066 /* ViewProtocols */,
 				A06FD469236AFF82004BC899 /* Constants */,
 				A04FB55F236ACC71002CDDD3 /* Views */,
 				A04FB55E236ACC58002CDDD3 /* ViewControllers */,
@@ -149,7 +154,6 @@
 				A04FB54D236AB856002CDDD3 /* Model */,
 				A04FB536236AAF97002CDDD3 /* Manager */,
 				A012076D236AA938007AF234 /* AppDelegate.swift */,
-				A0120773236AA938007AF234 /* Main.storyboard */,
 				A0120779236AA93A007AF234 /* Assets.xcassets */,
 				A012077B236AA93A007AF234 /* LaunchScreen.storyboard */,
 				A012077E236AA93A007AF234 /* Info.plist */,
@@ -164,6 +168,16 @@
 				A0120789236AA93A007AF234 /* Info.plist */,
 			);
 			path = LalamoveTests;
+			sourceTree = "<group>";
+		};
+		A02CF573236BFB9F0035D066 /* ViewProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				A02CF574236BFC030035D066 /* TableViewRefreshable.swift */,
+				A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */,
+				A02CF57A236C24610035D066 /* AlertPresentable.swift */,
+			);
+			path = ViewProtocols;
 			sourceTree = "<group>";
 		};
 		A04FB535236AAF71002CDDD3 /* Network */ = {
@@ -388,7 +402,6 @@
 			files = (
 				A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */,
 				A012077A236AA93A007AF234 /* Assets.xcassets in Resources */,
-				A0120775236AA938007AF234 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,11 +477,14 @@
 				A04FB545236AB321002CDDD3 /* APIPerformer.swift in Sources */,
 				A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */,
 				A06FD465236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */,
+				A02CF575236BFC030035D066 /* TableViewRefreshable.swift in Sources */,
+				A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */,
 				A04FB55C236AC8E4002CDDD3 /* APIServiceError.swift in Sources */,
 				A06FD460236AF9E2004BC899 /* DeliveryViewModel.swift in Sources */,
 				A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */,
 				A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */,
 				A012076E236AA938007AF234 /* AppDelegate.swift in Sources */,
+				A02CF57B236C24610035D066 /* AlertPresentable.swift in Sources */,
 				A04FB551236AB879002CDDD3 /* Location.swift in Sources */,
 				A04FB54F236AB86F002CDDD3 /* Delivery.swift in Sources */,
 				A04FB547236AB370002CDDD3 /* URLRequestComponents.swift in Sources */,
@@ -498,14 +514,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A0120773236AA938007AF234 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0120774236AA938007AF234 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A012077B236AA93A007AF234 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
