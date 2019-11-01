@@ -26,7 +26,7 @@ extension DeliveryCoreDataModel {
     // Key is combination of endpoint, limit & offset
     @discardableResult
     func generateKey() -> String {
-        return "\(Endpoint.deliveries.rawValue)_\(Contants.deliveryLimitPerRequest)_\(offSet)"
+        return "\(Endpoint.deliveries.rawValue)_\(Constants.deliveryLimitPerRequest)_\(offSet)"
     }
     
     static func create() -> DeliveryCoreDataModel

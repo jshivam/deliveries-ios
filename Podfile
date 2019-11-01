@@ -4,7 +4,7 @@ target 'Lalamove' do
 
 	pod 'Alamofire'
 	pod 'AlamofireNetworkActivityIndicator'
-
+  pod 'AlamofireImage'
 
   # Pods for Lalamove
 

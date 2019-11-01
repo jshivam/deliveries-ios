@@ -38,6 +38,7 @@
 		A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */; };
 		A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */; };
 		A06FD46B236AFF96004BC899 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD46A236AFF96004BC899 /* Constants.swift */; };
+		A0EA052E236C32D6009D8802 /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A06FD46A236AFF96004BC899 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lalamove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4DE7D2EE26F642899077CA /* Pods-LalamoveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalamoveTests.release.xcconfig"; path = "Target Support Files/Pods-LalamoveTests/Pods-LalamoveTests.release.xcconfig"; sourceTree = "<group>"; };
 		FB3931E5E8C80ADB732FBF5A /* Pods-Lalamove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.release.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.release.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		A04FB55F236ACC71002CDDD3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A0EA052C236C32B1009D8802 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +309,14 @@
 				A06FD46A236AFF96004BC899 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		A0EA052C236C32B1009D8802 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D7A60C772092850548BB1387 /* Frameworks */ = {
@@ -489,6 +500,7 @@
 				A04FB54F236AB86F002CDDD3 /* Delivery.swift in Sources */,
 				A04FB547236AB370002CDDD3 /* URLRequestComponents.swift in Sources */,
 				A04FB543236AB18C002CDDD3 /* BaseService.swift in Sources */,
+				A0EA052E236C32D6009D8802 /* DeliveryTableViewCell.swift in Sources */,
 				A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */,
 				A04FB558236AC0C3002CDDD3 /* DeliveryRequestComponent.swift in Sources */,
 				A0120778236AA938007AF234 /* Lalamove.xcdatamodeld in Sources */,

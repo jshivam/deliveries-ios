@@ -11,7 +11,7 @@ import CoreData
 
 class DeliveryViewController: UIViewController, AlertPresentable, TableViewFooterLoadable
 {
-    let tableView = UITableView.init(frame: .zero, style: .plain)
+    let tableView = UITableView()
     let viewModel = DeliveryViewModel.init()
     
     override func viewDidLoad() {
@@ -20,15 +20,21 @@ class DeliveryViewController: UIViewController, AlertPresentable, TableViewFoote
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
-        title = "Deliveries"
+        title = "Things to Deliver"
         view.backgroundColor = .white
         view.addSubview(tableView)
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(DeliveryTableViewCell.self, forCellReuseIdentifier: "cell")
         
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+        tableView.tableFooterView = UIView()
         viewModel.frc.delegate = self
         downloadData(forNextPage: false, useCache: true)
     }
@@ -42,11 +48,6 @@ class DeliveryViewController: UIViewController, AlertPresentable, TableViewFoote
                 self?.showAlert(message: error.localizedDescription)
             }
         })
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        tableView.frame = view.bounds
     }
 }
 
@@ -64,8 +65,8 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let delivery = viewModel.frc.object(at: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Id: \(delivery.identifier) :\(delivery.desc ?? "N/A")"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DeliveryTableViewCell
+        cell.update(text: "Id: \(delivery.identifier) :\(delivery.desc ?? "N/A")", imageUrl: delivery.imageUrl)
         return cell
     }
     
@@ -88,6 +89,10 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource
             viewModel.currentOffSet = Int(delivery.offSet)
             downloadData(forNextPage: true, useCache: false)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
