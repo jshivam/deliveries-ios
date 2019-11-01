@@ -65,9 +65,6 @@ class DeliveryDetailViewController: UIViewController {
         mapView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: deliveryView.topAnchor).isActive = true
     }
-}
-
-extension DeliveryDetailViewController: MKMapViewDelegate {
     
     func dropDestinationPin()
     {
@@ -81,23 +78,4 @@ extension DeliveryDetailViewController: MKMapViewDelegate {
             mapView.setRegion(viewRegion, animated: true)
         }
     }
-
-    // MARK: MKMapView delegate methods
-
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard annotation is MKPointAnnotation else { return nil }
-
-        let identifier = LayoutConstants.markerIdentifier
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-
-        if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView!.canShowCallout = true
-        } else {
-            annotationView!.annotation = annotation
-        }
-
-        return annotationView
-    }
-
 }

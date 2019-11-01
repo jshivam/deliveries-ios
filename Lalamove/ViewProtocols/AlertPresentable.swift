@@ -10,7 +10,7 @@
 import UIKit
 
 protocol AlertPresentable {
-    
+    func showAlert(title: String?, message: String?)
 }
 
 extension AlertPresentable where Self: UIViewController {
