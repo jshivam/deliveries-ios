@@ -13,7 +13,8 @@ class BaseService {
     let apiPerformer: APIPerformerProtocol
     let sessionConfiguration: APISessionConfigurationProtocol
     
-    required init(apiPerformer: APIPerformerProtocol, sessionConfiguration: APISessionConfigurationProtocol) {
+    required init(apiPerformer: APIPerformerProtocol = APIPerformer(),
+                  sessionConfiguration: APISessionConfigurationProtocol = APISessionConfiguration()) {
         self.apiPerformer = apiPerformer
         self.sessionConfiguration = sessionConfiguration
     }

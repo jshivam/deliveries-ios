@@ -9,14 +9,14 @@
 import UIKit
 
 protocol DeliveryServiceProtocol {
-    func fetchDeliveries(completion: @escaping ([Delivery]?, Error?) -> Void)
+    func fetchDeliveries(offSet: Int, limit: Int, completion: @escaping ([Delivery]?, Error?) -> Void)
 }
 
 class DeliveryService: BaseService, DeliveryServiceProtocol {
     
-    func fetchDeliveries(completion: @escaping ([Delivery]?, Error?) -> Void) {
+    func fetchDeliveries(offSet: Int, limit: Int, completion: @escaping ([Delivery]?, Error?) -> Void) {
         // 1. Create Request Component
-        let requestComponent: DeliveryRequestComponent = DeliveryRequestComponent.fetch(offset: 0, limit: 10)
+        let requestComponent: DeliveryRequestComponent = DeliveryRequestComponent.fetch(offset: offSet, limit: limit)
         
         // 2. Create a request object
         let request = URLRequestBuilder(components: requestComponent, sessionConfiguration: sessionConfiguration)

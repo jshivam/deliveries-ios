@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		0EEEF2E3B33F77355BC29F52 /* libPods-LalamoveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */; };
 		1A0F632449C23D2D106B0E8D /* libPods-Lalamove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */; };
-		A00D583A236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5834236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift */; };
-		A00D583B236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5835236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift */; };
-		A00D583C236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5836236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift */; };
-		A00D583D236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5837236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift */; };
-		A00D583E236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5838236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift */; };
-		A00D583F236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5839236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift */; };
 		A00D5841236AE89A000B6A63 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5840236AE89A000B6A63 /* CoreDataManager.swift */; };
 		A012076E236AA938007AF234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012076D236AA938007AF234 /* AppDelegate.swift */; };
 		A0120772236AA938007AF234 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* ViewController.swift */; };
@@ -36,6 +30,12 @@
 		A04FB558236AC0C3002CDDD3 /* DeliveryRequestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB557236AC0C3002CDDD3 /* DeliveryRequestComponent.swift */; };
 		A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB559236AC134002CDDD3 /* DeliveryService.swift */; };
 		A04FB55C236AC8E4002CDDD3 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB55B236AC8E4002CDDD3 /* APIServiceError.swift */; };
+		A06FD460236AF9E2004BC899 /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD45F236AF9E2004BC899 /* DeliveryViewModel.swift */; };
+		A06FD465236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD461236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift */; };
+		A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD462236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift */; };
+		A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */; };
+		A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */; };
+		A06FD46B236AFF96004BC899 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD46A236AFF96004BC899 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +51,6 @@
 /* Begin PBXFileReference section */
 		70E78DBC01111D24DFDF6EC3 /* Pods-Lalamove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.debug.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.debug.xcconfig"; sourceTree = "<group>"; };
 		79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LalamoveTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A00D5834236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		A00D5835236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		A00D5836236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCache+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		A00D5837236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCache+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		A00D5838236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		A00D5839236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		A00D5840236AE89A000B6A63 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A012076A236AA938007AF234 /* Lalamove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lalamove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A012076D236AA938007AF234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +76,12 @@
 		A04FB557236AC0C3002CDDD3 /* DeliveryRequestComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRequestComponent.swift; sourceTree = "<group>"; };
 		A04FB559236AC134002CDDD3 /* DeliveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryService.swift; sourceTree = "<group>"; };
 		A04FB55B236AC8E4002CDDD3 /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
+		A06FD45F236AF9E2004BC899 /* DeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
+		A06FD461236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A06FD462236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A06FD46A236AFF96004BC899 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lalamove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4DE7D2EE26F642899077CA /* Pods-LalamoveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalamoveTests.release.xcconfig"; path = "Target Support Files/Pods-LalamoveTests/Pods-LalamoveTests.release.xcconfig"; sourceTree = "<group>"; };
 		FB3931E5E8C80ADB732FBF5A /* Pods-Lalamove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.release.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +142,7 @@
 		A012076C236AA938007AF234 /* Lalamove */ = {
 			isa = PBXGroup;
 			children = (
+				A06FD469236AFF82004BC899 /* Constants */,
 				A04FB55F236ACC71002CDDD3 /* Views */,
 				A04FB55E236ACC58002CDDD3 /* ViewControllers */,
 				A04FB55D236ACC4E002CDDD3 /* ViewModels */,
@@ -244,6 +245,7 @@
 		A04FB55D236ACC4E002CDDD3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A06FD45F236AF9E2004BC899 /* DeliveryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -276,14 +278,20 @@
 		A04FB561236AE4D1002CDDD3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A00D5834236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift */,
-				A00D5835236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift */,
-				A00D5836236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift */,
-				A00D5837236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift */,
-				A00D5838236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift */,
-				A00D5839236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift */,
+				A06FD461236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift */,
+				A06FD462236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift */,
+				A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */,
+				A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A06FD469236AFF82004BC899 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A06FD46A236AFF96004BC899 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		D7A60C772092850548BB1387 /* Frameworks */ = {
@@ -445,20 +453,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A00D583D236AE781000B6A63 /* DeliveryCache+CoreDataProperties.swift in Sources */,
-				A00D583C236AE781000B6A63 /* DeliveryCache+CoreDataClass.swift in Sources */,
+				A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */,
 				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
-				A00D583A236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */,
-				A00D583E236AE781000B6A63 /* LocationCoreDataModel+CoreDataClass.swift in Sources */,
-				A00D583F236AE781000B6A63 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */,
 				A0120772236AA938007AF234 /* ViewController.swift in Sources */,
 				A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */,
+				A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */,
+				A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */,
+				A06FD46B236AFF96004BC899 /* Constants.swift in Sources */,
 				A00D5841236AE89A000B6A63 /* CoreDataManager.swift in Sources */,
 				A04FB545236AB321002CDDD3 /* APIPerformer.swift in Sources */,
 				A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */,
+				A06FD465236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */,
 				A04FB55C236AC8E4002CDDD3 /* APIServiceError.swift in Sources */,
+				A06FD460236AF9E2004BC899 /* DeliveryViewModel.swift in Sources */,
 				A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */,
-				A00D583B236AE781000B6A63 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */,
 				A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */,
 				A012076E236AA938007AF234 /* AppDelegate.swift in Sources */,
 				A04FB551236AB879002CDDD3 /* Location.swift in Sources */,

@@ -22,4 +22,14 @@ extension LocationCoreDataModel {
     @NSManaged public var lng: Double
     @NSManaged public var delivery: DeliveryCoreDataModel?
 
+    static func create() -> LocationCoreDataModel {
+        let location = CoreDataManager.sharedInstance.createObject(LocationCoreDataModel.self)
+        return location
+    }
+    
+    func update(location: Location){
+        address = location.address
+        lat = location.lat
+        lng = location.lng
+    }
 }

@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="DeliveryCache" representedClassName="DeliveryCache" syncable="YES">
-        <attribute name="limit" attributeType="Integer 16" minValueString="0" defaultValueString="20" usesScalarValueType="YES"/>
-        <attribute name="offSet" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="deliveries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeliveryCoreDataModel" inverseName="cache" inverseEntity="DeliveryCoreDataModel"/>
-    </entity>
     <entity name="DeliveryCoreDataModel" representedClassName="DeliveryCoreDataModel" syncable="YES">
-        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="desc" attributeType="String" defaultValueString=""/>
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
-        <relationship name="cache" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeliveryCache" inverseName="deliveries" inverseEntity="DeliveryCache"/>
+        <attribute name="offSet" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationCoreDataModel" inverseName="delivery" inverseEntity="LocationCoreDataModel"/>
     </entity>
     <entity name="LocationCoreDataModel" representedClassName="LocationCoreDataModel" syncable="YES">
@@ -19,8 +14,7 @@
         <relationship name="delivery" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeliveryCoreDataModel" inverseName="location" inverseEntity="DeliveryCoreDataModel"/>
     </entity>
     <elements>
-        <element name="DeliveryCache" positionX="-54" positionY="-9" width="128" height="28"/>
-        <element name="DeliveryCoreDataModel" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="DeliveryCoreDataModel" positionX="278.2109375" positionY="-108.171875" width="128" height="118"/>
         <element name="LocationCoreDataModel" positionX="-36" positionY="36" width="128" height="103"/>
     </elements>
 </model>
