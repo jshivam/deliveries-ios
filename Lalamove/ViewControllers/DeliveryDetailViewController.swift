@@ -9,17 +9,13 @@
 import UIKit
 import MapKit
 
-struct MapConstants {
-    static let routeVisibilityArea: Double = 3000
-    static let routeLineWidth: CGFloat = 5.0
-    static let markerIdentifier = "marker"
-    static let routeFrameExtraMargin: Double = 6000
-    static let routeOriginExtraMargin: Double = 3000
-    static let routeColor: UIColor = .red
-}
-
 class DeliveryDetailViewController: UIViewController {
 
+    struct LayoutConstants {
+        static let routeVisibilityArea: Double = 3000
+        static let markerIdentifier = "annotation"
+    }
+    
     let viewModel: DeliveryDetailViewModel
     let mapView: MKMapView = {
         let mapView = MKMapView(frame: .zero)
@@ -27,23 +23,10 @@ class DeliveryDetailViewController: UIViewController {
         return mapView
     }()
     
-    let nameLabel:UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = UIColor.darkText
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let profileImageView:UIImageView = {
-        let img = UIImageView()
-        img.backgroundColor = .darkGray
-        img.contentMode = .scaleAspectFill
-        img.translatesAutoresizingMaskIntoConstraints = false
-        img.layer.cornerRadius = Constants.defautlCornerRadius
-        img.clipsToBounds = true
-       return img
+    let deliveryView: DeliveryView = {
+       let view = DeliveryView()
+       view.translatesAutoresizingMaskIntoConstraints = false
+       return view
     }()
     
     init(viewModel: DeliveryDetailViewModel) {
@@ -59,63 +42,28 @@ class DeliveryDetailViewController: UIViewController {
         super.viewDidLoad()
         title = "Delivery Details"
         mapView.delegate = self
-        setupUI()
+        setup()
     }
     
-    func setupUI() {
+    func setup() {
         view.backgroundColor = .white
         view.addSubview(mapView)
-        view.addSubview(profileImageView)
-        view.addSubview(nameLabel)
+        view.addSubview(deliveryView)
         
-        if let imageUrl = viewModel.delivery.imageUrl, let url = URL.init(string: imageUrl) {
-            profileImageView.af_setImage(
-                withURL: url,
-                placeholderImage: nil,
-                filter: nil,
-                imageTransition: .crossDissolve(0.2)
-            )
-        }
-        
-        nameLabel.text = viewModel.delivery.desc
+        deliveryView.update(text: viewModel.delivery.desc, imageUrl: viewModel.delivery.imageUrl)
         addConstraints()
         dropDestinationPin()
     }
 
     func addConstraints() {
-        let views: [String: Any] = [
-            "mapView": mapView,
-            "destinationImageView": profileImageView,
-            "destinationLabel": nameLabel]
-
-        var allConstraints: [NSLayoutConstraint] = []
-
-        let mapHorizontalConstraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[mapView]|",
-            metrics: nil,
-            views: views)
-        allConstraints += mapHorizontalConstraints
-
-        let bottomViewHorizontalConstraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-10-[destinationImageView(80)]-10-[destinationLabel]-10-|",
-            metrics: nil,
-            views: views)
-        allConstraints += bottomViewHorizontalConstraints
-
-        let imageVerticalConstraint = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[mapView]-10-[destinationImageView(80)]-50-|",
-            metrics: nil,
-            views: views)
-        allConstraints += imageVerticalConstraint
-
-        let labelVerticalConstraint = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[mapView]-10-[destinationLabel]-50-|",
-            metrics: nil,
-            views: views)
-        allConstraints += labelVerticalConstraint
-
-        view.addConstraints(allConstraints)
-
+                
+        deliveryView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        deliveryView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        deliveryView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        mapView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
+        mapView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        mapView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: deliveryView.topAnchor).isActive = true
     }
 }
 
@@ -129,23 +77,17 @@ extension DeliveryDetailViewController: MKMapViewDelegate {
             annotation.title = location.address
             annotation.coordinate = destinationLocation
             mapView.addAnnotation(annotation)
-            let viewRegion = MKCoordinateRegion(center: destinationLocation, latitudinalMeters: MapConstants.routeVisibilityArea, longitudinalMeters: MapConstants.routeVisibilityArea)
+            let viewRegion = MKCoordinateRegion(center: destinationLocation, latitudinalMeters: LayoutConstants.routeVisibilityArea, longitudinalMeters: LayoutConstants.routeVisibilityArea)
             mapView.setRegion(viewRegion, animated: true)
         }
     }
 
     // MARK: MKMapView delegate methods
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let polineLineRenderer = MKPolylineRenderer(overlay: overlay)
-        polineLineRenderer.strokeColor = MapConstants.routeColor
-        polineLineRenderer.lineWidth = MapConstants.routeLineWidth
-        return polineLineRenderer
-    }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
 
-        let identifier = "Annotation"
+        let identifier = LayoutConstants.markerIdentifier
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
 
         if annotationView == nil {

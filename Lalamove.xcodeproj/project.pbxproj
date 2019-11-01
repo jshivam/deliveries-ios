@@ -16,6 +16,7 @@
 		A012077A236AA93A007AF234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0120779236AA93A007AF234 /* Assets.xcassets */; };
 		A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A012077B236AA93A007AF234 /* LaunchScreen.storyboard */; };
 		A0120788236AA93A007AF234 /* LalamoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120787236AA93A007AF234 /* LalamoveTests.swift */; };
+		A01CC781236C86A200693C56 /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CC780236C86A200693C56 /* DeliveryView.swift */; };
 		A02CF575236BFC030035D066 /* TableViewRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF574236BFC030035D066 /* TableViewRefreshable.swift */; };
 		A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */; };
 		A02CF57B236C24610035D066 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF57A236C24610035D066 /* AlertPresentable.swift */; };
@@ -67,6 +68,7 @@
 		A0120783236AA93A007AF234 /* LalamoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LalamoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0120787236AA93A007AF234 /* LalamoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LalamoveTests.swift; sourceTree = "<group>"; };
 		A0120789236AA93A007AF234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A01CC780236C86A200693C56 /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
 		A02CF574236BFC030035D066 /* TableViewRefreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewRefreshable.swift; sourceTree = "<group>"; };
 		A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterLoader.swift; sourceTree = "<group>"; };
 		A02CF57A236C24610035D066 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				A0EA052C236C32B1009D8802 /* Cells */,
+				A01CC780236C86A200693C56 /* DeliveryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				A0EA052E236C32D6009D8802 /* DeliveryTableViewCell.swift in Sources */,
 				A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */,
 				A04FB558236AC0C3002CDDD3 /* DeliveryRequestComponent.swift in Sources */,
+				A01CC781236C86A200693C56 /* DeliveryView.swift in Sources */,
 				A0120778236AA938007AF234 /* Lalamove.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -63,7 +63,7 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource
     {
         let delivery = viewModel.frc.object(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DeliveryTableViewCell
-        cell.update(text: "Id: \(delivery.identifier) :\(delivery.desc ?? "N/A")", imageUrl: delivery.imageUrl)
+        cell.update(text: delivery.desc, imageUrl: delivery.imageUrl)
         return cell
     }
     
