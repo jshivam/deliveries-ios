@@ -99,5 +99,4 @@ extension DeliveryViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
-extension DeliveryViewController: AlertPresentable {}
 extension DeliveryViewController: TableViewFooterLoadable {}

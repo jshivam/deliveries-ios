@@ -95,7 +95,8 @@ class CoreDataManager {
             }
             saveContext()
         } catch {
-            print("Errod deleting...")
+            let fetchError = error as NSError
+            UIApplication.getTopViewController()?.showAlert(title: nil, message: fetchError.localizedDescription)
         }
     }
 
