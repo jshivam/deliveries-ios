@@ -17,16 +17,15 @@ import UIKit
 }
 
 extension TableViewRefreshable {
-    func beginRefreshing()
-    {
+    func beginRefreshing() {
         if let refreshControl = self.tableView.refreshControl, refreshControl.isRefreshing { return }
         let refreshControl = UIRefreshControl.init()
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         self.tableView.refreshControl = refreshControl
         self.tableView.refreshControl?.beginRefreshing()
     }
-    
-    func endRefreshing(){
+
+    func endRefreshing() {
         self.tableView.refreshControl?.endRefreshing()
     }
 }

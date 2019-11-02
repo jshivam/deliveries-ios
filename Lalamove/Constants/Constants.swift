@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-struct Constants
-{
+struct Constants {
     static var deliveryLimitPerRequest: Int { return 20 }
     static var defautlCornerRadius: CGFloat { return 8 }
     static var defaultSidePadding: CGFloat {return 15 }

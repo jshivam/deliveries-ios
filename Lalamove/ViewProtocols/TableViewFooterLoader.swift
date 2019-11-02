@@ -12,16 +12,14 @@ protocol TableViewFooterLoadable: TableViewProtocol {
     func showFooterLoader()
 }
 
-extension TableViewFooterLoadable
-{
-    func showFooterLoader()
-    {
+extension TableViewFooterLoadable {
+    func showFooterLoader() {
         let loader = UIActivityIndicatorView.init(style: .gray)
         loader.startAnimating()
         self.tableView.tableFooterView = loader
     }
-    
-    func hideFooterLoader(){
+
+    func hideFooterLoader() {
         self.tableView.tableFooterView = UIView()
     }
 }

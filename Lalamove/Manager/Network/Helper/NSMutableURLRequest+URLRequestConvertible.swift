@@ -16,11 +16,9 @@ extension NSMutableURLRequest: URLRequestConvertible {
 
 extension Request {
     func log() -> Self {
-        
         #if DEBUG
         debugPrint(self)
         #endif
-        
         return self
     }
 }

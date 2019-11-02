@@ -9,5 +9,5 @@
 import Foundation
 
 enum Endpoint: String {
-    case deliveries = "deliveries"
+    case deliveries
 }

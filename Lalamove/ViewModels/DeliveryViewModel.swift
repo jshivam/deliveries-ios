@@ -10,13 +10,10 @@ import Foundation
 import CoreData
 import UIKit
 
-class DeliveryViewModel
-{
+class DeliveryViewModel {
+    private let context = CoreDataManager.sharedInstance.workerManagedContext
     var currentOffSet = -1
     let deliveryServices = DeliveryService.init()
-    
-    private let context = CoreDataManager.sharedInstance.workerManagedContext
-    
     lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
         let fetchRequest = self.fetchRequest
         let context = self.context
@@ -31,53 +28,51 @@ class DeliveryViewModel
         }
         return fetchedResultsController
     }()
-    
+
     private lazy var fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = {
         let fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = DeliveryCoreDataModel.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "offSet", ascending: true), NSSortDescriptor(key: "identifier", ascending: true)]
         return fetchRequest
     }()
-    
+
     func numberOfSections() -> Int {
         let count = frc.sections?.count ?? 0
         return count
     }
-    
+
     func numberOfRows(section: Int) -> Int {
         let sectionInfo = frc.sections?[section]
         return sectionInfo?.numberOfObjects ?? 0
     }
-    
+
     func heightForRow() -> CGFloat {
         return UITableView.automaticDimension
     }
 }
 
-extension DeliveryViewModel
-{
-    func deleteAllDeliveries(){
+extension DeliveryViewModel {
+
+    func deleteAllDeliveries() {
         CoreDataManager.sharedInstance.deleteAll(DeliveryCoreDataModel.self)
         resetState()
     }
-    
-    func resetState(){
+
+    func resetState() {
         currentOffSet = -1
     }
-    
+
     func cacheExists(offSet: Int) -> Bool {
         let predicate = NSPredicate(format: "%K = %@", "offSet", "\(offSet)")
         let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate)
         return !deliveries.isEmpty
     }
-    
-    func isLastCell(indexPath: IndexPath) -> Bool{
+
+    func isLastCell(indexPath: IndexPath) -> Bool {
         return ((numberOfRows(section: indexPath.section) - 1) == indexPath.row)
     }
-    
-    func fetchDeliveries(useCache: Bool = true, completion: @escaping (Error?) -> Void)
-    {
+
+    func fetchDeliveries(useCache: Bool = true, completion: @escaping (Error?) -> Void) {
         var offSet = currentOffSet + Constants.deliveryLimitPerRequest
-        
         if currentOffSet == -1 {
             if useCache && cacheExists(offSet: 0) {
                 completion(nil)
@@ -85,13 +80,11 @@ extension DeliveryViewModel
             }
             offSet = 0
         }
-        
         deliveryServices.fetchDeliveries(offSet: offSet, limit: Constants.deliveryLimitPerRequest) { [weak self] (deliveries, error) in
             if let error = error {
                 completion(error)
                 return
             }
-            
             if let deliveries = deliveries {
                 for delivery in deliveries {
                     let model = DeliveryCoreDataModel.create()
@@ -103,8 +96,8 @@ extension DeliveryViewModel
             completion(nil)
         }
     }
-    
-    func saveDeliveries(){
+
+    func saveDeliveries() {
         CoreDataManager.sharedInstance.saveContext()
     }
 }

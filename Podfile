@@ -1,10 +1,10 @@
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 target 'Lalamove' do
 
 	pod 'Alamofire'
-	pod 'AlamofireNetworkActivityIndicator'
   pod 'AlamofireImage'
+  pod 'SwiftLint'
 
   # Pods for Lalamove
 

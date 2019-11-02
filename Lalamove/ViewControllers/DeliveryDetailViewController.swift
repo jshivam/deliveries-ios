@@ -15,59 +15,57 @@ class DeliveryDetailViewController: UIViewController {
         static let routeVisibilityArea: Double = 3000
         static let markerIdentifier = "annotation"
     }
-    
+
     let viewModel: DeliveryDetailViewModel
     let mapView: MKMapView = {
         let mapView = MKMapView(frame: .zero)
         mapView.translatesAutoresizingMaskIntoConstraints = false
         return mapView
     }()
-    
+
     let deliveryView: DeliveryView = {
        let view = DeliveryView()
        view.translatesAutoresizingMaskIntoConstraints = false
        return view
     }()
-    
+
     init(viewModel: DeliveryDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Delivery Details"
         mapView.delegate = self
         setup()
     }
-    
+
     func setup() {
         view.backgroundColor = .white
         view.addSubview(mapView)
         view.addSubview(deliveryView)
-        
+
         deliveryView.update(text: viewModel.delivery.desc, imageUrl: viewModel.delivery.imageUrl)
         addConstraints()
         dropDestinationPin()
     }
 
     func addConstraints() {
-                
-        deliveryView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-        deliveryView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
-        deliveryView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        mapView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
-        mapView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-        mapView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        deliveryView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        deliveryView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        deliveryView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         mapView.bottomAnchor.constraint(equalTo: deliveryView.topAnchor).isActive = true
     }
-    
-    func dropDestinationPin()
-    {
+
+    func dropDestinationPin() {
         if let location = viewModel.delivery.location {
             let destinationLocation = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
             let annotation = MKPointAnnotation()

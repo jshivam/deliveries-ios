@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension LocationCoreDataModel {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<LocationCoreDataModel> {
@@ -26,8 +25,8 @@ extension LocationCoreDataModel {
         let location = CoreDataManager.sharedInstance.createObject(LocationCoreDataModel.self)
         return location
     }
-    
-    func update(location: Location){
+
+    func update(location: Location) {
         address = location.address
         lat = location.lat
         lng = location.lng

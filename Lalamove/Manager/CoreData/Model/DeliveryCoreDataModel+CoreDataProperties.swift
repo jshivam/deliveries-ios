@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension DeliveryCoreDataModel {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<DeliveryCoreDataModel> {
@@ -28,18 +27,16 @@ extension DeliveryCoreDataModel {
     func generateKey() -> String {
         return "\(Endpoint.deliveries.rawValue)_\(Constants.deliveryLimitPerRequest)_\(offSet)"
     }
-    
-    static func create() -> DeliveryCoreDataModel
-    {
+
+    static func create() -> DeliveryCoreDataModel {
         let delivery = CoreDataManager.sharedInstance.createObject(DeliveryCoreDataModel.self)
-        
+
         let location = LocationCoreDataModel.create()
         delivery.location = location
-        
         return delivery
     }
-    
-    func update(delivery: Delivery, offSet: Int){
+
+    func update(delivery: Delivery, offSet: Int) {
         desc = delivery.desc
         identifier = Int64(delivery.identifier)
         imageUrl = delivery.imageUrl

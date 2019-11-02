@@ -8,10 +8,9 @@
 
 import UIKit
 
-class DeliveryDetailViewModel
-{
+class DeliveryDetailViewModel {
     let delivery: DeliveryCoreDataModel
-    
+
     init(delivery: DeliveryCoreDataModel) {
         self.delivery = delivery
     }

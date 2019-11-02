@@ -12,13 +12,10 @@ import Alamofire
 protocol URLRequestComponentsProtocol {
     var method: Alamofire.HTTPMethod { get }
     var encoding: Alamofire.ParameterEncoding { get }
-    
+
     var path: String { get }
     var parameters: [String: Any]? { get }
     var extraHeaders: [String: String]? { get }
 }
 
-extension URLRequestComponentsProtocol {
-    
-}
-
+extension URLRequestComponentsProtocol {}

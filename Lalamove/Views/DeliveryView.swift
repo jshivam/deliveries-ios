@@ -10,12 +10,12 @@ import UIKit
 import AlamofireImage
 
 class DeliveryView: UIView {
-    
-    struct LayoutConstants{
+
+    struct LayoutConstants {
         static var profileImageViewSize: CGSize { return CGSize.init(width: 52, height: 52) }
     }
-    
-    let descriptionLabel:UILabel = {
+
+    let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
@@ -23,8 +23,8 @@ class DeliveryView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    let profileImageView:UIImageView = {
+
+    let profileImageView: UIImageView = {
         let img = UIImageView()
         img.backgroundColor = .darkGray
         img.contentMode = .scaleAspectFill
@@ -33,24 +33,23 @@ class DeliveryView: UIView {
         img.clipsToBounds = true
        return img
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-    
-    func setup()
-    {
+
+    func setup() {
         addSubview(profileImageView)
         addSubview(descriptionLabel)
         addConstraints()
     }
-    
+
     func addConstraints() {
         let views: [String: Any] = [
             "profileImageView": profileImageView,
@@ -58,11 +57,11 @@ class DeliveryView: UIView {
             "superview": self]
 
         var allConstraints: [NSLayoutConstraint] = []
-        
-        let metrics = ["profileImageViewHeight" : LayoutConstants.profileImageViewSize.height,
-                       "profileImageViewWidth" : LayoutConstants.profileImageViewSize.width,
+
+        let metrics = ["profileImageViewHeight": LayoutConstants.profileImageViewSize.height,
+                       "profileImageViewWidth": LayoutConstants.profileImageViewSize.width,
                        "padding": Constants.defaultSidePadding]
-        
+
         let horizontalConstraint = NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-padding-[profileImageView(profileImageViewWidth)]-padding-[descriptionLabel]-padding-|",
             metrics: metrics,
@@ -85,8 +84,8 @@ class DeliveryView: UIView {
 
         addConstraints(allConstraints)
     }
-    
-    func update(text: String?, imageUrl: String?){
+
+    func update(text: String?, imageUrl: String?) {
         descriptionLabel.text = text
         if let imageUrl = imageUrl, let url = URL.init(string: imageUrl) {
             profileImageView.af_setImage(
