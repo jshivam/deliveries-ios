@@ -17,7 +17,7 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
             assertionFailure("DeliveryTableViewCell has not been registered!!!")
             return UITableViewCell()
         }
-        cell.update(text: delivery.desc, imageUrl: delivery.imageUrl)
+        cell.update(text: "\(delivery.identifier)", imageUrl: delivery.imageUrl)
         return cell
     }
 

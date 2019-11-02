@@ -18,8 +18,4 @@ class BaseService {
         self.apiPerformer = apiPerformer
         self.sessionConfiguration = sessionConfiguration
     }
-
-    func createRequest<T: URLRequestComponentsProtocol>(forRequest request: T) -> URLRequestConvertible {
-        return URLRequestBuilder(components: request, sessionConfiguration: sessionConfiguration)
-    }
 }

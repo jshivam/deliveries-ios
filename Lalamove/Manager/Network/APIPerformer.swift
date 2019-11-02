@@ -35,7 +35,6 @@ extension APIPerformer: APIPerformerProtocol {
                 if let data = response.data {
                     do {
                         let responseData = try JSONDecoder().decode(T.self, from: data)
-                        print(responseData)
                         completionHandler(request, .success(responseData))
                     } catch {
                         completionHandler(request, .failure(NetworkError.apiError))
