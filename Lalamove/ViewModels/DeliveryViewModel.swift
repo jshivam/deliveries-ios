@@ -80,20 +80,22 @@ extension DeliveryViewModel {
             }
             offSet = 0
         }
-        deliveryServices.fetchDeliveries(offSet: offSet, limit: Constants.deliveryLimitPerRequest) { [weak self] (deliveries, error) in
-            if let error = error {
-                completion(error)
-                return
-            }
-            if let deliveries = deliveries {
+
+        deliveryServices.fetchDeliveries(offSet: offSet, limit: Constants.deliveryLimitPerRequest) { [weak self] (result) in
+
+            switch result {
+            case .success(let deliveries):
                 for delivery in deliveries {
                     let model = DeliveryCoreDataModel.create()
                     model.update(delivery: delivery, offSet: offSet)
                 }
+                self?.saveDeliveries()
+                self?.currentOffSet = offSet
+                completion(nil)
+
+            case .failure(let error):
+                completion(error)
             }
-            self?.saveDeliveries()
-            self?.currentOffSet = offSet
-            completion(nil)
         }
     }
 

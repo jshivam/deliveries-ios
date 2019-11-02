@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 
 protocol DeliveryServiceProtocol {
-    func fetchDeliveries(offSet: Int, limit: Int, completion: @escaping ([Delivery]?, Error?) -> Void)
+    func fetchDeliveries(offSet: Int, limit: Int, completion: @escaping (Result<[Delivery]>) -> Void)
 }
 
 class DeliveryService: BaseService, DeliveryServiceProtocol {
 
-    func fetchDeliveries(offSet: Int, limit: Int, completion: @escaping ([Delivery]?, Error?) -> Void) {
+    func fetchDeliveries(offSet: Int, limit: Int, completion: @escaping (Result<[Delivery]>) -> Void) {
         // 1. Create Request Component
         let requestComponent: DeliveryRequestComponent = DeliveryRequestComponent.fetch(offset: offSet, limit: limit)
 
@@ -22,8 +23,13 @@ class DeliveryService: BaseService, DeliveryServiceProtocol {
         let request = URLRequestBuilder(components: requestComponent, sessionConfiguration: sessionConfiguration)
 
         // 3. Perform the request using APIPerformerProtocol
-        apiPerformer.perform(request: request) { (_, response: [Delivery]?, error) in
-            completion(response, error)
+        apiPerformer.perform(request: request) { (_, result: Result<[Delivery]>) in
+            switch result {
+            case .success(let deliveries):
+                deliveries.isEmpty ? completion(.failure(NetworkError.noData)) : completion(.success(deliveries))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

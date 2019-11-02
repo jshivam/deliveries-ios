@@ -43,6 +43,7 @@
 		A06FD46B236AFF96004BC899 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD46A236AFF96004BC899 /* Constants.swift */; };
 		A0772698236D6F8A00E7A31A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */; };
 		A077269C236D702700E7A31A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077269B236D702700E7A31A /* FirebaseManager.swift */; };
+		A0CC48D3236D9D8A00C17D24 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */; };
 		A0E97E64236C4B1300EA882D /* DeliveryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E97E63236C4B1300EA882D /* DeliveryDetailViewController.swift */; };
 		A0E97E66236C4BCE00EA882D /* DeliveryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E97E65236C4BCE00EA882D /* DeliveryDetailViewModel.swift */; };
 		A0EA052E236C32D6009D8802 /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */; };
@@ -99,6 +100,7 @@
 		A06FD46A236AFF96004BC899 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A077269B236D702700E7A31A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A0E97E63236C4B1300EA882D /* DeliveryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewController.swift; sourceTree = "<group>"; };
 		A0E97E65236C4BCE00EA882D /* DeliveryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewModel.swift; sourceTree = "<group>"; };
 		A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				A04FB55B236AC8E4002CDDD3 /* APIServiceError.swift */,
 				A04FB546236AB370002CDDD3 /* URLRequestComponents.swift */,
 				A04FB548236AB3A3002CDDD3 /* URLRequestBuilder.swift */,
+				A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				A02CF575236BFC030035D066 /* TableViewRefreshable.swift in Sources */,
 				A077269C236D702700E7A31A /* FirebaseManager.swift in Sources */,
 				A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */,
+				A0CC48D3236D9D8A00C17D24 /* NetworkError.swift in Sources */,
 				A04FB55C236AC8E4002CDDD3 /* APIServiceError.swift in Sources */,
 				A0E97E66236C4BCE00EA882D /* DeliveryDetailViewModel.swift in Sources */,
 				A06FD460236AF9E2004BC899 /* DeliveryViewModel.swift in Sources */,
