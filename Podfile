@@ -5,6 +5,9 @@ target 'Lalamove' do
 	pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'SwiftLint'
+  pod 'Firebase/Analytics'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   # Pods for Lalamove
 

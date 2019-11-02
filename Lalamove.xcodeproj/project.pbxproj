@@ -41,6 +41,8 @@
 		A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */; };
 		A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */; };
 		A06FD46B236AFF96004BC899 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD46A236AFF96004BC899 /* Constants.swift */; };
+		A0772698236D6F8A00E7A31A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */; };
+		A077269C236D702700E7A31A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077269B236D702700E7A31A /* FirebaseManager.swift */; };
 		A0E97E64236C4B1300EA882D /* DeliveryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E97E63236C4B1300EA882D /* DeliveryDetailViewController.swift */; };
 		A0E97E66236C4BCE00EA882D /* DeliveryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E97E65236C4BCE00EA882D /* DeliveryDetailViewModel.swift */; };
 		A0EA052E236C32D6009D8802 /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */; };
@@ -95,6 +97,8 @@
 		A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A06FD46A236AFF96004BC899 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A077269B236D702700E7A31A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A0E97E63236C4B1300EA882D /* DeliveryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewController.swift; sourceTree = "<group>"; };
 		A0E97E65236C4BCE00EA882D /* DeliveryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewModel.swift; sourceTree = "<group>"; };
 		A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				A04FB536236AAF97002CDDD3 /* Manager */,
 				A012077B236AA93A007AF234 /* LaunchScreen.storyboard */,
 				A012077E236AA93A007AF234 /* Info.plist */,
+				A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */,
 				A0120779236AA93A007AF234 /* Assets.xcassets */,
 				A012076D236AA938007AF234 /* AppDelegate.swift */,
 			);
@@ -220,6 +225,7 @@
 		A04FB536236AAF97002CDDD3 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A0772699236D6FC700E7A31A /* Firebase */,
 				A04FB560236AE4CA002CDDD3 /* CoreData */,
 				A04FB535236AAF71002CDDD3 /* Network */,
 			);
@@ -334,6 +340,22 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		A0772699236D6FC700E7A31A /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				A077269A236D6FEB00E7A31A /* Crashlytics */,
+				A077269B236D702700E7A31A /* FirebaseManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		A077269A236D6FEB00E7A31A /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
 		A0EA052C236C32B1009D8802 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +385,7 @@
 				A0120767236AA938007AF234 /* Frameworks */,
 				A0120768236AA938007AF234 /* Resources */,
 				A05EE6EC236D5824006D4A29 /* SwiftLint */,
+				A0B4EF4C236D780100ADB188 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -437,6 +460,7 @@
 			files = (
 				A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */,
 				A012077A236AA93A007AF234 /* Assets.xcassets in Resources */,
+				A0772698236D6F8A00E7A31A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +514,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		A0B4EF4C236D780100ADB188 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 		D4A10C716C35F94CF1A4E22D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,6 +576,7 @@
 				A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */,
 				A06FD465236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */,
 				A02CF575236BFC030035D066 /* TableViewRefreshable.swift in Sources */,
+				A077269C236D702700E7A31A /* FirebaseManager.swift in Sources */,
 				A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */,
 				A04FB55C236AC8E4002CDDD3 /* APIServiceError.swift in Sources */,
 				A0E97E66236C4BCE00EA882D /* DeliveryDetailViewModel.swift in Sources */,
@@ -634,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -688,7 +731,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -704,6 +747,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4V6BH5JAKH;
 				INFOPLIST_FILE = Lalamove/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
