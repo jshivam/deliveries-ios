@@ -34,7 +34,7 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if viewModel.isLastCell(indexPath: indexPath) {
+        if viewModel.shallFetchNextData(indexPath: indexPath) {
             let delivery = viewModel.frc.object(at: indexPath)
             viewModel.currentOffSet = Int(delivery.offSet)
             downloadData(forNextPage: true, useCache: false)

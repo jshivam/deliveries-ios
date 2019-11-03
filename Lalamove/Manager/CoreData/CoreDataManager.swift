@@ -100,23 +100,6 @@ class CoreDataManager {
         }
     }
 
-    func deleteObject(_ item: NSManagedObject) {
-        let itemId = item.objectID
-        let object = networkManagedContext.object(with: itemId)
-        networkManagedContext.delete(object)
-        saveContext()
-    }
-
-    func deleteObjects(_ items: [NSManagedObject]) {
-        let context = networkManagedContext
-        for item in items {
-            let itemId = item.objectID
-            let object = context.object(with: itemId)
-            context.delete(object)
-        }
-        saveContext()
-    }
-
     func createObject<T: NSManagedObject>(_ anyClass: T.Type) -> T {
         let context = networkManagedContext
         let name = className(anyClass)

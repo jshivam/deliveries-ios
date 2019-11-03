@@ -33,6 +33,20 @@ class DeliveryServiceTests: XCTestCase {
         }
     }
 
+    func testMockJson() {
+        deliveryService = DeliveryService(apiPerformer: apiPerfomer, sessionConfiguration: sessionConfiguration)
+        apiPerfomer.data = JSONLoader.jsonFileToData(jsonName: "deliveries")
+        apiPerfomer.faliure = nil
+        deliveryService.fetchDeliveries(offSet: 0, limit: 20) { (result) in
+            switch result {
+            case .success:
+                XCTAssert(true)
+            case .failure:
+                XCTAssert(false)
+            }
+        }
+    }
+
     func testRealData() {
         let fetchDeliveryExpectation = expectation(description: "Fetching Deliveries")
         deliveryService = DeliveryService()

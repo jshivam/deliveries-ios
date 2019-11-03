@@ -1,18 +1,20 @@
 //
-//  LalamoveTests.swift
+//  DeliveryTableViewCellTest.swift
 //  LalamoveTests
 //
-//  Created by Shivam Jaiswal on 31/10/19.
+//  Created by Shivam Jaiswal on 03/11/19.
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
 //
 
 import XCTest
 @testable import Lalamove
 
-class LalamoveTests: XCTestCase {
+class DeliveryTableViewCellTest: XCTestCase {
+
+    var cell: DeliveryTableViewCell!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        cell = DeliveryTableViewCell.init(style: .default, reuseIdentifier: "cell")
     }
 
     override func tearDown() {

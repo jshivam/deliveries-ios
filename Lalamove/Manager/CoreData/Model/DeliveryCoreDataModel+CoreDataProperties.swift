@@ -22,12 +22,6 @@ extension DeliveryCoreDataModel {
     @NSManaged public var offSet: Int64
     @NSManaged public var location: LocationCoreDataModel?
 
-    // Key is combination of endpoint, limit & offset
-    @discardableResult
-    func generateKey() -> String {
-        return "\(Endpoint.deliveries.rawValue)_\(Constants.deliveryLimitPerRequest)_\(offSet)"
-    }
-
     static func create() -> DeliveryCoreDataModel {
         let delivery = CoreDataManager.sharedInstance.createObject(DeliveryCoreDataModel.self)
 

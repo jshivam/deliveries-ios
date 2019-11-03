@@ -10,10 +10,28 @@ import Foundation
 import CoreData
 import UIKit
 
-class DeliveryViewModel {
-    private let context = CoreDataManager.sharedInstance.workerManagedContext
+protocol DeliveryViewModelProtocol {
+    var currentOffSet: Int { get }
+    var deliveryServices: DeliveryService { get }
+    var isFetchingDeliveries: Bool { get }
+
+    func numberOfSections() -> Int
+    func numberOfRows(section: Int) -> Int
+    func heightForRow() -> CGFloat
+    func deleteAllDeliveries()
+    func resetState()
+    func cacheExists(offSet: Int) -> Bool
+    func shallFetchNextData(indexPath: IndexPath) -> Bool
+    func fetchDeliveries(useCache: Bool, completion: @escaping (Error?) -> Void)
+    func saveDeliveries()
+}
+
+class DeliveryViewModel: DeliveryViewModelProtocol {
+
+    let context = CoreDataManager.sharedInstance.workerManagedContext
     var currentOffSet = -1
     let deliveryServices = DeliveryService.init()
+    var isFetchingDeliveries = false
     lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
         let fetchRequest = self.fetchRequest
         let context = self.context
@@ -67,11 +85,12 @@ extension DeliveryViewModel {
         return !deliveries.isEmpty
     }
 
-    func isLastCell(indexPath: IndexPath) -> Bool {
-        return ((numberOfRows(section: indexPath.section) - 1) == indexPath.row)
+    func shallFetchNextData(indexPath: IndexPath) -> Bool {
+        return ((numberOfRows(section: indexPath.section) - 1) == indexPath.row) && !isFetchingDeliveries
     }
 
     func fetchDeliveries(useCache: Bool = true, completion: @escaping (Error?) -> Void) {
+
         var offSet = currentOffSet + Constants.deliveryLimitPerRequest
         if currentOffSet == -1 {
             if useCache && cacheExists(offSet: 0) {
@@ -80,9 +99,9 @@ extension DeliveryViewModel {
             }
             offSet = 0
         }
-
+        isFetchingDeliveries = true
         deliveryServices.fetchDeliveries(offSet: offSet, limit: Constants.deliveryLimitPerRequest) { [weak self] (result) in
-
+            self?.isFetchingDeliveries = false
             switch result {
             case .success(let deliveries):
                 for delivery in deliveries {
