@@ -13,12 +13,9 @@ import UIKit
 extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let delivery = viewModel.frc.object(at: indexPath)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DeliveryTableViewCell else {
-            assertionFailure("DeliveryTableViewCell has not been registered!!!")
-            return UITableViewCell()
-        }
-        cell.update(text: "\(delivery.identifier)", imageUrl: delivery.imageUrl)
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DeliveryTableViewCell
+        cell?.update(text: delivery.desc, imageUrl: delivery.imageUrl)
+        return cell!
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

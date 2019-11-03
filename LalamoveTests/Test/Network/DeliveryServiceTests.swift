@@ -47,7 +47,7 @@ class DeliveryServiceTests: XCTestCase {
         }
     }
 
-    func testRealData() {
+    func testTimeOutData() {
         let fetchDeliveryExpectation = expectation(description: "Fetching Deliveries")
         deliveryService = DeliveryService()
         deliveryService.fetchDeliveries(offSet: 0, limit: Constants.deliveryLimitPerRequest) { (_) in

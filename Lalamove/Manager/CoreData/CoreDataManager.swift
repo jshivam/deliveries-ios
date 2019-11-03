@@ -70,18 +70,6 @@ class CoreDataManager {
         }
     }
 
-    func saveContexAndWait() {
-        self.networkManagedContext.performAndWait {
-            self.networkManagedContext.saveIfhasChanges()
-            self.workerManagedContext.performAndWait({
-                self.workerManagedContext.saveIfhasChanges()
-                self.mainContext.performAndWait({
-                    self.mainContext.saveIfhasChanges()
-                })
-            })
-        }
-    }
-
     func deleteAll<T: NSManagedObject>(_ anyClass: T.Type) {
         let context = networkManagedContext
         let name = className(anyClass)
@@ -112,7 +100,7 @@ class CoreDataManager {
                                        predicate: NSPredicate? = nil,
                                        moc: NSManagedObjectContext = CoreDataManager.sharedInstance.workerManagedContext ) -> [T] {
         let context = moc
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: className(classs))
+        let request = classs.fetchRequest()
         request.predicate = predicate
 
         do {

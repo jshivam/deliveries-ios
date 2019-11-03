@@ -11,17 +11,74 @@ import XCTest
 
 class DeliveryViewModelTest: XCTestCase {
 
+    lazy var coreData: CoreDataManager = {
+        let coreData = CoreDataManager.sharedInstance
+        coreData.setupTestEnvironment()
+        return coreData
+    }()
+
+    let viewModel = DeliveryViewModel()
+    var saveNotificationCompleteHandler: ((Notification) -> Void)?
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        NotificationCenter.default.addObserver(self, selector: #selector(contextSaved(notification:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: coreData.networkManagedContext)
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testNumberOfSectinos() {
+        XCTAssertEqual(viewModel.numberOfSections(), 1)
+    }
+
+    func testNumberOfRows() {
+        let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
+        XCTAssertEqual(viewModel.numberOfRows(section: 0), deliveries.count)
+    }
+
+    func testRowHeight() {
+        XCTAssertEqual(viewModel.heightForRow(), UITableView.automaticDimension)
+    }
+
+    func testDeleteAllAndResetState() {
+        let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
+        viewModel.deleteAllDeliveries()
+        XCTAssertEqual(viewModel.currentOffSet, -1)
+        if deliveries.isEmpty {
+            let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
+            XCTAssertEqual(0, deliveries.count)
+        } else {
+            saveNotificationCompleteHandler = { notif in
+                XCTAssertEqual(self.viewModel.numberOfRows(section: 0), 0)
+            }
+        }
+    }
+
+    func testFetchDataWithOutCache() {
+        let viewModel = DeliveryViewModel()
+        viewModel.fetchDeliveries(useCache: false) { (_) in
+            self.saveNotificationCompleteHandler = { _ in
+                let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
+                XCTAssertEqual(self.viewModel.numberOfRows(section: 0), deliveries.count)
+            }
+        }
+    }
+
+    func testFetchDataWithCache() {
+        let viewModel = DeliveryViewModel()
+        viewModel.fetchDeliveries(useCache: true) { (_) in
+            self.saveNotificationCompleteHandler = { _ in
+                let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
+                XCTAssertEqual(self.viewModel.numberOfRows(section: 0), deliveries.count)
+            }
+        }
+    }
+
+    func testFetchtNextData() {
+        let viewModel = DeliveryViewModel()
+        viewModel.isFetchingDeliveries = true
+        XCTAssertEqual(viewModel.shallFetchNextData(indexPath: NSIndexPath.init(row: 0, section: 0) as IndexPath), false)
     }
 
     func testPerformanceExample() {
@@ -31,4 +88,11 @@ class DeliveryViewModelTest: XCTestCase {
         }
     }
 
+}
+
+extension DeliveryViewModelTest {
+    func contextSaved( notification: Notification ) {
+        print("contextSaved----------\(notification)")
+        saveNotificationCompleteHandler?(notification)
+    }
 }

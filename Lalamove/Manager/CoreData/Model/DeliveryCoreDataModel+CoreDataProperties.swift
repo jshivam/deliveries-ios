@@ -30,6 +30,16 @@ extension DeliveryCoreDataModel {
         return delivery
     }
 
+    static func isExist(with id: Int) -> DeliveryCoreDataModel? {
+        let predicate = NSPredicate(format: "%K = %@", "offSet", "\(id)")
+        let delivery = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate)
+        if delivery.isEmpty {
+            return nil
+        } else {
+            return delivery.first
+        }
+    }
+
     func update(delivery: Delivery, offSet: Int) {
         desc = delivery.desc
         identifier = Int64(delivery.identifier)

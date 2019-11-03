@@ -24,6 +24,7 @@
 		A0303F58236E355200BE6225 /* DeliveryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */; };
 		A0303F5B236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */; };
 		A0303F5E236E42C500BE6225 /* DeliveryTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F5D236E42C500BE6225 /* DeliveryTableViewCellTest.swift */; };
+		A0476546236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0476545236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift */; };
 		A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */; };
 		A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */; };
 		A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */; };
@@ -47,6 +48,10 @@
 		A088ECF5236E1C37001B1157 /* DeliveryDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088ECF4236E1C37001B1157 /* DeliveryDetailViewModelTest.swift */; };
 		A088ECF8236E2B29001B1157 /* deliveries.json in Resources */ = {isa = PBXBuildFile; fileRef = A088ECF7236E2B29001B1157 /* deliveries.json */; };
 		A088ECFB236E2BCB001B1157 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088ECFA236E2BCA001B1157 /* JSONLoader.swift */; };
+		A09D2FF2236EAC3A005567C8 /* CoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D2FF1236EAC3A005567C8 /* CoreDataTest.swift */; };
+		A09D2FF4236EBE43005567C8 /* TopViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D2FF3236EBE43005567C8 /* TopViewControllerTest.swift */; };
+		A09D2FF8236F08A1005567C8 /* APIPerformerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D2FF7236F08A1005567C8 /* APIPerformerTest.swift */; };
+		A09D2FFA236F0A8F005567C8 /* URLRequestComponentsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D2FF9236F0A8F005567C8 /* URLRequestComponentsMock.swift */; };
 		A0CC48D3236D9D8A00C17D24 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */; };
 		A0CC48D5236DBA2200C17D24 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D4236DBA2200C17D24 /* UIApplication+Extension.swift */; };
 		A0CC48D7236DBC6000C17D24 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D6236DBC6000C17D24 /* UIViewController+Extension.swift */; };
@@ -93,6 +98,7 @@
 		A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModelTest.swift; sourceTree = "<group>"; };
 		A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewControllerTest.swift; sourceTree = "<group>"; };
 		A0303F5D236E42C500BE6225 /* DeliveryTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCellTest.swift; sourceTree = "<group>"; };
+		A0476545236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModelProtocol.swift; sourceTree = "<group>"; };
 		A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfiguration.swift; sourceTree = "<group>"; };
 		A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfigurationProtocol.swift; sourceTree = "<group>"; };
@@ -116,6 +122,10 @@
 		A088ECF4236E1C37001B1157 /* DeliveryDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewModelTest.swift; sourceTree = "<group>"; };
 		A088ECF7236E2B29001B1157 /* deliveries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = deliveries.json; sourceTree = "<group>"; };
 		A088ECFA236E2BCA001B1157 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
+		A09D2FF1236EAC3A005567C8 /* CoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTest.swift; sourceTree = "<group>"; };
+		A09D2FF3236EBE43005567C8 /* TopViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewControllerTest.swift; sourceTree = "<group>"; };
+		A09D2FF7236F08A1005567C8 /* APIPerformerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPerformerTest.swift; sourceTree = "<group>"; };
+		A09D2FF9236F0A8F005567C8 /* URLRequestComponentsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestComponentsMock.swift; sourceTree = "<group>"; };
 		A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A0CC48D4236DBA2200C17D24 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		A0CC48D6236DBC6000C17D24 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -234,6 +244,7 @@
 				A02CF574236BFC030035D066 /* TableViewRefreshable.swift */,
 				A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */,
 				A02CF57A236C24610035D066 /* AlertPresentable.swift */,
+				A0476545236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift */,
 			);
 			path = ViewProtocols;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */,
+				A09D2FF3236EBE43005567C8 /* TopViewControllerTest.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -420,6 +432,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		A09D2FF0236EAC0F005567C8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A09D2FF1236EAC3A005567C8 /* CoreDataTest.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		A0CC48D8236DCC2500C17D24 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +454,7 @@
 			children = (
 				A0CC48DA236DCC5900C17D24 /* APIPerformerProtocolMock.swift */,
 				A0CC48DF236DD63600C17D24 /* APISessionConfigurationMock.swift */,
+				A09D2FF9236F0A8F005567C8 /* URLRequestComponentsMock.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -441,6 +462,7 @@
 		A0CC48DC236DD58B00C17D24 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				A09D2FF0236EAC0F005567C8 /* CoreData */,
 				A0303F59236E36F500BE6225 /* ViewController */,
 				A088ECF3236E1C17001B1157 /* ViewModel */,
 				A0CC48E7236DF02A00C17D24 /* Network */,
@@ -471,6 +493,7 @@
 			children = (
 				A0CC48DD236DD5E300C17D24 /* DeliveryServiceTests.swift */,
 				A0CC48E8236DF05700C17D24 /* NetwrokErrorTest.swift */,
+				A09D2FF7236F08A1005567C8 /* APIPerformerTest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -681,6 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0476546236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift in Sources */,
 				A0CC48D7236DBC6000C17D24 /* UIViewController+Extension.swift in Sources */,
 				A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */,
 				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
@@ -723,13 +747,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09D2FF2236EAC3A005567C8 /* CoreDataTest.swift in Sources */,
 				A0CC48E0236DD63600C17D24 /* APISessionConfigurationMock.swift in Sources */,
 				A0CC48DE236DD5E300C17D24 /* DeliveryServiceTests.swift in Sources */,
+				A09D2FF4236EBE43005567C8 /* TopViewControllerTest.swift in Sources */,
 				A088ECFB236E2BCB001B1157 /* JSONLoader.swift in Sources */,
 				A0CC48E9236DF05700C17D24 /* NetwrokErrorTest.swift in Sources */,
+				A09D2FFA236F0A8F005567C8 /* URLRequestComponentsMock.swift in Sources */,
 				A0CC48E3236DE04900C17D24 /* TableViewFooterLoaderTest.swift in Sources */,
 				A0CC48E6236DE0FF00C17D24 /* TableViewMock.swift in Sources */,
 				A088ECF5236E1C37001B1157 /* DeliveryDetailViewModelTest.swift in Sources */,
+				A09D2FF8236F08A1005567C8 /* APIPerformerTest.swift in Sources */,
 				A0303F5E236E42C500BE6225 /* DeliveryTableViewCellTest.swift in Sources */,
 				A0303F5B236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift in Sources */,
 				A0CC48DB236DCC5900C17D24 /* APIPerformerProtocolMock.swift in Sources */,

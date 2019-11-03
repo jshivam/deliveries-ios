@@ -10,27 +10,11 @@ import Foundation
 import CoreData
 import UIKit
 
-protocol DeliveryViewModelProtocol {
-    var currentOffSet: Int { get }
-    var deliveryServices: DeliveryService { get }
-    var isFetchingDeliveries: Bool { get }
-
-    func numberOfSections() -> Int
-    func numberOfRows(section: Int) -> Int
-    func heightForRow() -> CGFloat
-    func deleteAllDeliveries()
-    func resetState()
-    func cacheExists(offSet: Int) -> Bool
-    func shallFetchNextData(indexPath: IndexPath) -> Bool
-    func fetchDeliveries(useCache: Bool, completion: @escaping (Error?) -> Void)
-    func saveDeliveries()
-}
-
 class DeliveryViewModel: DeliveryViewModelProtocol {
 
     let context = CoreDataManager.sharedInstance.workerManagedContext
     var currentOffSet = -1
-    let deliveryServices = DeliveryService.init()
+    let deliveryServices: DeliveryServiceProtocol = DeliveryService.init()
     var isFetchingDeliveries = false
     lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
         let fetchRequest = self.fetchRequest
@@ -104,17 +88,21 @@ extension DeliveryViewModel {
             self?.isFetchingDeliveries = false
             switch result {
             case .success(let deliveries):
-                for delivery in deliveries {
-                    let model = DeliveryCoreDataModel.create()
-                    model.update(delivery: delivery, offSet: offSet)
-                }
-                self?.saveDeliveries()
                 self?.currentOffSet = offSet
+                self?.handleFetcedDeliveries(deliveries)
+                self?.saveDeliveries()
                 completion(nil)
 
             case .failure(let error):
                 completion(error)
             }
+        }
+    }
+
+    func handleFetcedDeliveries(_ deliveries: [Delivery]) {
+        for delivery in deliveries {
+            let model = DeliveryCoreDataModel.isExist(with: delivery.identifier) ?? DeliveryCoreDataModel.create()
+            model.update(delivery: delivery, offSet: currentOffSet)
         }
     }
 

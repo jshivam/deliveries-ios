@@ -10,7 +10,5 @@ import Foundation
 @testable import Lalamove
 
 class APISessionConfigurationMock: APISessionConfigurationProtocol {
-    var baseURL: String {
-        return ""
-    }
+    var baseURL: String = "https://mock-api-mobile.dev.lalamove.com"
 }
