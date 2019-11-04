@@ -75,12 +75,11 @@ App has implemented crashlytics using Firebase.
 App used native Alamofire for making http call.
 
 # App Data Flow
-
-1. Checks for Records in Data Base
-2. if records exists, display the records from Data Base
-3. if records doesn't exists, make network call
-4. If succesfully fetched records from server, save the records to DB and display the records
-5. If unsuccesfully fetched records from server, display error 
+- Checks for Records in Data Base
+- if records exists, display the records from Data Base
+- if records doesn't exists, make network call
+- If succesfully fetched records from server, save the records to DB and display the records
+- If unsuccesfully fetched records from server, display error 
 
 ![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/flowChart.png)
 
@@ -94,10 +93,8 @@ App used native Alamofire for making http call.
 For pagination logic, App will assume more pages till the time it don't get empty list of response from server. In case of offline mode, it will always try for next page ( this is to make sure that if app comes online then it should return response).
 
 # ScreenShots
-1. Delivery List
 ![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryList.png)
 
-2. DeliveryDetail
 ![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail.png)
 
 # TODO / Improvements
