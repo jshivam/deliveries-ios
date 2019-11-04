@@ -15,6 +15,7 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
         let delivery = viewModel.frc.object(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DeliveryTableViewCell
         cell?.update(text: delivery.desc, imageUrl: delivery.imageUrl)
+//        cell?.update(text: "\(delivery.identifier)", imageUrl: delivery.imageUrl)
         return cell!
     }
 
@@ -34,7 +35,7 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
         if viewModel.shallFetchNextData(indexPath: indexPath) {
             let delivery = viewModel.frc.object(at: indexPath)
             viewModel.currentOffSet = Int(delivery.offSet)
-            downloadData(forNextPage: true, useCache: false)
+            downloadData(forNextPage: true, useCache: true)
         }
     }
 
@@ -49,7 +50,6 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension DeliveryViewController: TableViewRefreshable {
     func refreshData() {
-        viewModel.deleteAllDeliveries()
         downloadData(forNextPage: false, useCache: false)
     }
 }

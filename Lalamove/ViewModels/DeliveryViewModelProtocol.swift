@@ -17,7 +17,6 @@ protocol DeliveryViewModelProtocol {
     func numberOfRows(section: Int) -> Int
     func heightForRow() -> CGFloat
     func deleteAllDeliveries()
-    func resetState()
     func cacheExists(offSet: Int) -> Bool
     func shallFetchNextData(indexPath: IndexPath) -> Bool
     func fetchDeliveries(useCache: Bool, completion: @escaping (Error?) -> Void)

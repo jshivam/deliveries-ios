@@ -56,11 +56,6 @@ extension DeliveryViewModel {
 
     func deleteAllDeliveries() {
         CoreDataManager.sharedInstance.deleteAll(DeliveryCoreDataModel.self)
-        resetState()
-    }
-
-    func resetState() {
-        currentOffSet = -1
     }
 
     func cacheExists(offSet: Int) -> Bool {
@@ -75,9 +70,9 @@ extension DeliveryViewModel {
 
     func fetchDeliveries(useCache: Bool = true, completion: @escaping (Error?) -> Void) {
 
-        var offSet = currentOffSet + Constants.deliveryLimitPerRequest
-        if currentOffSet == -1 {
-            if useCache && cacheExists(offSet: 0) {
+        var offSet = useCache ? currentOffSet + Constants.deliveryLimitPerRequest : 0
+        if currentOffSet == -1 && useCache {
+            if cacheExists(offSet: 0) {
                 completion(nil)
                 return
             }
@@ -89,7 +84,7 @@ extension DeliveryViewModel {
             switch result {
             case .success(let deliveries):
                 self?.currentOffSet = offSet
-                self?.handleFetcedDeliveries(deliveries)
+                self?.handleFetcedDeliveries(deliveries, useCache: useCache)
                 self?.saveDeliveries()
                 completion(nil)
 
@@ -99,9 +94,21 @@ extension DeliveryViewModel {
         }
     }
 
-    func handleFetcedDeliveries(_ deliveries: [Delivery]) {
+    func handleFetcedDeliveries(_ deliveries: [Delivery], useCache: Bool) {
+
+        if !useCache {
+            deleteAllDeliveries()
+        }
+
         for delivery in deliveries {
-            let model = DeliveryCoreDataModel.isExist(with: delivery.identifier) ?? DeliveryCoreDataModel.create()
+
+            var model: DeliveryCoreDataModel {
+                if useCache {
+                    return DeliveryCoreDataModel.isExist(with: delivery.identifier) ?? DeliveryCoreDataModel.create()
+                } else {
+                    return DeliveryCoreDataModel.create()
+                }
+            }
             model.update(delivery: delivery, offSet: currentOffSet)
         }
     }
