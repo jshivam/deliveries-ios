@@ -1,1 +1,1 @@
-# lalamove-ios
+# deliveries-ios
