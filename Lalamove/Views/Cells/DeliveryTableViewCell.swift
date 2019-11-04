@@ -30,6 +30,8 @@ class DeliveryTableViewCell: UITableViewCell {
         contentView.addSubview(deliveryView)
         deliveryView.dropShadow()
         addConstraints()
+        let padding = Constants.defaultSidePadding * 2 + DeliveryView.LayoutConstants.profileImageViewSize.width
+        separatorInset = UIEdgeInsets.init(top: 0, left: padding, bottom: 0, right: 0)
     }
 
     func addConstraints() {

@@ -20,7 +20,6 @@ class DeliveryViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(tableView)
 
-        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
