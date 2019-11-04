@@ -28,6 +28,7 @@ class DeliveryTableViewCell: UITableViewCell {
 
     func setup() {
         contentView.addSubview(deliveryView)
+        deliveryView.dropShadow()
         addConstraints()
     }
 
