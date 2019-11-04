@@ -16,7 +16,7 @@ class DeliveryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Things to Deliver"
+        title = "deliveryListTitle".localized()
         view.backgroundColor = .white
         view.addSubview(tableView)
 

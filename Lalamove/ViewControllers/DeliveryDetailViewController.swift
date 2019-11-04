@@ -40,7 +40,7 @@ class DeliveryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Delivery Details"
+        title = "deliveryDetailTitle".localized()
         mapView.delegate = self
         setup()
     }

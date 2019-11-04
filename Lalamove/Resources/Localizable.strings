@@ -1,0 +1,13 @@
+// Alert
+"okButtonTitle" = "Okay";
+
+//Delivery List
+"deliveryListTitle" = "Things to Deliver";
+
+// Delivery Details
+"deliveryDetailTitle" = "Delivery Details";
+
+// Network Error
+"noData" = "We don't have any data to show now!";
+"apiError" = "Oops! Something went wrong!";
+"noInternet" = "The Internet connection appears to be offline";

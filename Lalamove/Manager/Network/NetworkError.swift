@@ -18,11 +18,11 @@ extension NetworkError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .apiError:
-            return NSLocalizedString("Oops! Something went wrong!", comment: "")
+            return "apiError".localized()
         case .noData:
-            return NSLocalizedString("We don't have any data to show now!", comment: "")
+            return "noData".localized()
         case .noInternet:
-            return NSLocalizedString("The Internet connection appears to be offline", comment: "")
+            return "noInternet".localized()
         }
     }
 }
