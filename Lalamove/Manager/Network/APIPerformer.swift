@@ -14,14 +14,9 @@ protocol APIPerformerProtocol {
 }
 
 class APIPerformer {
-    fileprivate var sessionManager: SessionManager!
-    init() {
-        initSessionManager()
-    }
-
-    func initSessionManager() {
-        let configuration = URLSessionConfiguration.default
-        sessionManager = SessionManager(configuration: configuration)
+    private let sessionManager: SessionProtocol
+    init(manager: SessionManager = SessionManager.default) {
+        self.sessionManager = manager
     }
 }
 
