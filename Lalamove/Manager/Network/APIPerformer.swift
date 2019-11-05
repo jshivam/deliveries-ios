@@ -15,7 +15,7 @@ protocol APIPerformerProtocol {
 
 class APIPerformer {
     private let sessionManager: SessionProtocol
-    init(manager: SessionManager = SessionManager.default) {
+    init(manager: SessionProtocol = SessionManager.default) {
         self.sessionManager = manager
     }
 }

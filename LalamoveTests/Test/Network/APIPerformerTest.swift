@@ -12,31 +12,64 @@ import XCTest
 
 class APIPerformerTest: XCTestCase {
 
+    var apiPerformer: APIPerformer!
+    var session: SessionManagerMock!
+
+    var request: URLRequestBuilder {
+        let requestComponent = URLRequestComponentsMock()
+        let request = URLRequestBuilder.init(components: requestComponent, sessionConfiguration: APISessionConfigurationMock())
+        return request
+    }
+
     override func setUp() {
+        session = SessionManagerMock()
+        apiPerformer = APIPerformer.init(manager: session)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        apiPerformer = nil
+        session = nil
     }
 
-    func testAPIPerformerSuccess() {
-        let requestComponent = URLRequestComponentsMock()
-        let request = URLRequestBuilder.init(components: requestComponent, sessionConfiguration: APISessionConfigurationMock())
-        APIPerformer().perform(request: request) { (_, result: Result<[Delivery]>) in
+    func testAPIError() {
+        session.dataRequest.nextResultType = .apiError
+        apiPerformer.perform(request: request) { (_, result: Result<MockModel>) in
             switch result {
-            case .success(let items):
-                XCTAssertNil(items)
+            case .success:
+                XCTAssert(false)
             case .failure:
-                break
+                XCTAssert(true)
             }
         }
     }
 
-    func testAPIPerformerError() {
-        let requestComponent = URLRequestComponentsMock()
-        requestComponent.method = .post
-        let request = URLRequestBuilder.init(components: requestComponent, sessionConfiguration: APISessionConfigurationMock())
-        APIPerformer().perform(request: request) { (_, result: Result<[Delivery]>) in
+    func testNoInternetError() {
+        session.dataRequest.nextResultType = .noInternetError
+        apiPerformer.perform(request: request) { (_, result: Result<MockModel>) in
+            switch result {
+            case .success:
+                XCTAssert(false)
+            case .failure:
+                XCTAssert(true)
+            }
+        }
+    }
+
+    func testApiSuccess() {
+        session.dataRequest.nextResultType = .success
+        apiPerformer.perform(request: request) { (_, result: Result<MockModel>) in
+            switch result {
+            case .success:
+                XCTAssert(true)
+            case .failure:
+                XCTAssert(false)
+            }
+        }
+    }
+
+    func testParsingError() {
+        session.dataRequest.nextResultType = .parsingError
+        apiPerformer.perform(request: request) { (_, result: Result<MockModel>) in
             switch result {
             case .success:
                 XCTAssert(false)

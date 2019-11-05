@@ -56,6 +56,8 @@
 		A09D2FF8236F08A1005567C8 /* APIPerformerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D2FF7236F08A1005567C8 /* APIPerformerTest.swift */; };
 		A09D2FFA236F0A8F005567C8 /* URLRequestComponentsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D2FF9236F0A8F005567C8 /* URLRequestComponentsMock.swift */; };
 		A0B3877323717CCF009565E3 /* SessionManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3877223717CCF009565E3 /* SessionManager+Extension.swift */; };
+		A0B3877523718181009565E3 /* SessionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3877423718181009565E3 /* SessionManagerMock.swift */; };
+		A0B3877823719453009565E3 /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3877723719453009565E3 /* MockModel.swift */; };
 		A0CC48D3236D9D8A00C17D24 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */; };
 		A0CC48D5236DBA2200C17D24 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D4236DBA2200C17D24 /* UIApplication+Extension.swift */; };
 		A0CC48D7236DBC6000C17D24 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D6236DBC6000C17D24 /* UIViewController+Extension.swift */; };
@@ -134,6 +136,8 @@
 		A09D2FF7236F08A1005567C8 /* APIPerformerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPerformerTest.swift; sourceTree = "<group>"; };
 		A09D2FF9236F0A8F005567C8 /* URLRequestComponentsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestComponentsMock.swift; sourceTree = "<group>"; };
 		A0B3877223717CCF009565E3 /* SessionManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionManager+Extension.swift"; sourceTree = "<group>"; };
+		A0B3877423718181009565E3 /* SessionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerMock.swift; sourceTree = "<group>"; };
+		A0B3877723719453009565E3 /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
 		A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A0CC48D4236DBA2200C17D24 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		A0CC48D6236DBC6000C17D24 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -468,9 +472,18 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		A0B387762371943C009565E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0B3877723719453009565E3 /* MockModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A0CC48D8236DCC2500C17D24 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				A0B387762371943C009565E3 /* Model */,
 				A0CC48E4236DE09A00C17D24 /* Views */,
 				A0CC48D9236DCC2F00C17D24 /* Network */,
 			);
@@ -483,6 +496,7 @@
 				A0CC48DA236DCC5900C17D24 /* APIPerformerProtocolMock.swift */,
 				A0CC48DF236DD63600C17D24 /* APISessionConfigurationMock.swift */,
 				A09D2FF9236F0A8F005567C8 /* URLRequestComponentsMock.swift */,
+				A0B3877423718181009565E3 /* SessionManagerMock.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -781,6 +795,7 @@
 			files = (
 				A09D2FF2236EAC3A005567C8 /* CoreDataTest.swift in Sources */,
 				A0CC48E0236DD63600C17D24 /* APISessionConfigurationMock.swift in Sources */,
+				A0B3877823719453009565E3 /* MockModel.swift in Sources */,
 				A0CC48DE236DD5E300C17D24 /* DeliveryServiceTests.swift in Sources */,
 				A09D2FF4236EBE43005567C8 /* TopViewControllerTest.swift in Sources */,
 				A088ECFB236E2BCB001B1157 /* JSONLoader.swift in Sources */,
@@ -791,6 +806,7 @@
 				A088ECF5236E1C37001B1157 /* DeliveryDetailViewModelTest.swift in Sources */,
 				A09D2FF8236F08A1005567C8 /* APIPerformerTest.swift in Sources */,
 				A0303F5E236E42C500BE6225 /* DeliveryTableViewCellTest.swift in Sources */,
+				A0B3877523718181009565E3 /* SessionManagerMock.swift in Sources */,
 				A0303F5B236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift in Sources */,
 				A0CC48DB236DCC5900C17D24 /* APIPerformerProtocolMock.swift in Sources */,
 				A0303F58236E355200BE6225 /* DeliveryViewModelTest.swift in Sources */,
