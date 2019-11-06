@@ -25,7 +25,6 @@
 		A02CF57B236C24610035D066 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF57A236C24610035D066 /* AlertPresentable.swift */; };
 		A0303F58236E355200BE6225 /* DeliveryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */; };
 		A0303F5B236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */; };
-		A0303F5E236E42C500BE6225 /* DeliveryTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F5D236E42C500BE6225 /* DeliveryTableViewCellTest.swift */; };
 		A0476546236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0476545236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift */; };
 		A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */; };
 		A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */; };
@@ -61,7 +60,6 @@
 		A0CC48D3236D9D8A00C17D24 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */; };
 		A0CC48D5236DBA2200C17D24 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D4236DBA2200C17D24 /* UIApplication+Extension.swift */; };
 		A0CC48D7236DBC6000C17D24 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48D6236DBC6000C17D24 /* UIViewController+Extension.swift */; };
-		A0CC48DB236DCC5900C17D24 /* APIPerformerProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48DA236DCC5900C17D24 /* APIPerformerProtocolMock.swift */; };
 		A0CC48DE236DD5E300C17D24 /* DeliveryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48DD236DD5E300C17D24 /* DeliveryServiceTests.swift */; };
 		A0CC48E0236DD63600C17D24 /* APISessionConfigurationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48DF236DD63600C17D24 /* APISessionConfigurationMock.swift */; };
 		A0CC48E3236DE04900C17D24 /* TableViewFooterLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC48E2236DE04900C17D24 /* TableViewFooterLoaderTest.swift */; };
@@ -70,6 +68,10 @@
 		A0E97E64236C4B1300EA882D /* DeliveryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E97E63236C4B1300EA882D /* DeliveryDetailViewController.swift */; };
 		A0E97E66236C4BCE00EA882D /* DeliveryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E97E65236C4BCE00EA882D /* DeliveryDetailViewModel.swift */; };
 		A0EA052E236C32D6009D8802 /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */; };
+		A0F17C7A237280180057477D /* emptyDeliveries.json in Resources */ = {isa = PBXBuildFile; fileRef = A0F17C79237280180057477D /* emptyDeliveries.json */; };
+		A0F17C7C237287A80057477D /* invaildDeliveries.json in Resources */ = {isa = PBXBuildFile; fileRef = A0F17C7B237287A80057477D /* invaildDeliveries.json */; };
+		A0F17C7E23728DE00057477D /* DeliveryRequestComponentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17C7D23728DE00057477D /* DeliveryRequestComponentTest.swift */; };
+		A0F17C802372937B0057477D /* URLRequestBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17C7F2372937B0057477D /* URLRequestBuilderTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +107,6 @@
 		A02CF57A236C24610035D066 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModelTest.swift; sourceTree = "<group>"; };
 		A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewControllerTest.swift; sourceTree = "<group>"; };
-		A0303F5D236E42C500BE6225 /* DeliveryTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCellTest.swift; sourceTree = "<group>"; };
 		A0476545236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModelProtocol.swift; sourceTree = "<group>"; };
 		A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfiguration.swift; sourceTree = "<group>"; };
@@ -141,7 +142,6 @@
 		A0CC48D2236D9D8A00C17D24 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A0CC48D4236DBA2200C17D24 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		A0CC48D6236DBC6000C17D24 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		A0CC48DA236DCC5900C17D24 /* APIPerformerProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPerformerProtocolMock.swift; sourceTree = "<group>"; };
 		A0CC48DD236DD5E300C17D24 /* DeliveryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryServiceTests.swift; sourceTree = "<group>"; };
 		A0CC48DF236DD63600C17D24 /* APISessionConfigurationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfigurationMock.swift; sourceTree = "<group>"; };
 		A0CC48E2236DE04900C17D24 /* TableViewFooterLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterLoaderTest.swift; sourceTree = "<group>"; };
@@ -150,6 +150,10 @@
 		A0E97E63236C4B1300EA882D /* DeliveryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewController.swift; sourceTree = "<group>"; };
 		A0E97E65236C4BCE00EA882D /* DeliveryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewModel.swift; sourceTree = "<group>"; };
 		A0EA052D236C32D6009D8802 /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
+		A0F17C79237280180057477D /* emptyDeliveries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emptyDeliveries.json; sourceTree = "<group>"; };
+		A0F17C7B237287A80057477D /* invaildDeliveries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = invaildDeliveries.json; sourceTree = "<group>"; };
+		A0F17C7D23728DE00057477D /* DeliveryRequestComponentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRequestComponentTest.swift; sourceTree = "<group>"; };
+		A0F17C7F2372937B0057477D /* URLRequestBuilderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilderTest.swift; sourceTree = "<group>"; };
 		AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Lalamove.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4DE7D2EE26F642899077CA /* Pods-LalamoveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LalamoveTests.release.xcconfig"; path = "Target Support Files/Pods-LalamoveTests/Pods-LalamoveTests.release.xcconfig"; sourceTree = "<group>"; };
 		FB3931E5E8C80ADB732FBF5A /* Pods-Lalamove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.release.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.release.xcconfig"; sourceTree = "<group>"; };
@@ -452,6 +456,8 @@
 			isa = PBXGroup;
 			children = (
 				A088ECF7236E2B29001B1157 /* deliveries.json */,
+				A0F17C79237280180057477D /* emptyDeliveries.json */,
+				A0F17C7B237287A80057477D /* invaildDeliveries.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -493,7 +499,6 @@
 		A0CC48D9236DCC2F00C17D24 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A0CC48DA236DCC5900C17D24 /* APIPerformerProtocolMock.swift */,
 				A0CC48DF236DD63600C17D24 /* APISessionConfigurationMock.swift */,
 				A09D2FF9236F0A8F005567C8 /* URLRequestComponentsMock.swift */,
 				A0B3877423718181009565E3 /* SessionManagerMock.swift */,
@@ -516,7 +521,6 @@
 		A0CC48E1236DE01B00C17D24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A0303F5D236E42C500BE6225 /* DeliveryTableViewCellTest.swift */,
 				A0CC48E2236DE04900C17D24 /* TableViewFooterLoaderTest.swift */,
 			);
 			path = Views;
@@ -536,6 +540,8 @@
 				A0CC48DD236DD5E300C17D24 /* DeliveryServiceTests.swift */,
 				A0CC48E8236DF05700C17D24 /* NetwrokErrorTest.swift */,
 				A09D2FF7236F08A1005567C8 /* APIPerformerTest.swift */,
+				A0F17C7D23728DE00057477D /* DeliveryRequestComponentTest.swift */,
+				A0F17C7F2372937B0057477D /* URLRequestBuilderTest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -654,6 +660,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A088ECF8236E2B29001B1157 /* deliveries.json in Resources */,
+				A0F17C7C237287A80057477D /* invaildDeliveries.json in Resources */,
+				A0F17C7A237280180057477D /* emptyDeliveries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +804,7 @@
 				A09D2FF2236EAC3A005567C8 /* CoreDataTest.swift in Sources */,
 				A0CC48E0236DD63600C17D24 /* APISessionConfigurationMock.swift in Sources */,
 				A0B3877823719453009565E3 /* MockModel.swift in Sources */,
+				A0F17C802372937B0057477D /* URLRequestBuilderTest.swift in Sources */,
 				A0CC48DE236DD5E300C17D24 /* DeliveryServiceTests.swift in Sources */,
 				A09D2FF4236EBE43005567C8 /* TopViewControllerTest.swift in Sources */,
 				A088ECFB236E2BCB001B1157 /* JSONLoader.swift in Sources */,
@@ -805,10 +814,9 @@
 				A0CC48E6236DE0FF00C17D24 /* TableViewMock.swift in Sources */,
 				A088ECF5236E1C37001B1157 /* DeliveryDetailViewModelTest.swift in Sources */,
 				A09D2FF8236F08A1005567C8 /* APIPerformerTest.swift in Sources */,
-				A0303F5E236E42C500BE6225 /* DeliveryTableViewCellTest.swift in Sources */,
 				A0B3877523718181009565E3 /* SessionManagerMock.swift in Sources */,
 				A0303F5B236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift in Sources */,
-				A0CC48DB236DCC5900C17D24 /* APIPerformerProtocolMock.swift in Sources */,
+				A0F17C7E23728DE00057477D /* DeliveryRequestComponentTest.swift in Sources */,
 				A0303F58236E355200BE6225 /* DeliveryViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ enum NextResultType {
     case noInternetError
     case apiError
     case parsingError
-    case success
+    case success(Data?)
 
     var nextResult: Result<Any> {
         switch self {
@@ -30,8 +30,8 @@ enum NextResultType {
 
     var data: Data? {
         switch self {
-        case .success:
-            return MockModel.data
+        case .success(let data):
+            return data
         case .parsingError:
             return Data.init([0, 1, 0])
         default:
@@ -51,9 +51,9 @@ class SessionManagerMock: SessionProtocol {
 
 class DataRequestMock: DataRequestProtocol {
 
-    var nextResultType: NextResultType = .success
+    var nextResultType: NextResultType!
 
-    var nextData: DataResponse<Any> {
+    private var nextData: DataResponse<Any> {
         return DataResponse<Any>.init(request: nil, response: nil, data: nextResultType.data, result: nextResultType.nextResult)
     }
 
