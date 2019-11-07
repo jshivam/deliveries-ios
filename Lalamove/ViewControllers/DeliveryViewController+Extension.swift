@@ -12,10 +12,9 @@ import UIKit
 
 extension DeliveryListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let delivery = viewModel.frc.object(at: indexPath)
+        let item = viewModel.item(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DeliveryTableViewCell
-        cell?.update(text: delivery.desc, imageUrl: delivery.imageUrl)
-//        cell?.update(text: "\(delivery.identifier)", imageUrl: delivery.imageUrl)
+        cell?.update(text: item.title, imageUrl: item.imageURL)
         return cell!
     }
 
@@ -27,15 +26,10 @@ extension DeliveryListViewController: UITableViewDelegate, UITableViewDataSource
         return viewModel.numberOfRows(section: section)
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel.heightForRow()
-    }
-
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if viewModel.shallFetchNextData(indexPath: indexPath) {
-            let delivery = viewModel.frc.object(at: indexPath)
-            viewModel.fetchedItemsCount = Int(delivery.offSet)
-            downloadData(forNextPage: true, useCache: true)
+        viewModel.lastVisibileIndexPath = indexPath
+        viewModel.fetchNextDataHandler = { [weak self] _ in
+            self?.downloadData(forNextPage: true, useCache: true)
         }
     }
 

@@ -23,6 +23,7 @@ class DeliveryListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(DeliveryTableViewCell.self, forCellReuseIdentifier: "cell")
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
