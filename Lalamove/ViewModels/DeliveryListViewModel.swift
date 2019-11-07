@@ -28,8 +28,11 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
     let deliveryServices: DeliveryServiceProtocol = DeliveryService.init()
     var lastVisibileIndexPath: IndexPath? = nil {
         didSet {
-            guard let indexPath = self.lastVisibileIndexPath, shallFetchNextData(indexPath: indexPath) else { return }
-            fetchNextDataHandler?(self)
+            guard let indexPath = self.lastVisibileIndexPath else { return }
+            currentOffSet = indexPath.row + 1
+            if shallFetchNextData(indexPath: indexPath) {
+                fetchNextDataHandler?(self)
+            }
         }
     }
 
