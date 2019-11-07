@@ -54,6 +54,7 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
     private lazy var fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = {
         let fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = DeliveryCoreDataModel.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "offSet", ascending: true), NSSortDescriptor(key: "identifier", ascending: true)]
+        fetchRequest.fetchBatchSize = GlobalConstants.deliveryLimitPerRequest
         return fetchRequest
     }()
 }
