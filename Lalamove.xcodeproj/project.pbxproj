@@ -43,7 +43,7 @@
 		A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD462236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift */; };
 		A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */; };
 		A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */; };
-		A06FD46B236AFF96004BC899 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD46A236AFF96004BC899 /* Constants.swift */; };
+		A06FD46B236AFF96004BC899 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD46A236AFF96004BC899 /* GlobalConstants.swift */; };
 		A0772698236D6F8A00E7A31A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */; };
 		A077269C236D702700E7A31A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A077269B236D702700E7A31A /* FirebaseManager.swift */; };
 		A088ECF5236E1C37001B1157 /* DeliveryDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088ECF4236E1C37001B1157 /* DeliveryDetailViewModelTest.swift */; };
@@ -124,7 +124,7 @@
 		A06FD462236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A06FD464236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A06FD46A236AFF96004BC899 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A06FD46A236AFF96004BC899 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A077269B236D702700E7A31A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A088ECF4236E1C37001B1157 /* DeliveryDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewModelTest.swift; sourceTree = "<group>"; };
@@ -419,7 +419,7 @@
 		A06FD469236AFF82004BC899 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				A06FD46A236AFF96004BC899 /* Constants.swift */,
+				A06FD46A236AFF96004BC899 /* GlobalConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -761,7 +761,7 @@
 				A01CC787236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift in Sources */,
 				A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */,
 				A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */,
-				A06FD46B236AFF96004BC899 /* Constants.swift in Sources */,
+				A06FD46B236AFF96004BC899 /* GlobalConstants.swift in Sources */,
 				A0E97E64236C4B1300EA882D /* DeliveryDetailViewController.swift in Sources */,
 				A007DF7823703B4A00B345F7 /* UIView+Extension.swift in Sources */,
 				A00D5841236AE89A000B6A63 /* CoreDataManager.swift in Sources */,

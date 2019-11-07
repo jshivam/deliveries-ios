@@ -10,13 +10,19 @@ import UIKit
 import CoreData
 
 class DeliveryListViewController: UIViewController {
+
+    struct Constants {
+        static let deliveryCellIndentifier = "cell"
+        static let title = "deliveryListTitle".localized()
+    }
+
     let tableView = UITableView()
     let viewModel = DeliveryListViewModel.init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "deliveryListTitle".localized()
+        title = Constants.title
         view.backgroundColor = .white
         view.addSubview(tableView)
 
@@ -24,7 +30,7 @@ class DeliveryListViewController: UIViewController {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(DeliveryTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(DeliveryTableViewCell.self, forCellReuseIdentifier: Constants.deliveryCellIndentifier)
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true

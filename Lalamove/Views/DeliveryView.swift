@@ -11,7 +11,7 @@ import AlamofireImage
 
 class DeliveryView: UIView {
 
-    struct LayoutConstants {
+    struct Constants {
         static var profileImageViewSize: CGSize { return CGSize.init(width: 52, height: 52) }
     }
 
@@ -29,7 +29,7 @@ class DeliveryView: UIView {
         img.backgroundColor = .darkGray
         img.contentMode = .scaleAspectFill
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.layer.cornerRadius = Constants.defautlCornerRadius
+        img.layer.cornerRadius = GlobalConstants.defautlCornerRadius
         img.clipsToBounds = true
        return img
     }()
@@ -58,9 +58,9 @@ class DeliveryView: UIView {
 
         var allConstraints: [NSLayoutConstraint] = []
 
-        let metrics = ["profileImageViewHeight": LayoutConstants.profileImageViewSize.height,
-                       "profileImageViewWidth": LayoutConstants.profileImageViewSize.width,
-                       "padding": Constants.defaultSidePadding]
+        let metrics = ["profileImageViewHeight": Constants.profileImageViewSize.height,
+                       "profileImageViewWidth": Constants.profileImageViewSize.width,
+                       "padding": GlobalConstants.defaultSidePadding]
 
         let horizontalConstraint = NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-padding-[profileImageView(profileImageViewWidth)]-padding-[descriptionLabel]-padding-|",

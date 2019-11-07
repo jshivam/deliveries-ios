@@ -13,7 +13,7 @@ import UIKit
 extension DeliveryListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel.item(at: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DeliveryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.deliveryCellIndentifier, for: indexPath) as? DeliveryTableViewCell
         cell?.update(text: item.title, imageUrl: item.imageURL)
         return cell!
     }

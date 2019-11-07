@@ -11,9 +11,10 @@ import MapKit
 
 class DeliveryDetailViewController: UIViewController {
 
-    struct LayoutConstants {
-        static let routeVisibilityArea: Double = 3000
+    struct Constants {
         static let markerIdentifier = "annotation"
+        static let title = "deliveryDetailTitle".localized()
+        static let routeVisibilityArea: Double = 3000
     }
 
     let viewModel: DeliveryDetailViewModel
@@ -40,7 +41,7 @@ class DeliveryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "deliveryDetailTitle".localized()
+        title = Constants.title
         mapView.delegate = self
         setup()
     }
@@ -72,7 +73,7 @@ class DeliveryDetailViewController: UIViewController {
             annotation.title = location.address
             annotation.coordinate = destinationLocation
             mapView.addAnnotation(annotation)
-            let viewRegion = MKCoordinateRegion(center: destinationLocation, latitudinalMeters: LayoutConstants.routeVisibilityArea, longitudinalMeters: LayoutConstants.routeVisibilityArea)
+            let viewRegion = MKCoordinateRegion(center: destinationLocation, latitudinalMeters: Constants.routeVisibilityArea, longitudinalMeters: Constants.routeVisibilityArea)
             mapView.setRegion(viewRegion, animated: true)
         }
     }

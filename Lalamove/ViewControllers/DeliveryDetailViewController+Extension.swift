@@ -14,7 +14,7 @@ extension DeliveryDetailViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
 
-        let identifier = LayoutConstants.markerIdentifier
+        let identifier = Constants.markerIdentifier
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
 
         if annotationView == nil {

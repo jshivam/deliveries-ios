@@ -92,7 +92,7 @@ extension DeliveryListViewModel {
 
     func fetchDeliveries(useCache: Bool = true, completion: @escaping (Error?) -> Void) {
 
-        var offSet = useCache ? currentOffSet + Constants.deliveryLimitPerRequest : 0
+        var offSet = useCache ? currentOffSet + GlobalConstants.deliveryLimitPerRequest : 0
         if currentOffSet == -1 && useCache {
             if cacheExists(offSet: 0) {
                 completion(nil)
@@ -101,14 +101,14 @@ extension DeliveryListViewModel {
             offSet = 0
         }
         isFetchingDeliveries = true
-        deliveryServices.fetchDeliveries(offSet: offSet, limit: Constants.deliveryLimitPerRequest) { [weak self] (result) in
+        deliveryServices.fetchDeliveries(offSet: offSet, limit: GlobalConstants.deliveryLimitPerRequest) { [weak self] (result) in
 
             guard let `self` = self else { return }
 
             self.isFetchingDeliveries = false
             switch result {
             case .success(let deliveries):
-                self.currentOffSet = offSet - (Constants.deliveryLimitPerRequest - deliveries.count)
+                self.currentOffSet = offSet - (GlobalConstants.deliveryLimitPerRequest - deliveries.count)
                 self.handleFetcedDeliveries(deliveries, useCache: useCache)
                 self.saveDeliveries()
                 completion(nil)
