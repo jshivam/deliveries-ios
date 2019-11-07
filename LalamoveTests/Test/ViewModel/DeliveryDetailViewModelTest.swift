@@ -11,29 +11,41 @@ import XCTest
 
 class DeliveryDetailViewModelTest: XCTestCase {
 
+    let coreData = CoreDataManager.init(config: CoreDataMockConfig())
+
+    lazy var dataModel: DeliveryCoreDataModel = {
+        let deliveryModel = coreData.createObject(DeliveryCoreDataModel.self)
+        let locationModel = coreData.createObject(LocationCoreDataModel.self)
+        deliveryModel.location = locationModel
+        let location = Location.init(lat: 10, lng: 20, address: "london")
+        let delivery = Delivery.init(identifier: 100, desc: "this is test", imageUrl: "", location: location)
+        deliveryModel.update(delivery: delivery, offSet: 0)
+        return deliveryModel
+    }()
+
     var viewModel: DeliveryDetailViewModel!
 
     override func setUp() {
-        let dataModel = DeliveryCoreDataModel.create()
-        let location = Location.init(lat: 0, lng: 0, address: "london")
-        let delivery = Delivery.init(identifier: 0, desc: "this is test", imageUrl: "", location: location)
-        dataModel.update(delivery: delivery, offSet: 0)
         viewModel = DeliveryDetailViewModel.init(delivery: dataModel)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
     }
 
-    func testExample() {
-        XCTAssertNotNil(viewModel.delivery.location?.address)
+    func testDeliveryModel() {
+        let isEqual = (viewModel.delivery.identifier == 100) && (viewModel.delivery.desc == "this is test") && (viewModel.delivery.imageUrl!.isEmpty)
+        XCTAssert(isEqual)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testLocationAddress() {
+        let location = viewModel.delivery.location!
+        XCTAssertEqual(location.address, "london")
     }
 
+    func testLocationLatnLng() {
+        let location = viewModel.delivery.location!
+        let isEqual = (10 == location.lat) && (20 == viewModel.delivery.location!.lng)
+        XCTAssert(isEqual)
+    }
 }

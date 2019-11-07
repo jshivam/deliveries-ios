@@ -13,45 +13,44 @@ import CoreData
 class CoreDataTest: XCTestCase {
 
     var saveNotificationCompleteHandler: ((Notification) -> Void)?
-
-    lazy var coreData: CoreDataManager = {
-        let coreData = CoreDataManager.sharedInstance
-        coreData.setupTestEnvironment()
-        return coreData
-    }()
+    let coreData = CoreDataManager.init(config: CoreDataMockConfig())
 
     override func setUp() {
-        NotificationCenter.default.addObserver(self, selector: #selector(contextSaved(notification:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: coreData.networkManagedContext)
+        NotificationCenter.default.addObserver(self, selector: #selector(contextSaved(notification:)),
+                                               name: NSNotification.Name.NSManagedObjectContextDidSave,
+                                               object: coreData.networkManagedContext)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        saveNotificationCompleteHandler =  nil
     }
 
-    func testDeleteAll() {
-        let alldeliveries = coreData.fetchData(from: DeliveryCoreDataModel.self)
-        let alllocations = self.coreData.fetchData(from: LocationCoreDataModel.self)
+    func testCreateModel() {
+        let model = coreData.createObject(DeliveryCoreDataModel.self)
+        XCTAssertNotNil(model)
+    }
 
-        XCTAssertEqual(alldeliveries.count, alllocations.count)
+    func testFetchModel() {
+        let alldeliveries = self.coreData.fetchData(from: DeliveryCoreDataModel.self, moc: self.coreData.workerManagedContext)
+        XCTAssertNotNil(alldeliveries)
+    }
 
-        if !alldeliveries.isEmpty {
-            let notificationExpectation = expectation(description: "Deleting Deliveries")
-            coreData.deleteAll(DeliveryCoreDataModel.self)
-            saveNotificationCompleteHandler = { notif in
-                notificationExpectation.fulfill()
-                let alldeliveries = self.coreData.fetchData(from: DeliveryCoreDataModel.self)
-                let alllocations = self.coreData.fetchData(from: LocationCoreDataModel.self)
-                XCTAssert(alldeliveries.isEmpty)
-                XCTAssert(alllocations.isEmpty)
-            }
-            waitForExpectations(timeout: 5)
-        } else {
-            coreData.deleteAll(DeliveryCoreDataModel.self)
-            let alldeliveries = self.coreData.fetchData(from: DeliveryCoreDataModel.self)
-            let alllocations = self.coreData.fetchData(from: LocationCoreDataModel.self)
-            XCTAssert(alldeliveries.isEmpty)
-            XCTAssert(alllocations.isEmpty)
+    func testDelete() {
+
+        coreData.createObject(DeliveryCoreDataModel.self)
+        coreData.deleteAll(DeliveryCoreDataModel.self)
+        let notificationExpectation = expectation(description: "Deleting Deliveries")
+
+        saveNotificationCompleteHandler = { [weak self] (notification) in
+            guard let `self` = self else { return }
+            notificationExpectation.fulfill()
+            let alldeliveries = self.coreData.fetchData(from: DeliveryCoreDataModel.self, moc: self.coreData.workerManagedContext)
+            let alllocations = self.coreData.fetchData(from: LocationCoreDataModel.self, moc: self.coreData.workerManagedContext)
+            let isAllDeleted = (alldeliveries.count == alllocations.count) && alldeliveries.isEmpty
+            XCTAssert(isAllDeleted)
         }
+
+        waitForExpectations(timeout: 5)
     }
 }
 
@@ -59,15 +58,5 @@ extension CoreDataTest {
     func contextSaved( notification: Notification ) {
         print("contextSaved----------\(notification)")
         saveNotificationCompleteHandler?(notification)
-    }
-}
-
-extension CoreDataManager {
-    func setupTestEnvironment() {
-        do {
-            try self.persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
-        } catch {
-            fatalError("fix this")
-        }
     }
 }

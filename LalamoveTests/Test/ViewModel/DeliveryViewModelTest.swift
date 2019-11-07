@@ -13,7 +13,6 @@ class DeliveryViewModelTest: XCTestCase {
 
     lazy var coreData: CoreDataManager = {
         let coreData = CoreDataManager.sharedInstance
-        coreData.setupTestEnvironment()
         return coreData
     }()
 
@@ -37,19 +36,19 @@ class DeliveryViewModelTest: XCTestCase {
         XCTAssertEqual(viewModel.numberOfRows(section: 0), deliveries.count)
     }
 
-    func testDeleteAllAndResetState() {
-        let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
-        viewModel.deleteAllDeliveries()
-        XCTAssertEqual(viewModel.currentOffSet, -1)
-        if deliveries.isEmpty {
-            let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
-            XCTAssertEqual(0, deliveries.count)
-        } else {
-            saveNotificationCompleteHandler = { notif in
-                XCTAssertEqual(self.viewModel.numberOfRows(section: 0), 0)
-            }
-        }
-    }
+//    func testDeleteAllAndResetState() {
+//        let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
+//        viewModel.deleteAllDeliveries()
+//        XCTAssertEqual(viewModel.currentOffSet, -1)
+//        if deliveries.isEmpty {
+//            let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
+//            XCTAssertEqual(0, deliveries.count)
+//        } else {
+//            saveNotificationCompleteHandler = { notif in
+//                XCTAssertEqual(self.viewModel.numberOfRows(section: 0), 0)
+//            }
+//        }
+//    }
 
     func testFetchDataWithOutCache() {
         let viewModel = DeliveryListViewModel()

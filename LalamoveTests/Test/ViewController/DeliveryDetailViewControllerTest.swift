@@ -12,19 +12,25 @@ import XCTest
 class DeliveryDetailViewControllerTest: XCTestCase {
 
     var detailViewController: DeliveryDetailViewController!
+    let coreData = CoreDataManager.init(config: CoreDataMockConfig())
+    lazy var dataModel: DeliveryCoreDataModel = {
+        let deliveryModel = coreData.createObject(DeliveryCoreDataModel.self)
+        let locationModel = coreData.createObject(LocationCoreDataModel.self)
+        deliveryModel.location = locationModel
+        let location = Location.init(lat: 10, lng: 20, address: "london")
+        let delivery = Delivery.init(identifier: 100, desc: "this is test", imageUrl: "", location: location)
+        deliveryModel.update(delivery: delivery, offSet: 0)
+        return deliveryModel
+    }()
 
     override func setUp() {
-        let dataModel = DeliveryCoreDataModel.create()
-        let location = Location.init(lat: 0, lng: 0, address: "london")
-        let delivery = Delivery.init(identifier: 0, desc: "this is test", imageUrl: "", location: location)
-        dataModel.update(delivery: delivery, offSet: 0)
         let viewModel = DeliveryDetailViewModel.init(delivery: dataModel)
         detailViewController = DeliveryDetailViewController.init(viewModel: viewModel)
         detailViewController.view.tag = 0
     }
 
     override func tearDown() {
-
+        detailViewController = nil
     }
 
     func testViewModelLinkage() {
@@ -32,20 +38,10 @@ class DeliveryDetailViewControllerTest: XCTestCase {
     }
 
     func testMarker() {
-
         for annotation in self.detailViewController.mapView.annotations where annotation.title == self.detailViewController.viewModel.delivery.location!.address {
-            XCTAssert(true)
             XCTAssertNotNil(detailViewController.mapView(detailViewController.mapView, viewFor: annotation))
             return
         }
         XCTFail("Fail")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

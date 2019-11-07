@@ -20,6 +20,9 @@
 		A01CC781236C86A200693C56 /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CC780236C86A200693C56 /* DeliveryView.swift */; };
 		A01CC784236CA2DE00693C56 /* DeliveryViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CC783236CA2DE00693C56 /* DeliveryViewController+Extension.swift */; };
 		A01CC787236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CC786236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift */; };
+		A0269FED2374245300A88A63 /* CoreDataMockConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FEC2374245300A88A63 /* CoreDataMockConfig.swift */; };
+		A0269FF12374431600A88A63 /* ManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FEF2374423200A88A63 /* ManagedObjectModel.swift */; };
+		A0269FF32374479800A88A63 /* CoreDataConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FF22374479800A88A63 /* CoreDataConfig.swift */; };
 		A02CF575236BFC030035D066 /* TableViewRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF574236BFC030035D066 /* TableViewRefreshable.swift */; };
 		A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */; };
 		A02CF57B236C24610035D066 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF57A236C24610035D066 /* AlertPresentable.swift */; };
@@ -101,6 +104,9 @@
 		A01CC780236C86A200693C56 /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
 		A01CC783236CA2DE00693C56 /* DeliveryViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryViewController+Extension.swift"; sourceTree = "<group>"; };
 		A01CC786236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryDetailViewController+Extension.swift"; sourceTree = "<group>"; };
+		A0269FEC2374245300A88A63 /* CoreDataMockConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMockConfig.swift; sourceTree = "<group>"; };
+		A0269FEF2374423200A88A63 /* ManagedObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectModel.swift; sourceTree = "<group>"; };
+		A0269FF22374479800A88A63 /* CoreDataConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConfig.swift; sourceTree = "<group>"; };
 		A02CF574236BFC030035D066 /* TableViewRefreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewRefreshable.swift; sourceTree = "<group>"; };
 		A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterLoader.swift; sourceTree = "<group>"; };
 		A02CF57A236C24610035D066 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
@@ -251,6 +257,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A0269FEB2374243F00A88A63 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A0269FEC2374245300A88A63 /* CoreDataMockConfig.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		A02CF573236BFB9F0035D066 /* ViewProtocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				A00D5840236AE89A000B6A63 /* CoreDataManager.swift */,
+				A0269FEF2374423200A88A63 /* ManagedObjectModel.swift */,
+				A0269FF22374479800A88A63 /* CoreDataConfig.swift */,
 				A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */,
 				A04FB561236AE4D1002CDDD3 /* Model */,
 			);
@@ -486,6 +502,7 @@
 		A0CC48D8236DCC2500C17D24 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				A0269FEB2374243F00A88A63 /* CoreData */,
 				A0B387762371943C009565E3 /* Model */,
 				A0CC48E4236DE09A00C17D24 /* Views */,
 				A0CC48D9236DCC2F00C17D24 /* Network */,
@@ -756,6 +773,7 @@
 				A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */,
 				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
 				A01CC784236CA2DE00693C56 /* DeliveryViewController+Extension.swift in Sources */,
+				A0269FF12374431600A88A63 /* ManagedObjectModel.swift in Sources */,
 				A0120772236AA938007AF234 /* DeliveryListViewController.swift in Sources */,
 				A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */,
 				A01CC787236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift in Sources */,
@@ -775,6 +793,7 @@
 				A0CC48D3236D9D8A00C17D24 /* NetworkError.swift in Sources */,
 				A0E97E66236C4BCE00EA882D /* DeliveryDetailViewModel.swift in Sources */,
 				A06FD460236AF9E2004BC899 /* DeliveryListViewModel.swift in Sources */,
+				A0269FF32374479800A88A63 /* CoreDataConfig.swift in Sources */,
 				A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */,
 				A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */,
 				A012076E236AA938007AF234 /* AppDelegate.swift in Sources */,
@@ -809,6 +828,7 @@
 				A0CC48E3236DE04900C17D24 /* TableViewFooterLoaderTest.swift in Sources */,
 				A0CC48E6236DE0FF00C17D24 /* TableViewMock.swift in Sources */,
 				A088ECF5236E1C37001B1157 /* DeliveryDetailViewModelTest.swift in Sources */,
+				A0269FED2374245300A88A63 /* CoreDataMockConfig.swift in Sources */,
 				A09D2FF8236F08A1005567C8 /* APIPerformerTest.swift in Sources */,
 				A0B3877523718181009565E3 /* SessionManagerMock.swift in Sources */,
 				A0303F5B236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift in Sources */,

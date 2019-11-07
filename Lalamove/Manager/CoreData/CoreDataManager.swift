@@ -9,7 +9,23 @@
 import UIKit
 import CoreData
 
-class CoreDataManager {
+protocol CoreDataManagerProtocol {
+    var config: CoreDataConfigProtocol { get }
+
+    func saveContext()
+    func deleteAll<T: NSManagedObject>(_ anyClass: T.Type)
+    func createObject<T: NSManagedObject>(_ anyClass: T.Type) -> T
+    func fetchData<T: NSManagedObject>(from classs: T.Type,
+                                       predicate: NSPredicate?,
+                                       moc: NSManagedObjectContext ) -> [T]
+}
+
+class CoreDataManager: CoreDataManagerProtocol {
+
+    let config: CoreDataConfigProtocol
+    init(config: CoreDataConfigProtocol = CoreDataConfig()) {
+        self.config = config
+    }
 
     static let sharedInstance = CoreDataManager()
     private let fileName = "Lalamove"
@@ -21,8 +37,7 @@ class CoreDataManager {
     }()
 
     private(set) lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: fileName, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
+        return ManagedObjectModel.shared.model
     }()
 
     private(set) lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
@@ -31,7 +46,7 @@ class CoreDataManager {
         let url = self.applicationDocDir.appendingPathComponent(sqlFileName)
 
         do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
+            try coordinator.addPersistentStore(ofType: config.persistentStore, configurationName: nil, at: url, options: nil)
         } catch {
             print(error)
             abort()
@@ -88,6 +103,7 @@ class CoreDataManager {
         }
     }
 
+    @discardableResult
     func createObject<T: NSManagedObject>(_ anyClass: T.Type) -> T {
         let context = networkManagedContext
         let name = className(anyClass)
@@ -124,7 +140,7 @@ extension NSManagedObjectContext {
             do {
                 try self.save()
             } catch {
-                fatalError("Error : \(error.localizedDescription)")
+                print("Failed to Save Error : \(error.localizedDescription)")
             }
         }
     }
