@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
+extension DeliveryListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let delivery = viewModel.frc.object(at: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? DeliveryTableViewCell
@@ -34,7 +34,7 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if viewModel.shallFetchNextData(indexPath: indexPath) {
             let delivery = viewModel.frc.object(at: indexPath)
-            viewModel.currentOffSet = Int(delivery.offSet)
+            viewModel.fetchedItemsCount = Int(delivery.offSet)
             downloadData(forNextPage: true, useCache: true)
         }
     }
@@ -48,13 +48,13 @@ extension DeliveryViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension DeliveryViewController: TableViewRefreshable {
+extension DeliveryListViewController: TableViewRefreshable {
     func refreshData() {
         downloadData(forNextPage: false, useCache: false)
     }
 }
 
-extension DeliveryViewController: NSFetchedResultsControllerDelegate {
+extension DeliveryListViewController: NSFetchedResultsControllerDelegate {
 
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
@@ -96,4 +96,4 @@ extension DeliveryViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
-extension DeliveryViewController: TableViewFooterLoadable {}
+extension DeliveryListViewController: TableViewFooterLoadable {}

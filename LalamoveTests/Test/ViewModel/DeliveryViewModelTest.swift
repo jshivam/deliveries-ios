@@ -17,7 +17,7 @@ class DeliveryViewModelTest: XCTestCase {
         return coreData
     }()
 
-    let viewModel = DeliveryViewModel()
+    let viewModel = DeliveryListViewModel()
     var saveNotificationCompleteHandler: ((Notification) -> Void)?
 
     override func setUp() {
@@ -56,7 +56,7 @@ class DeliveryViewModelTest: XCTestCase {
     }
 
     func testFetchDataWithOutCache() {
-        let viewModel = DeliveryViewModel()
+        let viewModel = DeliveryListViewModel()
         viewModel.fetchDeliveries(useCache: false) { (_) in
             self.saveNotificationCompleteHandler = { _ in
                 let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
@@ -66,7 +66,7 @@ class DeliveryViewModelTest: XCTestCase {
     }
 
     func testFetchDataWithCache() {
-        let viewModel = DeliveryViewModel()
+        let viewModel = DeliveryListViewModel()
         viewModel.fetchDeliveries(useCache: true) { (_) in
             self.saveNotificationCompleteHandler = { _ in
                 let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
@@ -76,7 +76,7 @@ class DeliveryViewModelTest: XCTestCase {
     }
 
     func testFetchtNextData() {
-        let viewModel = DeliveryViewModel()
+        let viewModel = DeliveryListViewModel()
         viewModel.isFetchingDeliveries = true
         XCTAssertEqual(viewModel.shallFetchNextData(indexPath: NSIndexPath.init(row: 0, section: 0) as IndexPath), false)
     }

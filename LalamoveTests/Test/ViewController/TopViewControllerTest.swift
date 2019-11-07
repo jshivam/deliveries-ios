@@ -19,7 +19,7 @@ class TopViewControllerTest: XCTestCase {
     }
 
     func testTopController() {
-        let topController = UIApplication.getTopViewController() as? DeliveryViewController
+        let topController = UIApplication.getTopViewController() as? DeliveryListViewController
         XCTAssertNotNil(topController)
 
     }

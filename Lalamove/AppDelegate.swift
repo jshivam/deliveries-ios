@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseManager.configure()
 
-        let deliveryViewController = DeliveryViewController.init()
+        let deliveryViewController = DeliveryListViewController.init()
         let navigationController = UINavigationController.init(rootViewController: deliveryViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

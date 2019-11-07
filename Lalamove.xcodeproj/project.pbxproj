@@ -13,7 +13,7 @@
 		A007DF7823703B4A00B345F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007DF7723703B4A00B345F7 /* UIView+Extension.swift */; };
 		A00D5841236AE89A000B6A63 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D5840236AE89A000B6A63 /* CoreDataManager.swift */; };
 		A012076E236AA938007AF234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012076D236AA938007AF234 /* AppDelegate.swift */; };
-		A0120772236AA938007AF234 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* DeliveryViewController.swift */; };
+		A0120772236AA938007AF234 /* DeliveryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0120771236AA938007AF234 /* DeliveryListViewController.swift */; };
 		A0120778236AA938007AF234 /* Lalamove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0120776236AA938007AF234 /* Lalamove.xcdatamodeld */; };
 		A012077A236AA93A007AF234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0120779236AA93A007AF234 /* Assets.xcassets */; };
 		A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A012077B236AA93A007AF234 /* LaunchScreen.storyboard */; };
@@ -25,7 +25,6 @@
 		A02CF57B236C24610035D066 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF57A236C24610035D066 /* AlertPresentable.swift */; };
 		A0303F58236E355200BE6225 /* DeliveryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */; };
 		A0303F5B236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */; };
-		A0476546236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0476545236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift */; };
 		A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */; };
 		A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */; };
 		A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */; };
@@ -39,7 +38,7 @@
 		A04FB558236AC0C3002CDDD3 /* DeliveryRequestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB557236AC0C3002CDDD3 /* DeliveryRequestComponent.swift */; };
 		A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB559236AC134002CDDD3 /* DeliveryService.swift */; };
 		A05B09C6237015D30083987E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A05B09C5237015D30083987E /* Localizable.strings */; };
-		A06FD460236AF9E2004BC899 /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD45F236AF9E2004BC899 /* DeliveryViewModel.swift */; };
+		A06FD460236AF9E2004BC899 /* DeliveryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD45F236AF9E2004BC899 /* DeliveryListViewModel.swift */; };
 		A06FD465236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD461236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift */; };
 		A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD462236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift */; };
 		A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */; };
@@ -92,7 +91,7 @@
 		A00D5840236AE89A000B6A63 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A012076A236AA938007AF234 /* Lalamove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lalamove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A012076D236AA938007AF234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0120771236AA938007AF234 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
+		A0120771236AA938007AF234 /* DeliveryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewController.swift; sourceTree = "<group>"; };
 		A0120777236AA938007AF234 /* Lalamove.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lalamove.xcdatamodel; sourceTree = "<group>"; };
 		A0120779236AA93A007AF234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A012077C236AA93A007AF234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,7 +106,6 @@
 		A02CF57A236C24610035D066 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModelTest.swift; sourceTree = "<group>"; };
 		A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewControllerTest.swift; sourceTree = "<group>"; };
-		A0476545236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModelProtocol.swift; sourceTree = "<group>"; };
 		A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfiguration.swift; sourceTree = "<group>"; };
 		A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfigurationProtocol.swift; sourceTree = "<group>"; };
@@ -121,7 +119,7 @@
 		A04FB557236AC0C3002CDDD3 /* DeliveryRequestComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRequestComponent.swift; sourceTree = "<group>"; };
 		A04FB559236AC134002CDDD3 /* DeliveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryService.swift; sourceTree = "<group>"; };
 		A05B09C5237015D30083987E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		A06FD45F236AF9E2004BC899 /* DeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
+		A06FD45F236AF9E2004BC899 /* DeliveryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewModel.swift; sourceTree = "<group>"; };
 		A06FD461236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A06FD462236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A06FD463236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -353,8 +351,7 @@
 		A04FB55D236ACC4E002CDDD3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A06FD45F236AF9E2004BC899 /* DeliveryViewModel.swift */,
-				A0476545236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift */,
+				A06FD45F236AF9E2004BC899 /* DeliveryListViewModel.swift */,
 				A0E97E65236C4BCE00EA882D /* DeliveryDetailViewModel.swift */,
 			);
 			path = ViewModels;
@@ -363,7 +360,7 @@
 		A04FB55E236ACC58002CDDD3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A0120771236AA938007AF234 /* DeliveryViewController.swift */,
+				A0120771236AA938007AF234 /* DeliveryListViewController.swift */,
 				A01CC783236CA2DE00693C56 /* DeliveryViewController+Extension.swift */,
 				A0E97E63236C4B1300EA882D /* DeliveryDetailViewController.swift */,
 				A01CC786236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift */,
@@ -755,12 +752,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0476546236F2E3A0012F2A4 /* DeliveryViewModelProtocol.swift in Sources */,
 				A0CC48D7236DBC6000C17D24 /* UIViewController+Extension.swift in Sources */,
 				A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */,
 				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
 				A01CC784236CA2DE00693C56 /* DeliveryViewController+Extension.swift in Sources */,
-				A0120772236AA938007AF234 /* DeliveryViewController.swift in Sources */,
+				A0120772236AA938007AF234 /* DeliveryListViewController.swift in Sources */,
 				A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */,
 				A01CC787236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift in Sources */,
 				A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */,
@@ -778,7 +774,7 @@
 				A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */,
 				A0CC48D3236D9D8A00C17D24 /* NetworkError.swift in Sources */,
 				A0E97E66236C4BCE00EA882D /* DeliveryDetailViewModel.swift in Sources */,
-				A06FD460236AF9E2004BC899 /* DeliveryViewModel.swift in Sources */,
+				A06FD460236AF9E2004BC899 /* DeliveryListViewModel.swift in Sources */,
 				A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */,
 				A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */,
 				A012076E236AA938007AF234 /* AppDelegate.swift in Sources */,

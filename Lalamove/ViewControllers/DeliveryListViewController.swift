@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class DeliveryViewController: UIViewController {
+class DeliveryListViewController: UIViewController {
     let tableView = UITableView()
-    let viewModel = DeliveryViewModel.init()
+    let viewModel = DeliveryListViewModel.init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
