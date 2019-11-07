@@ -24,7 +24,7 @@ class DeliveryDetailViewController: UIViewController {
         return mapView
     }()
 
-    let deliveryView: DeliveryView = {
+    private let deliveryView: DeliveryView = {
        let view = DeliveryView()
        view.translatesAutoresizingMaskIntoConstraints = false
        return view
@@ -46,7 +46,7 @@ class DeliveryDetailViewController: UIViewController {
         setup()
     }
 
-    func setup() {
+    private func setup() {
         view.backgroundColor = .white
         view.addSubview(mapView)
         view.addSubview(deliveryView)
@@ -56,7 +56,7 @@ class DeliveryDetailViewController: UIViewController {
         dropDestinationPin()
     }
 
-    func addConstraints() {
+    private func addConstraints() {
         deliveryView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         deliveryView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         deliveryView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -66,7 +66,7 @@ class DeliveryDetailViewController: UIViewController {
         mapView.bottomAnchor.constraint(equalTo: deliveryView.topAnchor).isActive = true
     }
 
-    func dropDestinationPin() {
+    private func dropDestinationPin() {
         if let location = viewModel.delivery.location {
             let destinationLocation = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
             let annotation = MKPointAnnotation()

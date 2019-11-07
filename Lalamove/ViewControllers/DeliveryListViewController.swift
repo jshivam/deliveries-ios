@@ -31,15 +31,21 @@ class DeliveryListViewController: UIViewController {
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(DeliveryTableViewCell.self, forCellReuseIdentifier: Constants.deliveryCellIndentifier)
+        tableView.tableFooterView = UIView()
 
+        addConstraints()
+
+        viewModel.frc.delegate = self
+
+        downloadData(forNextPage: false, useCache: true)
+    }
+
+    func addConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.tableFooterView = UIView()
-        viewModel.frc.delegate = self
-        downloadData(forNextPage: false, useCache: true)
     }
 
     func downloadData(forNextPage: Bool, useCache: Bool) {

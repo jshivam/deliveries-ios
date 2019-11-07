@@ -11,7 +11,7 @@ import AlamofireImage
 
 class DeliveryTableViewCell: UITableViewCell {
 
-    let deliveryView: DeliveryView = {
+    private let deliveryView: DeliveryView = {
         let view = DeliveryView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -26,7 +26,7 @@ class DeliveryTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup() {
+    private func setup() {
         contentView.addSubview(deliveryView)
         deliveryView.dropShadow()
         addConstraints()
@@ -34,13 +34,16 @@ class DeliveryTableViewCell: UITableViewCell {
         separatorInset = UIEdgeInsets.init(top: 0, left: padding, bottom: 0, right: 0)
     }
 
-    func addConstraints() {
+    private func addConstraints() {
         deliveryView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         deliveryView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         deliveryView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         deliveryView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
+}
 
+// MARK: - Exposed Methods
+extension DeliveryTableViewCell {
     func update(text: String?, imageUrl: String?) {
         deliveryView.update(text: text, imageUrl: imageUrl)
     }

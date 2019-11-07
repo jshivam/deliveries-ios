@@ -37,10 +37,6 @@ class DeliveryViewModelTest: XCTestCase {
         XCTAssertEqual(viewModel.numberOfRows(section: 0), deliveries.count)
     }
 
-    func testRowHeight() {
-        XCTAssertEqual(viewModel.heightForRow(), UITableView.automaticDimension)
-    }
-
     func testDeleteAllAndResetState() {
         let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self)
         viewModel.deleteAllDeliveries()

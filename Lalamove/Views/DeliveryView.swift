@@ -15,7 +15,7 @@ class DeliveryView: UIView {
         static var profileImageViewSize: CGSize { return CGSize.init(width: 52, height: 52) }
     }
 
-    let descriptionLabel: UILabel = {
+    private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
@@ -24,7 +24,7 @@ class DeliveryView: UIView {
         return label
     }()
 
-    let profileImageView: UIImageView = {
+   private  let profileImageView: UIImageView = {
         let img = UIImageView()
         img.backgroundColor = .darkGray
         img.contentMode = .scaleAspectFill
@@ -44,13 +44,13 @@ class DeliveryView: UIView {
         setup()
     }
 
-    func setup() {
+    private func setup() {
         addSubview(profileImageView)
         addSubview(descriptionLabel)
         addConstraints()
     }
 
-    func addConstraints() {
+    private func addConstraints() {
         let views: [String: Any] = [
             "profileImageView": profileImageView,
             "descriptionLabel": descriptionLabel,
@@ -84,6 +84,10 @@ class DeliveryView: UIView {
 
         addConstraints(allConstraints)
     }
+}
+
+// MARK: - Exposed Methods
+extension DeliveryView {
 
     func update(text: String?, imageUrl: String?) {
         descriptionLabel.text = text
@@ -96,5 +100,4 @@ class DeliveryView: UIView {
             )
         }
     }
-
 }

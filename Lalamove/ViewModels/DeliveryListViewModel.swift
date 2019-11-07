@@ -11,31 +11,28 @@ import CoreData
 import UIKit
 
 protocol DeliveryListViewModelProtocol {
-    var currentOffSet: Int { get }
     var deliveryServices: DeliveryServiceProtocol { get }
-    var isFetchingDeliveries: Bool { get }
 
     func numberOfSections() -> Int
     func numberOfRows(section: Int) -> Int
     func deleteAllDeliveries()
-    func cacheExists(offSet: Int) -> Bool
-    func shallFetchNextData(indexPath: IndexPath) -> Bool
     func fetchDeliveries(useCache: Bool, completion: @escaping (Error?) -> Void)
     func saveDeliveries()
 }
 
 class DeliveryListViewModel: DeliveryListViewModelProtocol {
+    var currentOffSet = -1
+    var isFetchingDeliveries = false
+
+    var fetchNextDataHandler: ((DeliveryListViewModel) -> Void)?
+    let deliveryServices: DeliveryServiceProtocol = DeliveryService.init()
     var lastVisibileIndexPath: IndexPath? = nil {
         didSet {
             guard let indexPath = self.lastVisibileIndexPath, shallFetchNextData(indexPath: indexPath) else { return }
             fetchNextDataHandler?(self)
         }
     }
-    var fetchNextDataHandler: ((DeliveryListViewModel) -> Void)?
 
-    var currentOffSet = -1
-    let deliveryServices: DeliveryServiceProtocol = DeliveryService.init()
-    var isFetchingDeliveries = false
     lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
         let fetchRequest = self.fetchRequest
         let context = CoreDataManager.sharedInstance.workerManagedContext
@@ -56,6 +53,28 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "offSet", ascending: true), NSSortDescriptor(key: "identifier", ascending: true)]
         return fetchRequest
     }()
+}
+
+// MARK: - CoreData Accessors
+extension DeliveryListViewModel {
+
+    func deleteAllDeliveries() {
+        CoreDataManager.sharedInstance.deleteAll(DeliveryCoreDataModel.self)
+    }
+
+    private func cacheExists(offSet: Int) -> Bool {
+        let predicate = NSPredicate(format: "%K = %@", "offSet", "\(offSet)")
+        let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate)
+        return !deliveries.isEmpty
+    }
+
+    func saveDeliveries() {
+        CoreDataManager.sharedInstance.saveContext()
+    }
+}
+
+// MARK: - TableView Wrapper Methods
+extension DeliveryListViewModel {
 
     func numberOfSections() -> Int {
         let count = frc.sections?.count ?? 0
@@ -73,17 +92,8 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
     }
 }
 
+// MARK: - Network Accessors
 extension DeliveryListViewModel {
-
-    func deleteAllDeliveries() {
-        CoreDataManager.sharedInstance.deleteAll(DeliveryCoreDataModel.self)
-    }
-
-    func cacheExists(offSet: Int) -> Bool {
-        let predicate = NSPredicate(format: "%K = %@", "offSet", "\(offSet)")
-        let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate)
-        return !deliveries.isEmpty
-    }
 
     func shallFetchNextData(indexPath: IndexPath) -> Bool {
         let shallFetch = ((numberOfRows(section: indexPath.section) - 1) == indexPath.row) && !isFetchingDeliveries
@@ -119,7 +129,7 @@ extension DeliveryListViewModel {
         }
     }
 
-    func handleFetcedDeliveries(_ deliveries: [Delivery], useCache: Bool) {
+    private func handleFetcedDeliveries(_ deliveries: [Delivery], useCache: Bool) {
 
         if !useCache {
             deleteAllDeliveries()
@@ -136,9 +146,5 @@ extension DeliveryListViewModel {
             }
             model.update(delivery: delivery, offSet: currentOffSet)
         }
-    }
-
-    func saveDeliveries() {
-        CoreDataManager.sharedInstance.saveContext()
     }
 }
