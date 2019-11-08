@@ -24,6 +24,7 @@ class DeliveryService: BaseService, DeliveryServiceProtocol {
 
         // 3. Perform the request using APIPerformerProtocol
         apiPerformer.perform(request: request) { (_, result: Result<[Delivery]>) in
+            debugPrint("Fetched Deliveries \(result)")
             switch result {
             case .success(let deliveries):
                 deliveries.isEmpty ? completion(.failure(NetworkError.noData)) : completion(.success(deliveries))

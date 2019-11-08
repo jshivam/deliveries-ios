@@ -12,17 +12,13 @@ import CoreData
 
 extension LocationCoreDataModel {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<LocationCoreDataModel> {
-        return NSFetchRequest<LocationCoreDataModel>(entityName: "LocationCoreDataModel")
-    }
-
     @NSManaged public var address: String?
     @NSManaged public var lat: Double
     @NSManaged public var lng: Double
     @NSManaged public var delivery: DeliveryCoreDataModel?
 
-    static func create() -> LocationCoreDataModel {
-        let location = CoreDataManager.sharedInstance.createObject(LocationCoreDataModel.self)
+    static func create(coreData: CoreDataManagerProtocol) -> LocationCoreDataModel {
+        let location = coreData.createObject(LocationCoreDataModel.self)
         return location
     }
 

@@ -10,22 +10,30 @@ import Foundation
 import CoreData
 import UIKit
 
+enum FetchedDeliveryStatus {
+    case fromCache(Int)
+    case fromServer
+    case faliure(Error)
+}
+
 protocol DeliveryListViewModelProtocol {
     var deliveryServices: DeliveryServiceProtocol { get }
+    var coreData: CoreDataManagerProtocol { get }
 
     func numberOfSections() -> Int
     func numberOfRows(section: Int) -> Int
-    func deleteAllDeliveries()
-    func fetchDeliveries(useCache: Bool, completion: @escaping (Error?) -> Void)
-    func saveDeliveries()
+    func fetchDeliveries(useCache: Bool, completion: @escaping (FetchedDeliveryStatus) -> Void)
 }
 
 class DeliveryListViewModel: DeliveryListViewModelProtocol {
-    var currentOffSet = -1
-    var isFetchingDeliveries = false
+
+    private var currentOffSet = -1
+    private var isFetchingDeliveries = false
 
     var fetchNextDataHandler: ((DeliveryListViewModel) -> Void)?
-    let deliveryServices: DeliveryServiceProtocol = DeliveryService.init()
+    var deliveryServices: DeliveryServiceProtocol = DeliveryService()
+    var coreData: CoreDataManagerProtocol = CoreDataManager.sharedInstance
+
     var lastVisibileIndexPath: IndexPath? = nil {
         didSet {
             guard let indexPath = self.lastVisibileIndexPath else { return }
@@ -38,15 +46,15 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
 
     lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
         let fetchRequest = self.fetchRequest
-        let context = CoreDataManager.sharedInstance.workerManagedContext
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context,
-                                                                  sectionNameKeyPath: nil, cacheName: nil)
+        let context = self.coreData.workerManagedContext
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                  managedObjectContext: context,
+                                                                  sectionNameKeyPath: nil,
+                                                                  cacheName: nil)
         do {
             try fetchedResultsController.performFetch()
         } catch {
-            let fetchError = error as NSError
-            print("Unable to Perform Fetch Request")
-            print("\(fetchError), \(fetchError.localizedDescription)")
+            print("fetchedResultsController Error: \(error.localizedDescription)")
         }
         return fetchedResultsController
     }()
@@ -62,18 +70,18 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
 // MARK: - CoreData Accessors
 extension DeliveryListViewModel {
 
-    func deleteAllDeliveries() {
-        CoreDataManager.sharedInstance.deleteAll(DeliveryCoreDataModel.self)
+    private func deleteAllDeliveries() {
+        coreData.deleteAll(DeliveryCoreDataModel.self)
     }
 
     private func cacheExists(offSet: Int) -> Bool {
         let predicate = NSPredicate(format: "%K = %@", "offSet", "\(offSet)")
-        let deliveries = CoreDataManager.sharedInstance.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate)
+        let deliveries = coreData.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate, moc: coreData.workerManagedContext)
         return !deliveries.isEmpty
     }
 
-    func saveDeliveries() {
-        CoreDataManager.sharedInstance.saveContext()
+    private func saveDeliveries() {
+        coreData.saveContext()
     }
 }
 
@@ -99,21 +107,25 @@ extension DeliveryListViewModel {
 // MARK: - Network Accessors
 extension DeliveryListViewModel {
 
-    func shallFetchNextData(indexPath: IndexPath) -> Bool {
+    private func shallFetchNextData(indexPath: IndexPath) -> Bool {
         let shallFetch = ((numberOfRows(section: indexPath.section) - 1) == indexPath.row) && !isFetchingDeliveries
         return shallFetch
     }
 
-    func fetchDeliveries(useCache: Bool = true, completion: @escaping (Error?) -> Void) {
+    func fetchDeliveries(useCache: Bool = true, completion: @escaping (FetchedDeliveryStatus) -> Void) {
 
         var offSet = useCache ? currentOffSet + GlobalConstants.deliveryLimitPerRequest : 0
         if currentOffSet == -1 && useCache {
             if cacheExists(offSet: 0) {
-                completion(nil)
+                completion(.fromCache(0))
                 return
             }
             offSet = 0
+        } else if useCache && cacheExists(offSet: offSet) {
+            completion(.fromCache(offSet))
+            return
         }
+
         isFetchingDeliveries = true
         deliveryServices.fetchDeliveries(offSet: offSet, limit: GlobalConstants.deliveryLimitPerRequest) { [weak self] (result) in
 
@@ -125,10 +137,10 @@ extension DeliveryListViewModel {
                 self.currentOffSet = offSet - (GlobalConstants.deliveryLimitPerRequest - deliveries.count)
                 self.handleFetcedDeliveries(deliveries, useCache: useCache)
                 self.saveDeliveries()
-                completion(nil)
+                completion(.fromServer)
 
             case .failure(let error):
-                completion(error)
+                completion(.faliure(error))
             }
         }
     }
@@ -143,9 +155,9 @@ extension DeliveryListViewModel {
 
             var model: DeliveryCoreDataModel {
                 if useCache {
-                    return DeliveryCoreDataModel.isExist(with: delivery.identifier) ?? DeliveryCoreDataModel.create()
+                    return DeliveryCoreDataModel.isExist(with: delivery.identifier, coreData: coreData) ?? DeliveryCoreDataModel.create(coreData: coreData)
                 } else {
-                    return DeliveryCoreDataModel.create()
+                    return DeliveryCoreDataModel.create(coreData: coreData)
                 }
             }
             model.update(delivery: delivery, offSet: currentOffSet)

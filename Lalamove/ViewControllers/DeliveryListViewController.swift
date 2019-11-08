@@ -50,10 +50,13 @@ class DeliveryListViewController: UIViewController {
 
     func downloadData(forNextPage: Bool, useCache: Bool) {
         forNextPage ? showFooterLoader() : beginRefreshing()
-        viewModel.fetchDeliveries(useCache: useCache, completion: { [weak self] error in
+        viewModel.fetchDeliveries(useCache: useCache, completion: { [weak self] status in
             forNextPage ? self?.hideFooterLoader() : self?.endRefreshing()
-            if let error = error {
+            switch status {
+            case .faliure(let error):
                 self?.showAlert(message: error.localizedDescription)
+            default:
+                break
             }
         })
     }

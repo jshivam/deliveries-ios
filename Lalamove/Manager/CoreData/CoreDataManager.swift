@@ -12,6 +12,9 @@ import CoreData
 protocol CoreDataManagerProtocol {
     var config: CoreDataConfigProtocol { get }
 
+    var workerManagedContext: NSManagedObjectContext { get }
+    var networkManagedContext: NSManagedObjectContext { get }
+
     func saveContext()
     func deleteAll<T: NSManagedObject>(_ anyClass: T.Type)
     func createObject<T: NSManagedObject>(_ anyClass: T.Type) -> T
