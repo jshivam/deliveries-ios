@@ -56,7 +56,6 @@ class CoreDataTest: XCTestCase {
 
 extension CoreDataTest {
     func contextSaved( notification: Notification ) {
-        print("contextSaved----------\(notification)")
         saveNotificationCompleteHandler?(notification)
     }
 }

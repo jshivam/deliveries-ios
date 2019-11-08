@@ -30,22 +30,22 @@ class URLRequestBuilderTest: XCTestCase {
         XCTAssertNil(requestURL)
     }
 
-//    func testBaseURLAndPathURL() {
-//        sessionconfig.baseURL = "https://www.google.co.in/"
-//        requestComponent.path = "https://github.com/jshivam/deliveries-ios"
-//        let req = try? builder.asURLRequest()
-//        let absoluteString = req?.url?.absoluteString
-//        XCTAssertEqual(absoluteString, requestComponent.path)
-//    }
-//
-//    func testConfigs() {
-//        requestComponent.extraHeaders = ["key": "value"]
-//        requestComponent.method = .post
-//
-//        let req = try? builder.asURLRequest()
-//        XCTAssertEqual(requestComponent.extraHeaders, req?.allHTTPHeaderFields)
-//        XCTAssertEqual(requestComponent.method.rawValue, req?.httpMethod)
-//    }
+    func testBaseURLAndPathURL() {
+        sessionconfig.baseURL = "https://www.google.co.in/"
+        requestComponent.path = "https://github.com/jshivam/deliveries-ios"
+        let req = try? builder.asURLRequest()
+        let absoluteString = req?.url?.absoluteString
+        XCTAssertEqual(absoluteString, requestComponent.path)
+    }
+
+    func testConfigs() {
+        requestComponent.extraHeaders = ["key": "value"]
+        requestComponent.method = .post
+
+        let req = try? builder.asURLRequest()
+        XCTAssertEqual(requestComponent.extraHeaders, req?.allHTTPHeaderFields)
+        XCTAssertEqual(requestComponent.method.rawValue, req?.httpMethod)
+    }
 
     override func tearDown() {
         requestComponent = nil

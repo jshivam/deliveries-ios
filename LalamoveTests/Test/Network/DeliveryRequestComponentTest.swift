@@ -28,5 +28,6 @@ class DeliveryRequestComponentTest: XCTestCase {
         let limit = deliveryRequestComponent.parameters?["limit"] as? Int
         XCTAssertEqual(offSet, 10)
         XCTAssertEqual(limit, 100)
+        XCTAssertNil(deliveryRequestComponent.extraHeaders)
     }
 }
