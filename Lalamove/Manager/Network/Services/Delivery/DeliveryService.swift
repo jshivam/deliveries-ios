@@ -23,8 +23,9 @@ class DeliveryService: BaseService, DeliveryServiceProtocol {
         let request = URLRequestBuilder(components: requestComponent, sessionConfiguration: sessionConfiguration)
 
         // 3. Perform the request using APIPerformerProtocol
+        debugPrint("Fetching Deliveries....")
         apiPerformer.perform(request: request) { (_, result: Result<[Delivery]>) in
-            debugPrint("Fetched Deliveries \(result)")
+            debugPrint("Fetched Deliveries with \(result)")
             switch result {
             case .success(let deliveries):
                 deliveries.isEmpty ? completion(.failure(NetworkError.noData)) : completion(.success(deliveries))

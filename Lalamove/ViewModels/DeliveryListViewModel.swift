@@ -75,7 +75,7 @@ extension DeliveryListViewModel {
     }
 
     private func cacheExists(offSet: Int) -> Bool {
-        let predicate = NSPredicate(format: "%K = %@", "offSet", "\(offSet)")
+        let predicate = NSPredicate(format: "offSet == \(offSet)")
         let deliveries = coreData.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate, moc: coreData.workerManagedContext)
         return !deliveries.isEmpty
     }

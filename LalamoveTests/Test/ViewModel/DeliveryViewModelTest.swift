@@ -45,8 +45,7 @@ class DeliveryViewModelTest: XCTestCase {
     }
 
     func testNumberOfRows() {
-        let deliveries = coreData.fetchData(from: DeliveryCoreDataModel.self)
-        XCTAssertEqual(viewModel.numberOfRows(section: 0), deliveries.count)
+        XCTAssertEqual(viewModel.numberOfRows(section: 0), viewModel.frc.fetchedObjects?.count)
     }
 
     func testFetchDataFromNetworkSuccess() {
@@ -87,6 +86,12 @@ class DeliveryViewModelTest: XCTestCase {
     }
 
     func testFetchDataFromCacheWhenAvaiable() {
+        let model = coreData.createObject(DeliveryCoreDataModel.self)
+        model.identifier = 11
+        model.offSet = 0
+        model.desc = "dummy22"
+        model.location = coreData.createObject(LocationCoreDataModel.self)
+        coreData.saveContext()
 
         let fetchExpectation = expectation(description: "fetchExpectation")
         saveNotificationCompleteHandler = { [weak self] (notification) in
@@ -101,12 +106,6 @@ class DeliveryViewModelTest: XCTestCase {
                 }
             }
         }
-        let model = coreData.createObject(DeliveryCoreDataModel.self)
-        model.identifier = 1
-        model.offSet = 0
-        model.desc = "dummy2"
-        model.location = coreData.createObject(LocationCoreDataModel.self)
-        coreData.saveContext()
         wait(for: [fetchExpectation], timeout: 5)
     }
 
