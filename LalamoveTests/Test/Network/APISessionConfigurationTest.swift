@@ -9,7 +9,13 @@
 import XCTest
 @testable import Lalamove
 class APISessionConfigurationTest: XCTestCase {
+    var config: APISessionConfiguration! = APISessionConfiguration.init()
+
     func testBaseURL() {
-        XCTAssertEqual(APISessionConfiguration.init().baseURL, "https://mock-api-mobile.dev.lalamove.com")
+        XCTAssertEqual(config.baseURL, "https://mock-api-mobile.dev.lalamove.com")
+    }
+
+    override func tearDown() {
+        config = nil
     }
 }

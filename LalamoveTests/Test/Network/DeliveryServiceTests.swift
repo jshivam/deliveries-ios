@@ -20,18 +20,19 @@ class DeliveryServiceTests: XCTestCase {
         session = SessionManagerMock()
         apiPerformer = APIPerformer.init(manager: session)
         sessionConfiguration = APISessionConfigurationMock()
+        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: sessionConfiguration)
     }
 
     override func tearDown() {
         apiPerformer = nil
         session = nil
         sessionConfiguration = nil
+        deliveryService = nil
     }
 
     func testNetworkfailure() {
         let expctation = expectation(description: "testNetworkfailure")
         session.dataRequest.nextResultType = .apiError
-        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: sessionConfiguration)
         deliveryService.fetchDeliveries(offSet: 0, limit: 20) { (result) in
             expctation.fulfill()
             switch result {
@@ -48,7 +49,6 @@ class DeliveryServiceTests: XCTestCase {
         let expctation = expectation(description: "testNetworkfailure")
         let data = JSONLoader.jsonFileToData(jsonName: "emptyDeliveries")
         session.dataRequest.nextResultType = .success(data)
-        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: sessionConfiguration)
         deliveryService.fetchDeliveries(offSet: 0, limit: 20) { (result) in
             expctation.fulfill()
             switch result {
@@ -65,7 +65,6 @@ class DeliveryServiceTests: XCTestCase {
         let expctation = expectation(description: "testNetworkfailure")
         let data = JSONLoader.jsonFileToData(jsonName: "invaildDeliveries")
         session.dataRequest.nextResultType = .success(data)
-        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: sessionConfiguration)
         deliveryService.fetchDeliveries(offSet: 0, limit: 20) { (result) in
             expctation.fulfill()
             switch result {
@@ -82,7 +81,6 @@ class DeliveryServiceTests: XCTestCase {
         let expctation = expectation(description: "testNetworkfailure")
         let data = JSONLoader.jsonFileToData(jsonName: "deliveries")
         session.dataRequest.nextResultType = .success(data)
-        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: sessionConfiguration)
         deliveryService.fetchDeliveries(offSet: 0, limit: 20) { (result) in
             expctation.fulfill()
             switch result {
@@ -93,9 +91,5 @@ class DeliveryServiceTests: XCTestCase {
            }
         }
         waitForExpectations(timeout: 5)
-    }
-
-    func testBaseUrl() {
-        XCTAssertEqual(sessionConfiguration.baseURL, "https://mock-api-mobile.dev.lalamove.com")
     }
 }

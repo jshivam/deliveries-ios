@@ -12,21 +12,22 @@ import CoreData
 
 class DeliveryViewModelTest: XCTestCase {
 
-    let coreData = CoreDataManager.init(config: CoreDataMockConfig())
+    var coreData: CoreDataManager! = CoreDataManager.init(config: CoreDataMockConfig())
     var viewModel: DeliveryListViewModel!
     var saveNotificationCompleteHandler: ((Notification) -> Void)?
 
     var apiPerformer: APIPerformer!
     var session: SessionManagerMock!
     var deliveryService: DeliveryService!
+    var configMock: APISessionConfigurationMock!
 
     override func setUp() {
 
         session = SessionManagerMock()
         apiPerformer = APIPerformer(manager: session)
-
-        viewModel = DeliveryListViewModel()
-        viewModel.coreData = coreData
+        configMock = APISessionConfigurationMock()
+        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: configMock)
+        viewModel = DeliveryListViewModel.init(deliveryServices: deliveryService, coreData: coreData)
 
         NotificationCenter.default.addObserver(self, selector: #selector(contextSaved(notification:)),
                                                name: NSNotification.Name.NSManagedObjectContextDidSave,
@@ -34,6 +35,9 @@ class DeliveryViewModelTest: XCTestCase {
     }
 
     override func tearDown() {
+        configMock = nil
+        deliveryService = nil
+        coreData = nil
         apiPerformer = nil
         session = nil
         viewModel = nil
@@ -51,8 +55,6 @@ class DeliveryViewModelTest: XCTestCase {
     func testFetchDataFromNetworkSuccess() {
         let data = JSONLoader.jsonFileToData(jsonName: "deliveries")
         session.dataRequest.nextResultType = .success(data)
-        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: APISessionConfigurationMock())
-        viewModel.deliveryServices = deliveryService
 
         let fetchExpectation = expectation(description: "fetchExpectation")
         viewModel.fetchDeliveries(useCache: false) { (status) in
@@ -69,8 +71,6 @@ class DeliveryViewModelTest: XCTestCase {
 
     func testFetchDataFromNetworkFailure() {
         session.dataRequest.nextResultType = .apiError
-        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: APISessionConfigurationMock())
-        viewModel.deliveryServices = deliveryService
 
         let fetchExpectation = expectation(description: "fetchExpectation")
         viewModel.fetchDeliveries(useCache: false) { (status) in
@@ -115,8 +115,6 @@ class DeliveryViewModelTest: XCTestCase {
 
         let data = JSONLoader.jsonFileToData(jsonName: "deliveries")
         session.dataRequest.nextResultType = .success(data)
-        deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: APISessionConfigurationMock())
-        viewModel.deliveryServices = deliveryService
 
         let fetchExpectation = expectation(description: "fetchExpectation")
         self.viewModel.fetchDeliveries(useCache: true) { (status) in

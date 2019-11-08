@@ -11,9 +11,9 @@ import XCTest
 
 class DeliveryDetailViewModelTest: XCTestCase {
 
-    let coreData = CoreDataManager.init(config: CoreDataMockConfig())
+    var coreData: CoreDataManager! = CoreDataManager.init(config: CoreDataMockConfig())
 
-    lazy var dataModel: DeliveryCoreDataModel = {
+    lazy var dataModel: DeliveryCoreDataModel! = {
         let deliveryModel = coreData.createObject(DeliveryCoreDataModel.self)
         let locationModel = coreData.createObject(LocationCoreDataModel.self)
         deliveryModel.location = locationModel
@@ -31,6 +31,8 @@ class DeliveryDetailViewModelTest: XCTestCase {
 
     override func tearDown() {
         viewModel = nil
+        coreData = nil
+        dataModel = nil
     }
 
     func testDeliveryModel() {

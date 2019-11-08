@@ -16,24 +16,50 @@ enum FetchedDeliveryStatus {
     case faliure(Error)
 }
 
-protocol DeliveryListViewModelProtocol {
-    var deliveryServices: DeliveryServiceProtocol { get }
-    var coreData: CoreDataManagerProtocol { get }
+protocol DeliveryListViewModelProtocol: AnyObject {
 
+    init(deliveryServices: DeliveryServiceProtocol, coreData: CoreDataManagerProtocol)
     func numberOfSections() -> Int
     func numberOfRows(section: Int) -> Int
+    func item(at indexPath: IndexPath) -> (title: String?, imageURL: String?)
+
     func fetchDeliveries(useCache: Bool, completion: @escaping (FetchedDeliveryStatus) -> Void)
+
+    var fetchNextDataHandler: ((DeliveryListViewModelProtocol) -> Void)? { get set}
+    var lastVisibileIndexPath: IndexPath? { get set }
+    var frc: NSFetchedResultsController<DeliveryCoreDataModel> { get }
 }
 
 class DeliveryListViewModel: DeliveryListViewModelProtocol {
 
+    private let deliveryServices: DeliveryServiceProtocol
+    private let coreData: CoreDataManagerProtocol
     private var currentOffSet = -1
     private var isFetchingDeliveries = false
 
-    var fetchNextDataHandler: ((DeliveryListViewModel) -> Void)?
-    var deliveryServices: DeliveryServiceProtocol = DeliveryService()
-    var coreData: CoreDataManagerProtocol = CoreDataManager.sharedInstance
+    private(set) lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
+           let fetchRequest = self.fetchRequest
+           let context = self.coreData.workerManagedContext
+           let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                     managedObjectContext: context,
+                                                                     sectionNameKeyPath: nil,
+                                                                     cacheName: nil)
+           do {
+               try fetchedResultsController.performFetch()
+           } catch {
+               print("fetchedResultsController Error: \(error.localizedDescription)")
+           }
+           return fetchedResultsController
+       }()
 
+       private lazy var fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = {
+           let fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = DeliveryCoreDataModel.fetchRequest()
+           fetchRequest.sortDescriptors = [NSSortDescriptor(key: "offSet", ascending: true), NSSortDescriptor(key: "identifier", ascending: true)]
+           fetchRequest.fetchBatchSize = GlobalConstants.deliveryLimitPerRequest
+           return fetchRequest
+       }()
+
+    var fetchNextDataHandler: ((DeliveryListViewModelProtocol) -> Void)?
     var lastVisibileIndexPath: IndexPath? = nil {
         didSet {
             guard let indexPath = self.lastVisibileIndexPath else { return }
@@ -44,27 +70,10 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
         }
     }
 
-    lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
-        let fetchRequest = self.fetchRequest
-        let context = self.coreData.workerManagedContext
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                                  managedObjectContext: context,
-                                                                  sectionNameKeyPath: nil,
-                                                                  cacheName: nil)
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            print("fetchedResultsController Error: \(error.localizedDescription)")
-        }
-        return fetchedResultsController
-    }()
-
-    private lazy var fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = {
-        let fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = DeliveryCoreDataModel.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "offSet", ascending: true), NSSortDescriptor(key: "identifier", ascending: true)]
-        fetchRequest.fetchBatchSize = GlobalConstants.deliveryLimitPerRequest
-        return fetchRequest
-    }()
+    required init(deliveryServices: DeliveryServiceProtocol, coreData: CoreDataManagerProtocol) {
+        self.coreData = coreData
+        self.deliveryServices = deliveryServices
+    }
 }
 
 // MARK: - CoreData Accessors
@@ -100,7 +109,7 @@ extension DeliveryListViewModel {
 
     func item(at indexPath: IndexPath) -> (title: String?, imageURL: String?) {
         let delivery = frc.object(at: indexPath)
-        return (title: delivery.desc, imageURL: delivery.imageUrl)
+        return (title: "\(delivery.identifier): \(delivery.desc ?? "--")", imageURL: delivery.imageUrl)
     }
 }
 
@@ -114,7 +123,7 @@ extension DeliveryListViewModel {
 
     func fetchDeliveries(useCache: Bool = true, completion: @escaping (FetchedDeliveryStatus) -> Void) {
 
-        var offSet = useCache ? currentOffSet + GlobalConstants.deliveryLimitPerRequest : 0
+        var offSet = useCache ? currentOffSet : 0
         if currentOffSet == -1 && useCache {
             if cacheExists(offSet: 0) {
                 completion(.fromCache(0))

@@ -13,7 +13,7 @@ import CoreData
 class CoreDataTest: XCTestCase {
 
     var saveNotificationCompleteHandler: ((Notification) -> Void)?
-    let coreData = CoreDataManager.init(config: CoreDataMockConfig())
+    var coreData: CoreDataManager! = CoreDataManager.init(config: CoreDataMockConfig())
 
     override func setUp() {
         NotificationCenter.default.addObserver(self, selector: #selector(contextSaved(notification:)),
@@ -23,6 +23,7 @@ class CoreDataTest: XCTestCase {
 
     override func tearDown() {
         saveNotificationCompleteHandler =  nil
+        coreData = nil
     }
 
     func testCreateModel() {
@@ -42,10 +43,10 @@ class CoreDataTest: XCTestCase {
         let notificationExpectation = expectation(description: "Deleting Deliveries")
 
         saveNotificationCompleteHandler = { [weak self] (notification) in
-            guard let `self` = self else { return }
+            guard let `self` = self, let coreData = self.coreData else { return }
             notificationExpectation.fulfill()
-            let alldeliveries = self.coreData.fetchData(from: DeliveryCoreDataModel.self, moc: self.coreData.workerManagedContext)
-            let alllocations = self.coreData.fetchData(from: LocationCoreDataModel.self, moc: self.coreData.workerManagedContext)
+            let alldeliveries = coreData.fetchData(from: DeliveryCoreDataModel.self, moc: coreData.workerManagedContext)
+            let alllocations = coreData.fetchData(from: LocationCoreDataModel.self, moc: coreData.workerManagedContext)
             let isAllDeleted = (alldeliveries.count == alllocations.count) && alldeliveries.isEmpty
             XCTAssert(isAllDeleted)
         }
