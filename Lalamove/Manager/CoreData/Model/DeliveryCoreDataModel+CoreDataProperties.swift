@@ -31,7 +31,7 @@ extension DeliveryCoreDataModel {
     }
 
     static func isExist(with id: Int, coreData: CoreDataManagerProtocol) -> DeliveryCoreDataModel? {
-        let predicate = NSPredicate(format: "%K = %@", "offSet", "\(id)")
+        let predicate = NSPredicate(format: "identifier == \(id)")
         let delivery = coreData.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate, moc: coreData.networkManagedContext)
         if delivery.isEmpty {
             return nil

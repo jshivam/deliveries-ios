@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0EEEF2E3B33F77355BC29F52 /* libPods-LalamoveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */; };
 		1A0F632449C23D2D106B0E8D /* libPods-Lalamove.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF574C4F1A13B20A000A823D /* libPods-Lalamove.a */; };
+		A001D46E2378021F000049B1 /* DeliveryListViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001D46D2378021F000049B1 /* DeliveryListViewModelMock.swift */; };
+		A001D47023780CFB000049B1 /* DeliveryListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001D46F23780CFB000049B1 /* DeliveryListViewControllerTest.swift */; };
 		A007DF76237019EE00B345F7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007DF75237019EE00B345F7 /* String+Extension.swift */; };
 		A007DF7823703B4A00B345F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A007DF7723703B4A00B345F7 /* UIView+Extension.swift */; };
 		A00A49302375CD1D001E6A59 /* APISessionConfigurationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A492F2375CD1D001E6A59 /* APISessionConfigurationTest.swift */; };
@@ -19,8 +21,6 @@
 		A012077A236AA93A007AF234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0120779236AA93A007AF234 /* Assets.xcassets */; };
 		A012077D236AA93A007AF234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A012077B236AA93A007AF234 /* LaunchScreen.storyboard */; };
 		A01CC781236C86A200693C56 /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CC780236C86A200693C56 /* DeliveryView.swift */; };
-		A01CC784236CA2DE00693C56 /* DeliveryViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CC783236CA2DE00693C56 /* DeliveryViewController+Extension.swift */; };
-		A01CC787236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CC786236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift */; };
 		A0269FED2374245300A88A63 /* CoreDataMockConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FEC2374245300A88A63 /* CoreDataMockConfig.swift */; };
 		A0269FF12374431600A88A63 /* ManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FEF2374423200A88A63 /* ManagedObjectModel.swift */; };
 		A0269FF32374479800A88A63 /* CoreDataConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FF22374479800A88A63 /* CoreDataConfig.swift */; };
@@ -90,6 +90,8 @@
 /* Begin PBXFileReference section */
 		70E78DBC01111D24DFDF6EC3 /* Pods-Lalamove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lalamove.debug.xcconfig"; path = "Target Support Files/Pods-Lalamove/Pods-Lalamove.debug.xcconfig"; sourceTree = "<group>"; };
 		79871D4B6AC0789D71CBF2EE /* libPods-LalamoveTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LalamoveTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A001D46D2378021F000049B1 /* DeliveryListViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewModelMock.swift; sourceTree = "<group>"; };
+		A001D46F23780CFB000049B1 /* DeliveryListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewControllerTest.swift; sourceTree = "<group>"; };
 		A007DF75237019EE00B345F7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A007DF7723703B4A00B345F7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A00A492F2375CD1D001E6A59 /* APISessionConfigurationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfigurationTest.swift; sourceTree = "<group>"; };
@@ -104,8 +106,6 @@
 		A0120783236AA93A007AF234 /* LalamoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LalamoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0120789236AA93A007AF234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A01CC780236C86A200693C56 /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
-		A01CC783236CA2DE00693C56 /* DeliveryViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryViewController+Extension.swift"; sourceTree = "<group>"; };
-		A01CC786236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeliveryDetailViewController+Extension.swift"; sourceTree = "<group>"; };
 		A0269FEC2374245300A88A63 /* CoreDataMockConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMockConfig.swift; sourceTree = "<group>"; };
 		A0269FEF2374423200A88A63 /* ManagedObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectModel.swift; sourceTree = "<group>"; };
 		A0269FF22374479800A88A63 /* CoreDataConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConfig.swift; sourceTree = "<group>"; };
@@ -197,6 +197,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A001D46C237801FC000049B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A001D46D2378021F000049B1 /* DeliveryListViewModelMock.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A0120761236AA938007AF234 = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +290,7 @@
 			children = (
 				A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */,
 				A09D2FF3236EBE43005567C8 /* TopViewControllerTest.swift */,
+				A001D46F23780CFB000049B1 /* DeliveryListViewControllerTest.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -377,9 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				A0120771236AA938007AF234 /* DeliveryListViewController.swift */,
-				A01CC783236CA2DE00693C56 /* DeliveryViewController+Extension.swift */,
 				A0E97E63236C4B1300EA882D /* DeliveryDetailViewController.swift */,
-				A01CC786236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -504,6 +511,7 @@
 		A0CC48D8236DCC2500C17D24 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				A001D46C237801FC000049B1 /* ViewModel */,
 				A0269FEB2374243F00A88A63 /* CoreData */,
 				A0B387762371943C009565E3 /* Model */,
 				A0CC48E4236DE09A00C17D24 /* Views */,
@@ -775,11 +783,9 @@
 				A0CC48D7236DBC6000C17D24 /* UIViewController+Extension.swift in Sources */,
 				A06FD466236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataProperties.swift in Sources */,
 				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
-				A01CC784236CA2DE00693C56 /* DeliveryViewController+Extension.swift in Sources */,
 				A0269FF12374431600A88A63 /* ManagedObjectModel.swift in Sources */,
 				A0120772236AA938007AF234 /* DeliveryListViewController.swift in Sources */,
 				A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */,
-				A01CC787236CA4EA00693C56 /* DeliveryDetailViewController+Extension.swift in Sources */,
 				A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */,
 				A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */,
 				A06FD46B236AFF96004BC899 /* GlobalConstants.swift in Sources */,
@@ -819,6 +825,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A001D46E2378021F000049B1 /* DeliveryListViewModelMock.swift in Sources */,
 				A09D2FF2236EAC3A005567C8 /* CoreDataTest.swift in Sources */,
 				A0CC48E0236DD63600C17D24 /* APISessionConfigurationMock.swift in Sources */,
 				A0B3877823719453009565E3 /* MockModel.swift in Sources */,
@@ -830,6 +837,7 @@
 				A09D2FFA236F0A8F005567C8 /* URLRequestComponentsMock.swift in Sources */,
 				A0CC48E3236DE04900C17D24 /* TableViewFooterLoaderTest.swift in Sources */,
 				A0CC48E6236DE0FF00C17D24 /* TableViewMock.swift in Sources */,
+				A001D47023780CFB000049B1 /* DeliveryListViewControllerTest.swift in Sources */,
 				A088ECF5236E1C37001B1157 /* DeliveryDetailViewModelTest.swift in Sources */,
 				A00A49302375CD1D001E6A59 /* APISessionConfigurationTest.swift in Sources */,
 				A0269FED2374245300A88A63 /* CoreDataMockConfig.swift in Sources */,

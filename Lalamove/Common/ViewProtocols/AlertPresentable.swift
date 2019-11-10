@@ -15,7 +15,7 @@ protocol AlertPresentable {
 extension AlertPresentable where Self: UIViewController {
     func showAlert(title: String? = nil, message: String? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "okButtonTitle".localized(), style: .default) {(_) in }
+        let confirmAction = UIAlertAction(title: LocalizedConstants.okButtonTitle, style: .default) {(_) in }
         alert.addAction(confirmAction)
         self.present(alert, animated: true, completion: nil)
     }

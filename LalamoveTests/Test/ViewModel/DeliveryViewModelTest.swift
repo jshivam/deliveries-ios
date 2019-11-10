@@ -49,7 +49,7 @@ class DeliveryViewModelTest: XCTestCase {
     }
 
     func testNumberOfRows() {
-        XCTAssertEqual(viewModel.numberOfRows(section: 0), viewModel.frc.fetchedObjects?.count)
+        XCTAssertEqual(viewModel.numberOfRows(section: 0), viewModel.fetchedObjectsCount())
     }
 
     func testFetchDataFromNetworkSuccess() {

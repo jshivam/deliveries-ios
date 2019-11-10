@@ -18,11 +18,11 @@ extension NetworkError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .apiError:
-            return "apiError".localized()
+            return LocalizedConstants.apiError
         case .noData:
-            return "noData".localized()
+            return LocalizedConstants.noData
         case .noInternet:
-            return "noInternet".localized()
+            return LocalizedConstants.noInternet
         }
     }
 }

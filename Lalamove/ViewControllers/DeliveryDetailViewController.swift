@@ -13,7 +13,7 @@ class DeliveryDetailViewController: UIViewController {
 
     struct Constants {
         static let markerIdentifier = "annotation"
-        static let title = "deliveryDetailTitle".localized()
+        static let title = LocalizedConstants.deliveryDetailTitle
         static let routeVisibilityArea: Double = 3000
     }
 
@@ -76,5 +76,24 @@ class DeliveryDetailViewController: UIViewController {
             let viewRegion = MKCoordinateRegion(center: destinationLocation, latitudinalMeters: Constants.routeVisibilityArea, longitudinalMeters: Constants.routeVisibilityArea)
             mapView.setRegion(viewRegion, animated: true)
         }
+    }
+}
+
+extension DeliveryDetailViewController: MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+
+        let identifier = Constants.markerIdentifier
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+
+        return annotationView
     }
 }

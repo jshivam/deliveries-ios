@@ -19,15 +19,19 @@ enum FetchedDeliveryStatus {
 protocol DeliveryListViewModelProtocol: AnyObject {
 
     init(deliveryServices: DeliveryServiceProtocol, coreData: CoreDataManagerProtocol)
+
     func numberOfSections() -> Int
     func numberOfRows(section: Int) -> Int
     func item(at indexPath: IndexPath) -> (title: String?, imageURL: String?)
 
+    func delivery(at indexPath: IndexPath) -> DeliveryCoreDataModel
+    func fetchedObjectsCount() -> Int
+
     func fetchDeliveries(useCache: Bool, completion: @escaping (FetchedDeliveryStatus) -> Void)
 
-    var fetchNextDataHandler: ((DeliveryListViewModelProtocol) -> Void)? { get set}
+    var fetchNextDataHandler: ((DeliveryListViewModelProtocol) -> Void)? { get set }
     var lastVisibileIndexPath: IndexPath? { get set }
-    var frc: NSFetchedResultsController<DeliveryCoreDataModel> { get }
+    var fetchedResultsControllerDelegate: NSFetchedResultsControllerDelegate? { get set }
 }
 
 class DeliveryListViewModel: DeliveryListViewModelProtocol {
@@ -37,7 +41,7 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
     private var currentOffSet = -1
     private var isFetchingDeliveries = false
 
-    private(set) lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
+    private lazy var frc: NSFetchedResultsController<DeliveryCoreDataModel> = {
            let fetchRequest = self.fetchRequest
            let context = self.coreData.workerManagedContext
            let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
@@ -70,6 +74,12 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
         }
     }
 
+    weak var fetchedResultsControllerDelegate: NSFetchedResultsControllerDelegate? {
+        didSet {
+            self.frc.delegate = self.fetchedResultsControllerDelegate
+        }
+    }
+
     required init(deliveryServices: DeliveryServiceProtocol, coreData: CoreDataManagerProtocol) {
         self.coreData = coreData
         self.deliveryServices = deliveryServices
@@ -92,6 +102,15 @@ extension DeliveryListViewModel {
     private func saveDeliveries() {
         coreData.saveContext()
     }
+
+    func delivery(at indexPath: IndexPath) -> DeliveryCoreDataModel {
+        let delivery = frc.object(at: indexPath)
+        return delivery
+    }
+
+    func fetchedObjectsCount() -> Int {
+        return frc.fetchedObjects?.count ?? 0
+    }
 }
 
 // MARK: - TableView Wrapper Methods
@@ -108,7 +127,7 @@ extension DeliveryListViewModel {
     }
 
     func item(at indexPath: IndexPath) -> (title: String?, imageURL: String?) {
-        let delivery = frc.object(at: indexPath)
+        let delivery = self.delivery(at: indexPath)
         return (title: "\(delivery.identifier): \(delivery.desc ?? "--")", imageURL: delivery.imageUrl)
     }
 }
