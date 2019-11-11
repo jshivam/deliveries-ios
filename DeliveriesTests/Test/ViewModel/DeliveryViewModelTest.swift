@@ -94,16 +94,13 @@ class DeliveryViewModelTest: XCTestCase {
         coreData.saveContext()
 
         let fetchExpectation = expectation(description: "fetchExpectation")
-        saveNotificationCompleteHandler = { [weak self] (notification) in
-            guard let `self` = self else { return }
-            self.viewModel.fetchDeliveries(useCache: true) { (status) in
-                fetchExpectation.fulfill()
-                switch status {
-                case .fromCache:
-                    XCTAssert(true)
-                default:
-                    XCTAssert(false)
-                }
+        self.viewModel.fetchDeliveries(useCache: true) { (status) in
+            fetchExpectation.fulfill()
+            switch status {
+            case .fromCache:
+                XCTAssert(true)
+            default:
+                XCTAssert(false)
             }
         }
         wait(for: [fetchExpectation], timeout: 5)

@@ -28,4 +28,5 @@ struct LocalizedConstants {
 
     static let deliveryListTitle = "deliveryListTitle".localized()
     static let deliveryDetailTitle = "deliveryDetailTitle".localized()
+    static let unnamed = "N/A"
 }

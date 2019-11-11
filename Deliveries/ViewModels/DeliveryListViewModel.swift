@@ -134,7 +134,7 @@ extension DeliveryListViewModel {
 
     func item(at indexPath: IndexPath) -> (title: String?, imageURL: String?) {
         let delivery = self.delivery(at: indexPath)
-        return (title: delivery.desc, imageURL: delivery.imageUrl)
+        return (title: "\(delivery.desc ?? LocalizedConstants.unnamed) at \(delivery.location?.address ?? LocalizedConstants.unnamed)", imageURL: delivery.imageUrl)
     }
 }
 
@@ -187,17 +187,25 @@ extension DeliveryListViewModel {
 
         for delivery in deliveries {
             var model: DeliveryCoreDataModel {
-                if useCache, let deliveyModel = getDeliveryCoreDataModelIfExists(with: delivery.identifier) {
-                    return deliveyModel
+                if useCache, let deliveryObject = getDeliveryCoreDataModelIfExists(with: delivery.identifier) {
+                    deliveryObject.desc = delivery.desc
+                    deliveryObject.identifier = Int64(delivery.identifier)
+                    deliveryObject.imageUrl = delivery.imageUrl
+                    deliveryObject.location?.address = delivery.location.address
+                    deliveryObject.location?.lat = delivery.location.lat
+                    deliveryObject.location?.lng = delivery.location.lng
+                    return deliveryObject
                 } else {
-                    return DeliveryCoreDataModel.create(coreData: coreData, delivery: delivery)
+                    let deliveryObject = DeliveryCoreDataModel.create(coreData: coreData, delivery: delivery)
+                    return deliveryObject
                 }
             }
+            model.offSet = Int64(currentOffSet)
         }
     }
 
     private func getDeliveryCoreDataModelIfExists(with id: Int) -> DeliveryCoreDataModel? {
-        let predicate = NSPredicate(format: "identifier == \(id)")
+        let predicate = NSPredicate(format: "\(Constants.idKey) == \(id)")
         let delivery = coreData.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate, moc: coreData.networkManagedContext)
         return delivery.first
     }

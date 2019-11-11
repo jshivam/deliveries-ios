@@ -234,11 +234,6 @@
 				A04FB55D236ACC4E002CDDD3 /* ViewModels */,
 				A04FB55E236ACC58002CDDD3 /* ViewControllers */,
 				A04FB55F236ACC71002CDDD3 /* Views */,
-				A012077B236AA93A007AF234 /* LaunchScreen.storyboard */,
-				A012077E236AA93A007AF234 /* Info.plist */,
-				A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */,
-				A0120779236AA93A007AF234 /* Assets.xcassets */,
-				A012076D236AA938007AF234 /* AppDelegate.swift */,
 				A05B09C4237015BE0083987E /* Resources */,
 			);
 			path = Deliveries;
@@ -426,6 +421,10 @@
 		A05B09C4237015BE0083987E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A012077B236AA93A007AF234 /* LaunchScreen.storyboard */,
+				A0772697236D6F8A00E7A31A /* GoogleService-Info.plist */,
+				A012077E236AA93A007AF234 /* Info.plist */,
+				A0120779236AA93A007AF234 /* Assets.xcassets */,
 				A05B09C5237015D30083987E /* Localizable.strings */,
 			);
 			path = Resources;
@@ -434,6 +433,7 @@
 		A05B09C72370178F0083987E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A012076D236AA938007AF234 /* AppDelegate.swift */,
 				A06FD469236AFF82004BC899 /* Constants */,
 				A01CC782236CA05600693C56 /* Extensions */,
 				A02CF573236BFB9F0035D066 /* ViewProtocols */,
@@ -993,7 +993,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4V6BH5JAKH;
-				INFOPLIST_FILE = Deliveries/Info.plist;
+				INFOPLIST_FILE = Deliveries/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1013,7 +1013,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4V6BH5JAKH;
-				INFOPLIST_FILE = Deliveries/Info.plist;
+				INFOPLIST_FILE = Deliveries/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

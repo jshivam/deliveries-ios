@@ -22,6 +22,7 @@ extension DeliveryCoreDataModel {
     @NSManaged public var offSet: Int64
     @NSManaged public var location: LocationCoreDataModel?
 
+    @discardableResult
     static func create(coreData: CoreDataManagerProtocol, delivery: Delivery?) -> DeliveryCoreDataModel {
         let deliveryObject = coreData.createObject(DeliveryCoreDataModel.self)
         if let delivery = delivery {

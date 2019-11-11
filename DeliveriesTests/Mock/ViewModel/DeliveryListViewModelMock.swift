@@ -19,12 +19,15 @@ class DeliveryListViewModelMock: DeliveryListViewModelProtocol {
     weak var fetchedResultsControllerDelegate: NSFetchedResultsControllerDelegate?
     var numberOfSectionsMock = 1
     var numberOfRowsMock = 10
-    var item:(title: String?, imageURL: String?) = (title: "text", imageURL: nil)
+    var item:(title: String?, imageURL: String?) = (title: "text", imageURL: "https://www.google.co.in/")
     var fetchNextDataHandler: ((DeliveryListViewModelProtocol) -> Void)?
     var lastVisibileIndexPath: IndexPath?
 
-    lazy var delivery: DeliveryCoreDataModel = {
-        return DeliveryCoreDataModel.create(coreData: coreData)
+   lazy var delivery: DeliveryCoreDataModel! = {
+        let location = Location.init(lat: 10, lng: 20, address: "london")
+        let delivery = Delivery.init(identifier: 100, desc: "this is test", imageUrl: "https://www.google.co.in/", location: location)
+        let deliveryModel = DeliveryCoreDataModel.create(coreData: coreData, delivery: delivery)
+        return deliveryModel
     }()
 
     var fetchedDeliveryStatus: FetchedDeliveryStatus = .fromServer

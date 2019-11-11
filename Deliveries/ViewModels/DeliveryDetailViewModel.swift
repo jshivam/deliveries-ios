@@ -24,7 +24,7 @@ class DeliveryDetailViewModel: DeliveryDetailViewModelProtocol {
     }
 
     var deliveryDescribtion: String? {
-        return delivery.desc
+        return "\(delivery.desc ?? LocalizedConstants.unnamed) at \(delivery.location?.address ?? LocalizedConstants.unnamed)"
     }
 
     var imageURL: String? {

@@ -11,7 +11,7 @@ import MapKit
 
 class DeliveryDetailViewController: UIViewController {
 
-    struct Constants {
+    private struct Constants {
         static let markerIdentifier = "annotation"
         static let title = LocalizedConstants.deliveryDetailTitle
         static let routeVisibilityArea: Double = 3000

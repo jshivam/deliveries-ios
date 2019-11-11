@@ -40,18 +40,11 @@ class CoreDataTest: XCTestCase {
 
         coreData.createObject(DeliveryCoreDataModel.self)
         coreData.deleteAll(DeliveryCoreDataModel.self)
-        let notificationExpectation = expectation(description: "Deleting Deliveries")
-
-        saveNotificationCompleteHandler = { [weak self] (notification) in
-            guard let `self` = self, let coreData = self.coreData else { return }
-            notificationExpectation.fulfill()
-            let alldeliveries = coreData.fetchData(from: DeliveryCoreDataModel.self, moc: coreData.workerManagedContext)
-            let alllocations = coreData.fetchData(from: LocationCoreDataModel.self, moc: coreData.workerManagedContext)
-            let isAllDeleted = (alldeliveries.count == alllocations.count) && alldeliveries.isEmpty
-            XCTAssert(isAllDeleted)
-        }
-
-        waitForExpectations(timeout: 5)
+        coreData.saveContext()
+        let alldeliveries = coreData.fetchData(from: DeliveryCoreDataModel.self, moc: coreData.workerManagedContext)
+        let alllocations = coreData.fetchData(from: LocationCoreDataModel.self, moc: coreData.workerManagedContext)
+        let isAllDeleted = (alldeliveries.count == alllocations.count) && alldeliveries.isEmpty
+        XCTAssert(isAllDeleted)
     }
 }
 

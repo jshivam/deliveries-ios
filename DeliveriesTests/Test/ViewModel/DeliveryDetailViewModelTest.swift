@@ -14,12 +14,9 @@ class DeliveryDetailViewModelTest: XCTestCase {
     var coreData: CoreDataManager! = CoreDataManager.init(config: CoreDataMockConfig())
 
     lazy var dataModel: DeliveryCoreDataModel! = {
-        let deliveryModel = coreData.createObject(DeliveryCoreDataModel.self)
-        let locationModel = coreData.createObject(LocationCoreDataModel.self)
-        deliveryModel.location = locationModel
         let location = Location.init(lat: 10, lng: 20, address: "london")
-        let delivery = Delivery.init(identifier: 100, desc: "this is test", imageUrl: "", location: location)
-        deliveryModel.update(delivery: delivery, offSet: 0)
+        let delivery = Delivery.init(identifier: 100, desc: "this is test", imageUrl: "https://www.google.co.in/", location: location)
+        let deliveryModel = DeliveryCoreDataModel.create(coreData: coreData, delivery: delivery)
         return deliveryModel
     }()
 
@@ -35,19 +32,21 @@ class DeliveryDetailViewModelTest: XCTestCase {
         dataModel = nil
     }
 
-    func testDeliveryModel() {
-        let isEqual = (viewModel.delivery.identifier == 100) && (viewModel.delivery.desc == "this is test") && (viewModel.delivery.imageUrl!.isEmpty)
-        XCTAssert(isEqual)
+    func testDeliveryDescribtion() {
+        let expectedDescribtion = "this is test at london"
+        XCTAssertEqual(viewModel.deliveryDescribtion, expectedDescribtion)
     }
 
-    func testLocationAddress() {
-        let location = viewModel.delivery.location!
-        XCTAssertEqual(location.address, "london")
+    func testimageURL() {
+        let expectedURL = "https://www.google.co.in/"
+        XCTAssertEqual(viewModel.imageURL, expectedURL)
     }
 
-    func testLocationLatnLng() {
-        let location = viewModel.delivery.location!
-        let isEqual = (10 == location.lat) && (20 == viewModel.delivery.location!.lng)
-        XCTAssert(isEqual)
+    func testCoordinate2D() {
+        XCTAssertNotNil(viewModel.coordinate2D)
+    }
+
+    func testAnnotaton() {
+        XCTAssertNotNil(viewModel.annotation)
     }
 }

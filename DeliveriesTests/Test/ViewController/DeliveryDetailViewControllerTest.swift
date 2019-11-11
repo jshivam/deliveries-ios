@@ -14,12 +14,9 @@ class DeliveryDetailViewControllerTest: XCTestCase {
     var detailViewController: DeliveryDetailViewController!
     var coreData: CoreDataManager! = CoreDataManager.init(config: CoreDataMockConfig())
     lazy var dataModel: DeliveryCoreDataModel! = {
-        let deliveryModel = coreData.createObject(DeliveryCoreDataModel.self)
-        let locationModel = coreData.createObject(LocationCoreDataModel.self)
-        deliveryModel.location = locationModel
         let location = Location.init(lat: 10, lng: 20, address: "london")
-        let delivery = Delivery.init(identifier: 100, desc: "this is test", imageUrl: "", location: location)
-        deliveryModel.update(delivery: delivery, offSet: 0)
+        let delivery = Delivery.init(identifier: 100, desc: "this is test", imageUrl: "https://www.google.co.in/", location: location)
+        let deliveryModel = DeliveryCoreDataModel.create(coreData: coreData, delivery: delivery)
         return deliveryModel
     }()
 
@@ -35,12 +32,8 @@ class DeliveryDetailViewControllerTest: XCTestCase {
         dataModel = nil
     }
 
-    func testViewModelLinkage() {
-        XCTAssertEqual(detailViewController.viewModel.delivery.location!.address, "london")
-    }
-
     func testMarker() {
-        for annotation in self.detailViewController.mapView.annotations where annotation.title == self.detailViewController.viewModel.delivery.location!.address {
+        for annotation in self.detailViewController.mapView.annotations where annotation.title == "london" {
             XCTAssertNotNil(detailViewController.mapView(detailViewController.mapView, viewFor: annotation))
             return
         }

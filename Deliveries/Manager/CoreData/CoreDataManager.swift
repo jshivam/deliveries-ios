@@ -77,11 +77,11 @@ class CoreDataManager: CoreDataManagerProtocol {
     }()
 
     func saveContext() {
-        self.networkManagedContext.perform {
+        self.networkManagedContext.performAndWait {
             self.networkManagedContext.saveIfhasChanges()
-            self.workerManagedContext.perform({
+            self.workerManagedContext.performAndWait({
                 self.workerManagedContext.saveIfhasChanges()
-                self.mainContext.perform({
+                self.mainContext.performAndWait({
                     self.mainContext.saveIfhasChanges()
                 })
             })
