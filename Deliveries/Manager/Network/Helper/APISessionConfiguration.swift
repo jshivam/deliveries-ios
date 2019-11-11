@@ -6,7 +6,7 @@
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class APISessionConfiguration: APISessionConfigurationProtocol {
     var baseURL: String {

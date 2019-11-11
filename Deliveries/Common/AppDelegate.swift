@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
 
         FirebaseManager.configure()
+        Toast.configure()
 
         let coreData = CoreDataManager.sharedInstance
         let deliveryService = DeliveryService()

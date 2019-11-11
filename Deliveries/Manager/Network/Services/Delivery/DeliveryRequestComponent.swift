@@ -6,7 +6,6 @@
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 
 enum DeliveryRequestComponent: URLRequestComponentsProtocol {

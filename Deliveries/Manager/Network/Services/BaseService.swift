@@ -6,7 +6,6 @@
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 
 class BaseService {

@@ -6,7 +6,6 @@
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
 //
 
-import UIKit
 import CoreData
 
 protocol CoreDataManagerProtocol {
@@ -101,8 +100,8 @@ class CoreDataManager: CoreDataManagerProtocol {
             }
             saveContext()
         } catch {
-            let fetchError = error as NSError
-            UIApplication.getTopViewController()?.showAlert(title: nil, message: fetchError.localizedDescription)
+            let deleteError = error as NSError
+            print("Failed to delete : \(deleteError.localizedDescription)")
         }
     }
 

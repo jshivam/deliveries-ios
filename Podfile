@@ -8,6 +8,7 @@ target 'Deliveries' do
   pod 'Firebase/Analytics'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Toast-Swift'
 
   # Pods for Lalamove
 

@@ -64,7 +64,7 @@ class DeliveryListViewController: UIViewController {
             forNextPage ? self?.hideFooterLoader() : self?.endRefreshing()
             switch status {
             case .faliure(let error):
-                self?.showAlert(message: error.localizedDescription)
+                self?.view.showToast(error.localizedDescription)
             default:
                 break
             }

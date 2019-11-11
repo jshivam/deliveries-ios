@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 extension UIView {
 
@@ -16,5 +17,13 @@ extension UIView {
         layer.shadowOffset = offSet
         layer.shadowOpacity = opacity
         layer.shadowRadius = radius
+    }
+
+    func showToast(_ message: String?) {
+        self.makeToast(message, duration: Toast.Constants.animationDuration, position: .bottom, style: ToastManager.shared.style)
+    }
+
+    func hide() {
+        self.hideAllToasts()
     }
 }
