@@ -1,8 +1,8 @@
 platform :ios, '11.0'
 
-target 'Lalamove' do
+target 'Deliveries' do
 
-	pod 'Alamofire'
+  pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'SwiftLint'
   pod 'Firebase/Analytics'
@@ -11,7 +11,7 @@ target 'Lalamove' do
 
   # Pods for Lalamove
 
-  target 'LalamoveTests' do
+  target 'DeliveriesTests' do
     inherit! :search_paths
     # Pods for testing
   end
