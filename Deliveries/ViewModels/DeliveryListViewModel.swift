@@ -128,7 +128,7 @@ extension DeliveryListViewModel {
 
     func item(at indexPath: IndexPath) -> (title: String?, imageURL: String?) {
         let delivery = self.delivery(at: indexPath)
-        return (title: "\(delivery.identifier): \(delivery.desc ?? "--")", imageURL: delivery.imageUrl)
+        return (title: delivery.desc, imageURL: delivery.imageUrl)
     }
 }
 
