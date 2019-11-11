@@ -453,7 +453,6 @@
 			isa = PBXGroup;
 			children = (
 				A077269A236D6FEB00E7A31A /* Crashlytics */,
-				A077269B236D702700E7A31A /* FirebaseManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -461,6 +460,7 @@
 		A077269A236D6FEB00E7A31A /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
+				A077269B236D702700E7A31A /* FirebaseManager.swift */,
 			);
 			path = Crashlytics;
 			sourceTree = "<group>";

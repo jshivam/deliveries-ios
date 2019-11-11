@@ -17,7 +17,7 @@ class DeliveryDetailViewController: UIViewController {
         static let routeVisibilityArea: Double = 3000
     }
 
-    let viewModel: DeliveryDetailViewModel
+    let viewModel: DeliveryDetailViewModelProtocol
     let mapView: MKMapView = {
         let mapView = MKMapView(frame: .zero)
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +30,7 @@ class DeliveryDetailViewController: UIViewController {
        return view
     }()
 
-    init(viewModel: DeliveryDetailViewModel) {
+    init(viewModel: DeliveryDetailViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -51,7 +51,7 @@ class DeliveryDetailViewController: UIViewController {
         view.addSubview(mapView)
         view.addSubview(deliveryView)
 
-        deliveryView.update(text: viewModel.delivery.desc, imageUrl: viewModel.delivery.imageUrl)
+        deliveryView.update(text: viewModel.deliveryDescribtion, imageUrl: viewModel.imageURL)
         addConstraints()
         dropDestinationPin()
     }
@@ -67,13 +67,11 @@ class DeliveryDetailViewController: UIViewController {
     }
 
     private func dropDestinationPin() {
-        if let location = viewModel.delivery.location {
-            let destinationLocation = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
-            let annotation = MKPointAnnotation()
-            annotation.title = location.address
-            annotation.coordinate = destinationLocation
+        if let destinationLocation = viewModel.coordinate2D, let annotation = viewModel.annotation {
             mapView.addAnnotation(annotation)
-            let viewRegion = MKCoordinateRegion(center: destinationLocation, latitudinalMeters: Constants.routeVisibilityArea, longitudinalMeters: Constants.routeVisibilityArea)
+            let viewRegion = MKCoordinateRegion(center: destinationLocation,
+                                                latitudinalMeters: Constants.routeVisibilityArea,
+                                                longitudinalMeters: Constants.routeVisibilityArea)
             mapView.setRegion(viewRegion, animated: true)
         }
     }

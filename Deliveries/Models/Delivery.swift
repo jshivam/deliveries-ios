@@ -16,7 +16,7 @@ struct Delivery: Codable {
 
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
-        case desc = "description"
+        case desc = "description" // used 'desc' as didn't want to use predefined key word 'description'
         case location
         case imageUrl
     }

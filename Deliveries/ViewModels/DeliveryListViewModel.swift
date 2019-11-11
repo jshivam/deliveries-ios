@@ -36,6 +36,11 @@ protocol DeliveryListViewModelProtocol: AnyObject {
 
 class DeliveryListViewModel: DeliveryListViewModelProtocol {
 
+    private struct Constants {
+        static let offSetKey = "offSet"
+        static let idKey = "identifier"
+    }
+
     private let deliveryServices: DeliveryServiceProtocol
     private let coreData: CoreDataManagerProtocol
     private var currentOffSet = -1
@@ -57,10 +62,11 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
        }()
 
        private lazy var fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = {
-           let fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = DeliveryCoreDataModel.fetchRequest()
-           fetchRequest.sortDescriptors = [NSSortDescriptor(key: "offSet", ascending: true), NSSortDescriptor(key: "identifier", ascending: true)]
-           fetchRequest.fetchBatchSize = GlobalConstants.deliveryLimitPerRequest
-           return fetchRequest
+            let fetchRequest: NSFetchRequest<DeliveryCoreDataModel> = DeliveryCoreDataModel.fetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: Constants.offSetKey, ascending: true),
+                                        NSSortDescriptor(key: Constants.idKey, ascending: true)]
+            fetchRequest.fetchBatchSize = GlobalConstants.deliveryLimitPerRequest
+            return fetchRequest
        }()
 
     var fetchNextDataHandler: ((DeliveryListViewModelProtocol) -> Void)?
@@ -94,7 +100,7 @@ extension DeliveryListViewModel {
     }
 
     private func cacheExists(offSet: Int) -> Bool {
-        let predicate = NSPredicate(format: "offSet == \(offSet)")
+        let predicate = NSPredicate(format: "\(Constants.offSetKey) == \(offSet)")
         let deliveries = coreData.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate, moc: coreData.workerManagedContext)
         return !deliveries.isEmpty
     }
@@ -180,15 +186,19 @@ extension DeliveryListViewModel {
         }
 
         for delivery in deliveries {
-
             var model: DeliveryCoreDataModel {
-                if useCache {
-                    return DeliveryCoreDataModel.isExist(with: delivery.identifier, coreData: coreData) ?? DeliveryCoreDataModel.create(coreData: coreData)
+                if useCache, let deliveyModel = getDeliveryCoreDataModelIfExists(with: delivery.identifier) {
+                    return deliveyModel
                 } else {
-                    return DeliveryCoreDataModel.create(coreData: coreData)
+                    return DeliveryCoreDataModel.create(coreData: coreData, delivery: delivery)
                 }
             }
-            model.update(delivery: delivery, offSet: currentOffSet)
         }
+    }
+
+    private func getDeliveryCoreDataModelIfExists(with id: Int) -> DeliveryCoreDataModel? {
+        let predicate = NSPredicate(format: "identifier == \(id)")
+        let delivery = coreData.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate, moc: coreData.networkManagedContext)
+        return delivery.first
     }
 }

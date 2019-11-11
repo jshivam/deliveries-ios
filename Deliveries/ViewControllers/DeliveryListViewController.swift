@@ -12,6 +12,7 @@ import CoreData
 class DeliveryListViewController: UIViewController {
 
     private struct Constants {
+        static let estimatedRowHeight: CGFloat = 44
         static let deliveryCellIndentifier = "cell"
         static let title = LocalizedConstants.deliveryListTitle
     }
@@ -37,7 +38,7 @@ class DeliveryListViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 44
+        tableView.estimatedRowHeight = Constants.estimatedRowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(DeliveryTableViewCell.self, forCellReuseIdentifier: Constants.deliveryCellIndentifier)
         tableView.tableFooterView = UIView()

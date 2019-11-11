@@ -17,14 +17,13 @@ extension LocationCoreDataModel {
     @NSManaged public var lng: Double
     @NSManaged public var delivery: DeliveryCoreDataModel?
 
-    static func create(coreData: CoreDataManagerProtocol) -> LocationCoreDataModel {
-        let location = coreData.createObject(LocationCoreDataModel.self)
-        return location
-    }
-
-    func update(location: Location) {
-        address = location.address
-        lat = location.lat
-        lng = location.lng
+    static func create(coreData: CoreDataManagerProtocol, location: Location?) -> LocationCoreDataModel {
+        let locationObject = coreData.createObject(LocationCoreDataModel.self)
+        if let location = location {
+            locationObject.address = location.address
+            locationObject.lat = location.lat
+            locationObject.lng = location.lng
+        }
+        return locationObject
     }
 }

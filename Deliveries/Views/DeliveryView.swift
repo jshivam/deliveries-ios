@@ -12,13 +12,15 @@ import AlamofireImage
 class DeliveryView: UIView {
 
     struct Constants {
-        static var profileImageViewSize: CGSize { return CGSize.init(width: 52, height: 52) }
+        static let profileImageViewSize: CGSize = CGSize.init(width: 52, height: 52)
+        static let labelFontSize: CGFloat = 16
+        static let animationDuration: TimeInterval = 0.2
     }
 
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: Constants.labelFontSize)
         label.textColor = UIColor.darkText
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -96,7 +98,7 @@ extension DeliveryView {
                 withURL: url,
                 placeholderImage: nil,
                 filter: nil,
-                imageTransition: .crossDissolve(0.2)
+                imageTransition: .crossDissolve(Constants.animationDuration)
             )
         }
     }

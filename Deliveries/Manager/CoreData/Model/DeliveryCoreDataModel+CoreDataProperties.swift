@@ -22,29 +22,15 @@ extension DeliveryCoreDataModel {
     @NSManaged public var offSet: Int64
     @NSManaged public var location: LocationCoreDataModel?
 
-    static func create(coreData: CoreDataManagerProtocol) -> DeliveryCoreDataModel {
-        let delivery = coreData.createObject(DeliveryCoreDataModel.self)
-
-        let location = LocationCoreDataModel.create(coreData: coreData)
-        delivery.location = location
-        return delivery
-    }
-
-    static func isExist(with id: Int, coreData: CoreDataManagerProtocol) -> DeliveryCoreDataModel? {
-        let predicate = NSPredicate(format: "identifier == \(id)")
-        let delivery = coreData.fetchData(from: DeliveryCoreDataModel.self, predicate: predicate, moc: coreData.networkManagedContext)
-        if delivery.isEmpty {
-            return nil
-        } else {
-            return delivery.first
+    static func create(coreData: CoreDataManagerProtocol, delivery: Delivery?) -> DeliveryCoreDataModel {
+        let deliveryObject = coreData.createObject(DeliveryCoreDataModel.self)
+        if let delivery = delivery {
+            deliveryObject.desc = delivery.desc
+            deliveryObject.identifier = Int64(delivery.identifier)
+            deliveryObject.imageUrl = delivery.imageUrl
+            let locationObject = LocationCoreDataModel.create(coreData: coreData, location: delivery.location)
+            deliveryObject.location = locationObject
         }
-    }
-
-    func update(delivery: Delivery, offSet: Int) {
-        desc = delivery.desc
-        identifier = Int64(delivery.identifier)
-        imageUrl = delivery.imageUrl
-        self.offSet = Int64(offSet)
-        location?.update(location: delivery.location)
+        return deliveryObject
     }
 }
