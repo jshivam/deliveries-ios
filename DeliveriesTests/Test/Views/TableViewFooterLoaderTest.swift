@@ -23,20 +23,16 @@ class TableViewFooterLoaderTest: XCTestCase {
 
     func testShowFooter() {
         tableViewMock.showFooterLoader()
-        if let view = tableViewMock.tableView.tableFooterView as? UIActivityIndicatorView {
-            XCTAssert(view.isAnimating)
-        } else {
-            XCTAssert(false)
-        }
+        let view = tableViewMock.tableView.tableFooterView as? UIActivityIndicatorView
+        XCTAssertNotNil(view)
+        XCTAssert(view!.isAnimating)
     }
 
     func testHideFooter() {
         tableViewMock.hideFooterLoader()
-        if let view = tableViewMock.tableView.tableFooterView {
-            XCTAssert(view.frame == .zero)
-        } else {
-            XCTAssert(true)
-        }
+        let view = tableViewMock.tableView.tableFooterView
+        XCTAssertNotNil(view)
+        XCTAssertEqual(view!.frame, CGRect.zero)
     }
 
 }

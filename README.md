@@ -101,3 +101,4 @@ For pagination logic, App will assume more pages till the time it don't get empt
 
 # TODO / Improvements
 -  UI test cases
+- Error Handing in CoreData

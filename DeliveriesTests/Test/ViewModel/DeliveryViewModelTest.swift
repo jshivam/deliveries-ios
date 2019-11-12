@@ -4,7 +4,7 @@
 //
 //  Created by Shivam Jaiswal on 03/11/19.
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
-//
+//u
 
 import XCTest
 import CoreData
@@ -14,7 +14,6 @@ class DeliveryViewModelTest: XCTestCase {
 
     var coreData: CoreDataManager! = CoreDataManager.init(config: CoreDataMockConfig())
     var viewModel: DeliveryListViewModel!
-    var saveNotificationCompleteHandler: ((Notification) -> Void)?
 
     var apiPerformer: APIPerformer!
     var session: SessionManagerMock!
@@ -28,10 +27,6 @@ class DeliveryViewModelTest: XCTestCase {
         configMock = APISessionConfigurationMock()
         deliveryService = DeliveryService(apiPerformer: apiPerformer, sessionConfiguration: configMock)
         viewModel = DeliveryListViewModel.init(deliveryServices: deliveryService, coreData: coreData)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(contextSaved(notification:)),
-                                               name: NSNotification.Name.NSManagedObjectContextDidSave,
-                                               object: coreData.networkManagedContext)
     }
 
     override func tearDown() {
@@ -41,7 +36,6 @@ class DeliveryViewModelTest: XCTestCase {
         apiPerformer = nil
         session = nil
         viewModel = nil
-        saveNotificationCompleteHandler = nil
     }
 
     func testNumberOfSectinos() {
@@ -134,11 +128,5 @@ class DeliveryViewModelTest: XCTestCase {
 
         let rows = viewModel.numberOfRows(section: 0)
         viewModel.lastVisibileIndexPath = IndexPath.init(row: rows - 1, section: 0)
-    }
-}
-
-extension DeliveryViewModelTest {
-    func contextSaved( notification: Notification ) {
-        saveNotificationCompleteHandler?(notification)
     }
 }
