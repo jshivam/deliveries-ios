@@ -50,7 +50,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         do {
             try coordinator.addPersistentStore(ofType: config.persistentStore, configurationName: nil, at: url, options: nil)
         } catch {
-            print(error)
+            debugPrint(error)
             abort()
         }
         return coordinator
@@ -101,7 +101,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             saveContext()
         } catch {
             let deleteError = error as NSError
-            print("Failed to delete : \(deleteError.localizedDescription)")
+            debugPrint("Failed to delete : \(deleteError.localizedDescription)")
         }
     }
 
@@ -125,7 +125,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             let result = try context.fetch(request)
             return result as! [T] // swiftlint:disable:this force_cast
         } catch {
-            print("Failed to fetch")
+            debugPrint("Failed to fetch")
         }
         return []
     }
@@ -142,7 +142,7 @@ extension NSManagedObjectContext {
             do {
                 try self.save()
             } catch {
-                print("Failed to Save Error : \(error.localizedDescription)")
+                debugPrint("Failed to Save Error : \(error.localizedDescription)")
             }
         }
     }

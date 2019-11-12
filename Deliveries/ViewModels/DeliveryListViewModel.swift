@@ -55,7 +55,7 @@ class DeliveryListViewModel: DeliveryListViewModelProtocol {
            do {
                try fetchedResultsController.performFetch()
            } catch {
-               print("fetchedResultsController Error: \(error.localizedDescription)")
+               debugPrint("fetchedResultsController Error: \(error.localizedDescription)")
            }
            return fetchedResultsController
        }()

@@ -40,6 +40,15 @@ Please check below for low level diagram:
 5. DataBaseManager - Responsible to handle data from DB.
 6. HTTPClient - Responsible to make HTTP api call.
 
+# App Data Flow
+- Checks for Records in Data Base
+- if records exists, display the records from Data Base
+- if records doesn't exists, make network call
+- If succesfully fetched records from server, save the records to DB and display the records
+- If unsuccesfully fetched records from server, display error 
+
+![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/flowChart.png)
+
 # Caching
 
 1. App using CoreData with Sqlite to make cache of JSON response.
@@ -69,19 +78,12 @@ App has implemented crashlytics using Firebase.
 - Firebase/Analytics
 - Fabric
 - Crashlytics
+- Toast-Swift
+
 
 # Network Calling
 
-App used native Alamofire for making http call.
-
-# App Data Flow
-- Checks for Records in Data Base
-- if records exists, display the records from Data Base
-- if records doesn't exists, make network call
-- If succesfully fetched records from server, save the records to DB and display the records
-- If unsuccesfully fetched records from server, display error 
-
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/flowChart.png)
+App used  Alamofire for making http call.
 
 
 # Displaying Delivery Details
@@ -98,5 +100,4 @@ For pagination logic, App will assume more pages till the time it don't get empt
 ![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail.png)
 
 # TODO / Improvements
--  Unit test cases Improvements
 -  UI test cases
