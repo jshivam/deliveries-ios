@@ -1,8 +1,8 @@
 //
 //  CoreDataMockConfig.swift
-//  LalamoveTests
+//  DeliveriesTests
 //
-//  Created by Shivam Jaiswal on 07/11/19.
+//  Created by Shivam Jaiswal on 11/11/19.
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
 //
 

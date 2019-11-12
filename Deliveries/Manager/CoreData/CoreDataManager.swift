@@ -1,8 +1,8 @@
 //
 //  CoreDataManager.swift
-//  Lalamove
+//  Deliveries
 //
-//  Created by Shivam Jaiswal on 31/10/19.
+//  Created by Shivam Jaiswal on 08/11/19.
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
 //
 
@@ -30,7 +30,7 @@ class CoreDataManager: CoreDataManagerProtocol {
     }
 
     static let sharedInstance = CoreDataManager()
-    private let fileName = "Lalamove"
+    private let fileName = ManagedObjectModel.Constant.fileName
 
     private(set) lazy var applicationDocDir: URL = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

@@ -1,8 +1,8 @@
 //
 //  NSMutableURLRequest+URLRequestConvertible.swift
-//  Lalamove
+//  Deliveries
 //
-//  Created by Shivam Jaiswal on 31/10/19.
+//  Created by Shivam Jaiswal on 08/11/19.
 //  Copyright © 2019 Shivam Jaiswal. All rights reserved.
 //
 
