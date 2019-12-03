@@ -41,6 +41,8 @@ class DeliveryDetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
+
         title = Constants.title
         mapView.delegate = self
         setup()

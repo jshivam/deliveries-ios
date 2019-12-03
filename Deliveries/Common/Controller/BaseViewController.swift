@@ -21,7 +21,7 @@ class BaseViewController: UIViewController {
     }
 
     func navigationBackButttonSetup() {
-        let backButton = UIBarButtonItem.init(title: nil, style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
     }
 }

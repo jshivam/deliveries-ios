@@ -32,6 +32,8 @@ class DeliveryListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.prefersLargeTitles = true
+
         title = Constants.title
         view.backgroundColor = .white
         view.addSubview(tableView)
