@@ -30,6 +30,12 @@ class DeliveryDetailViewController: BaseViewController {
        return view
     }()
 
+    private let blurView: UIVisualEffectView = {
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        return blurView
+    }()
+
     init(viewModel: DeliveryDetailViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -50,6 +56,7 @@ class DeliveryDetailViewController: BaseViewController {
 
     private func setup() {
         view.addSubview(mapView)
+        view.addSubview(blurView)
         view.addSubview(deliveryView)
 
         deliveryView.update(text: viewModel.deliveryDescribtion, imageUrl: viewModel.imageURL)
@@ -63,10 +70,16 @@ class DeliveryDetailViewController: BaseViewController {
         deliveryView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         deliveryView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         deliveryView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: deliveryView.topAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
+        blurView.topAnchor.constraint(equalTo: deliveryView.topAnchor).isActive = true
+        blurView.leftAnchor.constraint(equalTo: deliveryView.leftAnchor).isActive = true
+        blurView.rightAnchor.constraint(equalTo: deliveryView.rightAnchor).isActive = true
+        blurView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 
     private func dropDestinationPin() {

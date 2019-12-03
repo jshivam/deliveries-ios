@@ -67,8 +67,8 @@ App has implemented crashlytics using Firebase.
 1. Documentation: https://firebase.google.com/docs/crashlytics/get-started?platform=ios.
 
 # SwiftLint
-4. If need to change the rules of swiftlint, goto root folder of the project
-5. Open the .swiftlint.yml file and modify the rules based on the requirement
+1. If need to change the rules of swiftlint, goto root folder of the project
+2. Open the .swiftlint.yml file and modify the rules based on the requirement
 
 # CocoaPods Used
 
@@ -95,10 +95,11 @@ App used  Alamofire for making http call.
 For pagination logic, App will assume more pages till the time it don't get empty list of response from server. In case of offline mode, it will always try for next page ( this is to make sure that if app comes online then it should return response).
 
 # ScreenShots
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryList.png)
-
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail.png)
+![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryList_light.png)
+![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail_light.png)
+![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryList_dark.png)
+![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail_dark.png)
 
 # TODO / Improvements
 -  UI test cases
-- Error Handing in CoreData
+-  Error Handing in CoreData
