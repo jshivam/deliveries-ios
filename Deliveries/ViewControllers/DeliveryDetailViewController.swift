@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class DeliveryDetailViewController: UIViewController {
+class DeliveryDetailViewController: BaseViewController {
 
     private struct Constants {
         static let markerIdentifier = "annotation"
@@ -47,11 +47,12 @@ class DeliveryDetailViewController: UIViewController {
     }
 
     private func setup() {
-        view.backgroundColor = .white
         view.addSubview(mapView)
         view.addSubview(deliveryView)
 
         deliveryView.update(text: viewModel.deliveryDescribtion, imageUrl: viewModel.imageURL)
+        deliveryView.dropShadow()
+
         addConstraints()
         dropDestinationPin()
     }

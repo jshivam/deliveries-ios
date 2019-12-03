@@ -21,7 +21,7 @@ class DeliveryView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: Constants.labelFontSize)
-        label.textColor = UIColor.darkText
+        label.textColor = .titleColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

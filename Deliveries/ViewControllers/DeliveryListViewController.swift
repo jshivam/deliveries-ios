@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DeliveryListViewController: UIViewController {
+class DeliveryListViewController: BaseViewController {
 
     private struct Constants {
         static let estimatedRowHeight: CGFloat = 44

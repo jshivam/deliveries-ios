@@ -10,13 +10,17 @@ import UIKit
 
 protocol TableViewFooterLoadable: TableViewProtocol {
     func showFooterLoader()
+    func hideFooterLoader()
 }
 
 extension TableViewFooterLoadable {
     func showFooterLoader() {
-        let loader = UIActivityIndicatorView.init(style: .gray)
-        loader.startAnimating()
-        self.tableView.tableFooterView = loader
+        let loaderView = LoaderView.init(frame: .zero)
+        let height = loaderView.preferredHeight
+        loaderView.frame = CGRect.init(x: 0, y: 0, width: 0, height: height)
+        loaderView.loader.startAnimating()
+        self.tableView.tableFooterView = loaderView
+        loaderView.setNeedsLayout()
     }
 
     func hideFooterLoader() {

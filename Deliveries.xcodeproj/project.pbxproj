@@ -23,6 +23,9 @@
 		A0269FED2374245300A88A63 /* CoreDataMockConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FEC2374245300A88A63 /* CoreDataMockConfig.swift */; };
 		A0269FF12374431600A88A63 /* ManagedObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FEF2374423200A88A63 /* ManagedObjectModel.swift */; };
 		A0269FF32374479800A88A63 /* CoreDataConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0269FF22374479800A88A63 /* CoreDataConfig.swift */; };
+		A027118323961EF700D9F57C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027118223961EF700D9F57C /* UIColor+Extension.swift */; };
+		A0271186239628F000D9F57C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0271185239628F000D9F57C /* BaseViewController.swift */; };
+		A027118923962F1C00D9F57C /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027118823962F1C00D9F57C /* LoaderView.swift */; };
 		A02CF575236BFC030035D066 /* TableViewRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF574236BFC030035D066 /* TableViewRefreshable.swift */; };
 		A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */; };
 		A0303F58236E355200BE6225 /* DeliveryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */; };
@@ -107,6 +110,9 @@
 		A0269FEC2374245300A88A63 /* CoreDataMockConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMockConfig.swift; sourceTree = "<group>"; };
 		A0269FEF2374423200A88A63 /* ManagedObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectModel.swift; sourceTree = "<group>"; };
 		A0269FF22374479800A88A63 /* CoreDataConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConfig.swift; sourceTree = "<group>"; };
+		A027118223961EF700D9F57C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		A0271185239628F000D9F57C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A027118823962F1C00D9F57C /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		A02CF574236BFC030035D066 /* TableViewRefreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewRefreshable.swift; sourceTree = "<group>"; };
 		A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterLoader.swift; sourceTree = "<group>"; };
 		A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModelTest.swift; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 			children = (
 				A007DF75237019EE00B345F7 /* String+Extension.swift */,
 				A007DF7723703B4A00B345F7 /* UIView+Extension.swift */,
+				A027118223961EF700D9F57C /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +277,22 @@
 				A0269FEC2374245300A88A63 /* CoreDataMockConfig.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A0271184239628DC00D9F57C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0271185239628F000D9F57C /* BaseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A027118723962EE500D9F57C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A027118823962F1C00D9F57C /* LoaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A02CF573236BFB9F0035D066 /* ViewProtocols */ = {
@@ -433,7 +456,9 @@
 		A05B09C72370178F0083987E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A027118723962EE500D9F57C /* View */,
 				A012076D236AA938007AF234 /* AppDelegate.swift */,
+				A0271184239628DC00D9F57C /* Controller */,
 				A06FD469236AFF82004BC899 /* Constants */,
 				A01CC782236CA05600693C56 /* Extensions */,
 				A02CF573236BFB9F0035D066 /* ViewProtocols */,
@@ -791,6 +816,7 @@
 				A04FB554236ABBDB002CDDD3 /* Endpoint.swift in Sources */,
 				A0269FF12374431600A88A63 /* ManagedObjectModel.swift in Sources */,
 				A0120772236AA938007AF234 /* DeliveryListViewController.swift in Sources */,
+				A027118923962F1C00D9F57C /* LoaderView.swift in Sources */,
 				A04FB549236AB3A3002CDDD3 /* URLRequestBuilder.swift in Sources */,
 				A06FD467236AFB6C004BC899 /* LocationCoreDataModel+CoreDataClass.swift in Sources */,
 				A06FD468236AFB6C004BC899 /* LocationCoreDataModel+CoreDataProperties.swift in Sources */,
@@ -810,6 +836,7 @@
 				A06FD460236AF9E2004BC899 /* DeliveryListViewModel.swift in Sources */,
 				A0269FF32374479800A88A63 /* CoreDataConfig.swift in Sources */,
 				A04FB55A236AC134002CDDD3 /* DeliveryService.swift in Sources */,
+				A0271186239628F000D9F57C /* BaseViewController.swift in Sources */,
 				A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */,
 				A012076E236AA938007AF234 /* AppDelegate.swift in Sources */,
 				A0B3877323717CCF009565E3 /* SessionManager+Extension.swift in Sources */,
@@ -819,6 +846,7 @@
 				A04FB543236AB18C002CDDD3 /* BaseService.swift in Sources */,
 				A0EA052E236C32D6009D8802 /* DeliveryTableViewCell.swift in Sources */,
 				A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */,
+				A027118323961EF700D9F57C /* UIColor+Extension.swift in Sources */,
 				A04FB558236AC0C3002CDDD3 /* DeliveryRequestComponent.swift in Sources */,
 				A007DF76237019EE00B345F7 /* String+Extension.swift in Sources */,
 				A01CC781236C86A200693C56 /* DeliveryView.swift in Sources */,
