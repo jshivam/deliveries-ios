@@ -95,10 +95,8 @@ App used  Alamofire for making http call.
 For pagination logic, App will assume more pages till the time it don't get empty list of response from server. In case of offline mode, it will always try for next page ( this is to make sure that if app comes online then it should return response).
 
 # ScreenShots
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryList_light.png)
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail_light.png)
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryList_dark.png)
-![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail_dark.png)
+![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryList.png)
+![ScreenShot](https://github.com/jshivam/deliveries-ios/blob/master/ScreenShots/deliveryDetail.png)
 
 # TODO / Improvements
 -  UI test cases
