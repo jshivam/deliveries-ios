@@ -46,6 +46,7 @@ class DeliveryListViewController: BaseViewController {
         tableView.tableFooterView = UIView()
 
         addConstraints()
+        registerForceTouchForPreviewing(sourceView: tableView)
 
         viewModel.fetchedResultsControllerDelegate = self
 
@@ -99,10 +100,14 @@ extension DeliveryListViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(detailViewController(at: indexPath), animated: true)
+    }
+
+    private func detailViewController(at indexPath: IndexPath) -> DeliveryDetailViewController {
         let delivery = viewModel.delivery(at: indexPath)
         let detailViewModel = DeliveryDetailViewModel.init(delivery: delivery)
         let detailViewController = DeliveryDetailViewController.init(viewModel: detailViewModel)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        return detailViewController
     }
 }
 
@@ -151,6 +156,19 @@ extension DeliveryListViewController: NSFetchedResultsControllerDelegate {
         @unknown default:
             break
         }
+    }
+}
+
+extension DeliveryListViewController: ForceTouchable {
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
+        return detailViewController(at: indexPath)
+    }
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }
 

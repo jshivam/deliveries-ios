@@ -30,6 +30,8 @@
 		A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */; };
 		A0303F58236E355200BE6225 /* DeliveryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */; };
 		A0303F5B236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */; };
+		A03F98972396823E001B9848 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F98962396823E001B9848 /* UIApplication+Extension.swift */; };
+		A03F989B239689A3001B9848 /* ForceToucable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F989A239689A3001B9848 /* ForceToucable.swift */; };
 		A04FB539236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */; };
 		A04FB53B236AB089002CDDD3 /* APISessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */; };
 		A04FB540236AB153002CDDD3 /* APISessionConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */; };
@@ -117,6 +119,8 @@
 		A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterLoader.swift; sourceTree = "<group>"; };
 		A0303F57236E355200BE6225 /* DeliveryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModelTest.swift; sourceTree = "<group>"; };
 		A0303F5A236E371B00BE6225 /* DeliveryDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewControllerTest.swift; sourceTree = "<group>"; };
+		A03F98962396823E001B9848 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		A03F989A239689A3001B9848 /* ForceToucable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceToucable.swift; sourceTree = "<group>"; };
 		A04FB538236AB012002CDDD3 /* NSMutableURLRequest+URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		A04FB53A236AB089002CDDD3 /* APISessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfiguration.swift; sourceTree = "<group>"; };
 		A04FB53F236AB153002CDDD3 /* APISessionConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionConfigurationProtocol.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				A007DF75237019EE00B345F7 /* String+Extension.swift */,
 				A007DF7723703B4A00B345F7 /* UIView+Extension.swift */,
 				A027118223961EF700D9F57C /* UIColor+Extension.swift */,
+				A03F98962396823E001B9848 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			children = (
 				A02CF574236BFC030035D066 /* TableViewRefreshable.swift */,
 				A02CF576236C0C0B0035D066 /* TableViewFooterLoader.swift */,
+				A03F989A239689A3001B9848 /* ForceToucable.swift */,
 			);
 			path = ViewProtocols;
 			sourceTree = "<group>";
@@ -456,8 +462,8 @@
 		A05B09C72370178F0083987E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A027118723962EE500D9F57C /* View */,
 				A012076D236AA938007AF234 /* AppDelegate.swift */,
+				A027118723962EE500D9F57C /* View */,
 				A0271184239628DC00D9F57C /* Controller */,
 				A06FD469236AFF82004BC899 /* Constants */,
 				A01CC782236CA05600693C56 /* Extensions */,
@@ -830,6 +836,8 @@
 				A06FD465236AFB6C004BC899 /* DeliveryCoreDataModel+CoreDataClass.swift in Sources */,
 				A02CF575236BFC030035D066 /* TableViewRefreshable.swift in Sources */,
 				A077269C236D702700E7A31A /* FirebaseManager.swift in Sources */,
+				A03F989B239689A3001B9848 /* ForceToucable.swift in Sources */,
+				A03F98972396823E001B9848 /* UIApplication+Extension.swift in Sources */,
 				A02CF577236C0C0B0035D066 /* TableViewFooterLoader.swift in Sources */,
 				A0CC48D3236D9D8A00C17D24 /* NetworkError.swift in Sources */,
 				A0E97E66236C4BCE00EA882D /* DeliveryDetailViewModel.swift in Sources */,
