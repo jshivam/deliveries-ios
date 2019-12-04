@@ -164,7 +164,9 @@ extension DeliveryListViewController: ForceTouchable {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
         previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
-        return detailViewController(at: indexPath)
+        let detailViewController = self.detailViewController(at: indexPath)
+        detailViewController.preferredContentSize = CGSize(width: 0, height: view.bounds.height/2)
+        return detailViewController
     }
 
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
