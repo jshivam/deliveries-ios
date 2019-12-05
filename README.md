@@ -56,10 +56,14 @@ Please check below for low level diagram:
 3. Cache is deleted when App succesfully fetches fresh data from server by using 'Pull to Refresh' feature.
 
 # Assumptions        
-1. App support Localization, but for this version app contains only english text.     
-2. App support iPhone device in Portrait mode only. 
+1.  App support Localization, but for this version app contains only english text.     
+2.  App support iPhone device in Portrait mode only. 
 3.  Supported mobile platforms are iOS (11.x, 12.x, 13.x)        
 4.  Device support - iPhone 5s, iPhone 6 Series, iPhone SE, iPhone 7 Series, iPhone 8 Series, iPhone X Series    
+
+# Supported Features         
+1.  App supports Dark Mode.     
+2.  App support 3D touch peek and pop. 
 
 # Crashlytics
 
